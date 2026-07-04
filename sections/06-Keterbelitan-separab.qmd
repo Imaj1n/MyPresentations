@@ -1,0 +1,106 @@
+## Definisi Formal Keterbelitan
+
+Secara matematis, keadaan kuantum gabungan $|\Psi\rangle$ dikatakan **terbelit** jika ia **tidak dapat didekomposisi** menjadi perkalian Kronecker ($\otimes$) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit
+
+::::::: {.columns style="display: flex; justify-content: space-between;"}
+:::: {.column .fragment width="48%"}
+**Keadaan Terpisahkan (*Separable State*)**
+
+State yang dapat ditulis sebagai hasil kali langsung:
+
+::: {.card .success-box}
+$$|\Psi\rangle = |\psi_A\rangle \otimes |\psi_B\rangle$$
+:::
+
+**Keadaan Terbelit (*Entangled State*)**
+
+State yang melanggar kondisi faktorisasi:
+
+::: {.card .quantum-box}
+$$|\Psi\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle$$
+:::
+
+::::
+
+:::: {.column .fragment width="48%"}
+
+::::
+:::::::
+
+
+------------------------------------------------------------------------
+
+## Keterbelitan pada Sistem 2-Qubit
+
+Contoh keterbelitan state Bell:
+
+::: {.card .quantum-box}
+$$|\Phi^+\rangle = \frac{|00\rangle+|11\rangle}{\sqrt2}$$
+:::
+
+::::::: {.columns style="display: flex; justify-content: space-between;"}
+::: {.column .fragment width="48%"}
+Misalkan *state* tersebut diasumsikan bersifat **separable**:
+
+$$|\Phi^+\rangle = |\psi_A\rangle \otimes |\psi_B\rangle$$
+
+dengan definisi keadaan masing-masing qubit adalah:
+
+$$|\psi_A\rangle = a|0\rangle+b|1\rangle$$ $$|\psi_B\rangle = c|0\rangle+d|1\rangle$$ diperoleh sistem persamaan $$\begin{aligned}
+ac &= \frac1{\sqrt2}, ad = 0\\
+bc &= 0,bd = \frac1{\sqrt2}
+\end{aligned}$$
+:::
+
+::::: {.column .fragment width="48%"}
+:::: {.fragment .fade-up}
+::: {.card .success-box}
+Kontradiksi nilai di atas menunjukkan bahwa sistem persamaan ini: $$\boxed{\textbf{Tidak memiliki solusi}}$$
+:::
+::::
+:::::
+:::::::
+
+:::: {.fragment .fade-up}
+<br> Dari hasil pengujian matematis di atas, terbukti secara formal bahwa:
+
+::: {.card .quantum-box}
+$$|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle$$
+:::
+
+> Karena tidak dapat dinyatakan sebagai hasil perkalian tensor dari masing-masing keadaan penyusunnya, maka Bell State merupakan salah satu bentuk **Entangled State** (Keadaan Terbelit) yang murni.
+::::
+
+------------------------------------------------------------------------
+
+## Keterbelitan pada Sistem 3-Qubit (GHZ vs W State)
+
+Pada sistem 3-qubit, terdapat dua kelas keterbelitan maksimal yang secara topologi berbeda dan tidak dapat diubah satu sama lain via operasi uniter lokal dan komunikasi klasik (*LOCC*):
+
+::::::: {.columns style="display: flex; justify-content: space-between;"}
+:::: {.column width="48%"}
+**1. Keadaan GHZ (*Greenberger-Horne-Zeilinger*)**
+
+Superposisi dari dua keadaan ekstrem:
+
+::: {.card .quantum-box}
+$$|GHZ\rangle = \frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$$
+:::
+
+- **Sifat:** Memiliki keterbelitan tripartit global yang sangat kuat.
+- **Kelemahan:** Jika salah satu qubit diukur atau hilang, keterbelitan pada dua qubit sisanya akan **hancur total** menjadi *separable state* ($|00\rangle$ atau $|11\rangle$).
+::::
+
+:::: {.column .fragment width="48%"}
+**2. Keadaan W (*W-State*)**
+
+Superposisi dari semua permutasi satu eksitasi:
+
+::: {.card .success-box}
+$$|W\rangle = \frac{1}{\sqrt{3}}(|100\rangle + |010\rangle + |001\rangle)$$
+:::
+
+- **Sifat:** Keterbelitannya didistribusikan secara merata antar pasangan qubit.
+- **Kelebihan:** Sangat kokoh (*robust*). Jika satu qubit hilang atau diukur, dua qubit sisanya **tetap saling terbelit** membentuk state tipe Bell.
+::::
+:::::::

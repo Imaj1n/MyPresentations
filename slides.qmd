@@ -1,0 +1,43 @@
+---
+title: "Konstruksi Keadaan 3-Qubit Menggunakan Transformasi Matriks SU(2) dan SU(4)"
+author: "Dosen Pembimbing<br>Prof. Agus Purwanto, D.Sc."
+subtitle: "Alief Hisyam Al Hasany MR<br>NRP: 5001221098"
+institute: "Departemen Fisika, FSAD ITS"
+date: today
+
+format:
+  revealjs:
+    theme: [simple, template/custom.scss]
+    slide-number: true
+    transition: fade
+    chalkboard: true
+---
+
+<!-- {{< include sections/01-cover.qmd >}} -->
+
+<!-- {{< include sections/02-outline.qmd >}} -->
+
+{{< include sections/03-Qubit.qmd >}}
+
+{{< include sections/06-Keterbelitan-separab.qmd >}}
+
+{{< include sections/04-Tranformasi_Uniter.qmd >}}
+
+<!-- {{< include sections/05-Matriks_Densitas_NQubit.qmd >}} -->
+
+
+{{< include sections/07-Entropi.qmd >}}
+
+{{< include sections/08-metodologi.qmd >}}
+
+{{< include sections/09-parameterisasi-su.qmd >}}
+
+{{< include sections/10-transformasi-su3-su4.qmd >}}
+
+{{< include sections/11-hasil-klasifikasi.qmd >}}
+
+{{< include sections/12-interpretasi-su4.qmd >}}
+
+{{< include sections/13-kesimpulan.qmd >}}
+
+{{< include sections/14-terima-kasih.qmd >}}

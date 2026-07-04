@@ -1,0 +1,424 @@
+
+/*-- scss:defaults --*/
+
+$its-blue: #0a6289;
+$footer-blue: #3c6e94;
+
+/*-- scss:rules --*/
+
+// font style
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+/* Font untuk motto dan footer */
+.motto,
+.footer-left,
+.footer-right{
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* Motto */
+.motto{
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.motto-second{
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.motto-second{
+    transform: translateX(37px);
+}
+
+
+// fonts size quarto
+
+.reveal {
+  font-size: 25px !important;
+}
+
+/* Judul pada title slide */
+.reveal h1.title {
+  font-size: 1.5em !important;
+}
+
+/* Author */
+.reveal .title-slide .author {
+  font-size: 1em;
+}
+
+/* Subtitle (Dosen Pembimbing) */
+.reveal .title-slide .subtitle {
+  font-size: 0.9em;
+}
+
+/* Institute */
+.reveal .title-slide .institute {
+  font-size: 0.9em;
+}
+
+/* Institute */
+.reveal h3.date {
+  font-size: 0.9em !important;
+}
+
+// Transisi
+.reveal .slides section .fragment {
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+
+.reveal .slides section {
+  background-color: #ffffff;
+
+  padding-top: 40px;
+  padding-bottom: 65px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.reveal .slides {
+  width: 40%;
+}
+
+.reveal .slides section {
+  background: #fafafa;
+}
+
+.reveal .slides section {
+  background: #fafafa;
+}
+
+/* Header biru */
+/* Header full layar */
+.top-band {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  // height: 120px; 
+  height: 110px; 
+  background: linear-gradient(90deg, #0a6289 0%, #0b6d97 100%);
+  z-index: 900;
+}
+
+/* Footer full layar */
+.bottom-band {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  background: #3c6e94;
+  z-index: 900;
+}
+
+
+/* Logo */
+.its-header {
+  position: fixed;
+  top: 8px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  z-index: 999;
+}
+
+.its-header img {
+  filter: brightness(0) invert(1);
+  width: auto;
+}
+
+.logo-its {
+  height: 80px !important;
+}
+
+.logo-phi {
+  height: 72px !important;
+}
+
+.logo-laftifa {
+  height: 70px !important;
+}
+
+/* Motto kanan atas */
+.motto {
+  position: fixed;
+  top: 35px;
+  right: 40px;
+  color: white;
+  text-align: right;
+  font-size: 1.55em;
+  font-weight: 300;
+  z-index: 999;
+}
+
+/* Footer text */
+.footer-left {
+  position: fixed;
+  left: 25px;
+  bottom: 30px;
+  color: white;
+  font-size: 1.55em;
+  z-index: 999;
+}
+
+.footer-right {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  color: white;
+  font-size: 1.55em;
+  z-index: 999;
+}
+
+/* Nomor slide */
+.reveal .slide-number {
+  top: 18px !important;
+  right: 18px !important;
+  bottom: auto !important;
+  color: #d5d53f !important;
+  font-size: 0.7em !important;
+}
+
+/* Hilangkan progress bar */
+.reveal .progress {
+  display: none !important;
+}
+
+
+.its-header,
+.motto,
+.footer-left,
+.footer-right {
+  z-index: 1000;
+}
+
+// call out
+/* Box umum */
+.math-box {
+  background: #f8fbff;
+  border: 2px solid #4f8ef7;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* Hilangkan margin terakhir */
+.math-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Persamaan lebih lega */
+.math-box .math.display {
+  margin: 0.4em 0;
+}
+
+.info-box {
+  @extend .math-box;
+  border-color: #3498db;
+  background: #eef7ff;
+}
+
+.success-box {
+  @extend .math-box;
+  border-color: #2ecc71;
+  background: #effcf5;
+}
+
+.warning-box {
+  @extend .math-box;
+  border-color: #f39c12;
+  background: #fff8e8;
+}
+
+.danger-box {
+  @extend .math-box;
+  border-color: #e74c3c;
+  background: #fff2f1;
+}
+
+//// card callout
+
+// .card {
+//   background: white;
+//   border-radius: 16px;
+//   padding: 1.2rem 1.6rem;
+//   border-left: 8px solid #4f8ef7;
+//   box-shadow: 0 6px 18px rgba(0,0,0,.12);
+// }
+
+// //  Versi paling benar 01
+// .card {
+//   background: white;
+//   border-radius: 14px;
+//   padding: 1.2rem 1.6rem;
+//   margin: 0.25rem 0 !important;
+
+//   border-left: 6px solid #4f8ef7;
+//   box-shadow: 0 6px 18px rgba(0,0,0,.12);
+// }
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.2rem 1.6rem;
+  border-left: 6px solid #4f8ef7;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  margin: 0;
+}
+
+.card + .card {
+  margin-top: 0.4rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.MathJax_Display {
+  margin: 0.5rem 0 !important;
+}
+
+.card.info-box {
+  border-color: #3498db;
+  background: #eef7ff;
+}
+
+.card.success-box {
+  border-color: #2ecc71;
+  background: #effcf5;
+}
+
+.card.warning-box {
+  border-color: #f39c12;
+  background: #fff8e8;
+}
+
+.card.danger-box {
+  border-color: #e74c3c;
+  background: #fff2f2;
+}
+
+.card.quantum-box {
+  border-color: #6c63ff;
+  background: #f3f2ff;
+}
+
+// img border 
+
+.img-border {
+  width: 50%;
+  border: 4px solid orange;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.img-border:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(255, 165, 0, 0.6);
+}
+
+// tabel 
+
+.my-table {
+  margin: 1em auto;
+  display: table;
+  border-collapse: collapse;
+  font-size: 1.1em;
+  width: 30%;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.my-table th {
+  background: #ff9800;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+.my-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.my-table tr:nth-child(even) {
+  background: #fff7ed;
+}
+
+.table-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+// Video
+.video-frame {
+  position: absolute;
+  top: 180px;
+  left: 850px;
+  width: 260px;
+}
+
+.video-frame video {
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+// //  FLow Box
+
+// .flow {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 2rem;
+//   position: relative;
+// }
+
+// // BOX UTAMA
+// .flow-box {
+//   background: white;
+//   border-radius: 12px;
+//   padding: 1rem 1.4rem;
+//   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+//   border-left: 5px solid #4f8ef7;
+//   position: relative;
+//   min-width: 260px;
+// }
+
+// // PANAH MELENGKUNG KE BAWAH
+// .flow-box::after {
+//   content: "";
+//   position: absolute;
+//   left: 30px;
+//   bottom: -32px;
+//   width: 40px;
+//   height: 40px;
+
+//   border-left: 3px solid #4f8ef7;
+//   border-bottom: 3px solid #4f8ef7;
+
+//   border-bottom-left-radius: 20px;
+
+//   transform: rotate(-45deg);
+// }
+
+// // HILANGKAN PANAH DI BOX TERAKHIR
+// .flow-box:last-child::after {
+//   display: none;
+// }

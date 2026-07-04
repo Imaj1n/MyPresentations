@@ -1,0 +1,419 @@
+## Dasar Teori Grup & Grup Diskrit
+
+Sebelum masuk ke Grup Lie (kontinu), sebuah himpunan $G$ dengan operasi biner $*$ harus memenuhi aksioma formal grup:
+
+::::: {.columns style="display: flex; justify-content: space-between;"}
+<!-- KOLOM KIRI: 4 Syarat / Aksioma Grup -->
+
+::: {.column .fragment width="48%" style="text-align: left;"}
+**4 Aksioma Utama Grup** $(G, *)$
+
+- **Penutupan (*Closure*):** Untuk setiap $a, b \in G$, maka hasil $a * b \in G$.
+- **Asosiatif:** Untuk setiap $a, b, c \in G$, berlaku: $$(a * b) * c = a * (b * c)$$
+- **Elemen Identitas (**$e$): Terdapat $e \in G$ sedemikian rupa sehingga untuk setiap $a \in G$: $$a * e = e * a = a$$
+- **Elemen Invers (**$a^{-1}$): Untuk setiap $a \in G$, terdapat $a^{-1} \in G$ sehingga: $$a * a^{-1} = a^{-1} * a = e$$
+:::
+
+<!-- KOLOM KANAN: Contoh Grup Diskrit -->
+
+::: {.column .fragment width="48%" style="text-align: left;"}
+**Grup Diskrit**
+
+Contoh grup diskrit terhadap operasi perkalian bilangan kompleks.
+
+- Grup $\mu_4$
+
+$$\mu_4 = \{1, i, -1, -i\}$$
+
+- Grup $\mu_2$
+
+$$\mu_2 = \{1, -1\}$$
+
+Terlihat bahwa:
+
+$$\mu_2 \subset \mu_4 \iff \{1, -1\} \subset \{1, i, -1, -i\}$$
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Grup Lie dan Generator
+
+Operasi pada sistem kuantum merupakan **transformasi kontinu** yang dimodelkan oleh **Grup Lie**, sedangkan arah transformasi infinitesimalnya dijelaskan oleh **generator** pada aljabar Lie.
+
+::::::: {.columns style="display: flex; justify-content: space-between;"}
+<!-- KOLOM KIRI -->
+
+::::: {.column .fragment width="48%" style="text-align: left;"}
+### Pemetaan Eksponensial
+
+Setiap elemen Grup Lie dapat dinyatakan sebagai
+
+::: {.card .success-box}
+$$U(\theta_1,\theta_2,\ldots,\theta_n)
+=
+\exp\!\left(
+-i\sum_{k}\theta_k G_k
+\right),$$
+:::
+
+```{=html}
+<!-- dengan
+
+- $\theta_k$ : parameter kontinu,
+- $G_k$ : generator aljabar Lie,
+- $U(\boldsymbol{\theta})$ : elemen Grup Lie. -->
+```
+
+<!-- <br> -->
+
+<!-- ### Aljabar Lie -->
+
+Generator-generator memenuhi relasi al-jabar :
+
+::: {.card .quantum-box}
+$$[G_i,G_j]
+=
+G_iG_j-G_jG_i
+=
+\sum_k c_{ij}^{\,k}G_k,$$
+:::
+
+dengan $c_{ij}^{\,k}$ merupakan **konstanta struktur** (*structure constants*).
+:::::
+
+<!-- KOLOM KANAN -->
+
+::: {.column .fragment width="48%" style="text-align: left;"}
+:::
+:::::::
+
+------------------------------------------------------------------------
+
+### Grup Ortogonal $O(2)$ dan $SO(2)$
+
+::::::::::::::::: {.columns style="display: flex; justify-content: space-between;"}
+<!-- KOLOM KIRI -->
+
+::::::::: {.column width="30%" style="text-align: left;"}
+$$\boxed{OO^T = I}$$
+
+::: {.fragment .fade-up}
+$$O = \begin{pmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22}
+\end{pmatrix}$$
+:::
+
+::: {.fragment .fade-up}
+$$\Downarrow \boxed{OO^T = I}$$
+:::
+
+::: {.fragment .fade-up}
+$$\underbrace{O = \begin{pmatrix}
+    \cos\alpha & \sin\alpha \\
+    -\sin\alpha  & \cos\alpha
+\end{pmatrix}}_{O(2)} \xrightarrow{\det O = 1} \underbrace{O = \begin{pmatrix}
+    \cos\alpha & \sin\alpha \\
+    -\sin\alpha  & \cos\alpha
+\end{pmatrix} }_{SO(2)}$$
+:::
+
+```{=html}
+<!-- ::: {.video-frame}
+<video autoplay muted loop>
+  <source src="video/tes/DerivasiRotasi2D.mp4" type="video/mp4">
+</video>
+::: -->
+```
+
+::: {.fragment .fade-up}
+$$\Downarrow \boxed{\text{dalam bentuk eksponensial}}$$
+:::
+
+:::: {.fragment .fade-in}
+::: {.fragment .grow}
+$$O(\alpha) = e^{\alpha G}, \quad
+G = \begin{pmatrix}
+    0 & -1 \\
+    1 & 0
+\end{pmatrix}$$
+:::
+::::
+:::::::::
+
+<!-- KOLOM KANAN -->
+
+::::::::: {.column .fragment width="70%" style="text-align: left;"}
+untuk dimensi lebih tinggi, misal $3\times 3$, maka matriks rotasi dapat dinyatakan sebagai rotasi pada bidang-bidang tertentu, misal:
+
+::::::: r-stack
+<!-- Matriks pertama muncul -->
+
+::: {.fragment .fade-in-then-out}
+$$O_{12}(\phi) = \begin{pmatrix} \cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix} $$ dengan generator $$ G_{12} = \begin{pmatrix} 
+    0 & 1 & 0 \\ 
+   -1 & 0 & 0 \\ 
+    0 & 0 & 0 
+\end{pmatrix}$$
+:::
+
+<!-- Matriks kedua muncul menggantikan yang pertama -->
+
+::: {.fragment .fade-in-then-out}
+$$O_{13}(\theta) = \begin{pmatrix} \cos\theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos\theta \end{pmatrix} $$ dengan generator $$ G_{13} = \begin{pmatrix} 
+    0 & 0 & 1 \\ 
+    0 & 0 & 0 \\ 
+   -1 & 0 & 0 
+\end{pmatrix}$$
+:::
+
+<!-- Matriks ketiga muncul -->
+
+::: {.fragment .fade-in-then-out}
+$$O_{23}(\psi) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\psi & \sin\psi \\ 0 & -\sin\psi & \cos\psi \end{pmatrix} $$ dengan generator $$ 
+G_{23} = \begin{pmatrix} 
+    0 & 0 & 0 \\ 
+    0 & 0 & 1 \\ 
+    0 & -1 & 0 
+\end{pmatrix}$$
+:::
+
+::: fragment
+$$\begin{align}
+O(\phi,\theta,\psi) &= O_{12}(\phi) O_{13}(\theta) O_{23}(\psi)\\
+                    &=\begin{pmatrix} \cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} \cos\theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos\theta \end{pmatrix}\\
+                    &\begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\psi & \sin\psi \\ 0 & -\sin\psi & \cos\psi \end{pmatrix}\\
+\end{align}$$
+:::
+
+```{=html}
+<!-- ::: {.fragment}
+$$O(\phi,\theta,\psi) = \begin{pmatrix} \cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} \cos\theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos\theta \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\psi & \sin\psi \\ 0 & -\sin\psi & \cos\psi \end{pmatrix}$$
+::: -->
+```
+:::::::
+
+::: {.fragment .fade-up}
+> Ketiga generator ini membentuk basis bagi **Aljabar Lie** $\mathfrak{so}(3)$. Mereka memenuhi relasi komutasi komutator: $[G_{12}, G_{23}] = 2G_{13}$.
+:::
+:::::::::
+:::::::::::::::::
+
+------------------------------------------------------------------------
+
+### Grup Unitary $U(2)$ dan $SU(2)$
+
+:::::::::::::::::::: {.columns style="display: flex; justify-content: space-between;"}
+<!-- KOLOM KIRI: ALUR DERIVASI MATRIKS -->
+
+::::::::: {.column width="35%" style="text-align: left;"}
+$$\boxed{U^\dagger U=I \text{ dan } U U^\dagger =I,\; \det(U)=1}$$
+
+::: {.fragment .fade-up}
+$$\underbrace{U = \begin{pmatrix}
+    a_{1}e^{i\alpha_{1}} & a_{2}e^{i\alpha_{2}} \\
+    b_{1}e^{i\beta_{1}}  & b_{2}e^{i\beta_{2}}
+\end{pmatrix}}_{U(2)}$$
+:::
+
+::: {.fragment .fade-up}
+$$\Downarrow \boxed{U^\dagger U=I \text{ dan } U U^\dagger =I}$$
+:::
+
+::: {.fragment .fade-up}
+$$\underbrace{U =
+\begin{pmatrix}
+    \cos\theta \, e^{i\alpha_1} & \sin\theta \, e^{i\alpha_{2}} \\
+    -\sin\theta \, e^{i\beta_1} & \cos\theta \, e^{i(\alpha_2-\alpha_1+\beta_1)}
+\end{pmatrix}}_{SU(2)}$$
+:::
+
+::: {.fragment .fade-up}
+$$\Downarrow \boxed{\det U = 1}$$
+:::
+
+:::: {.fragment .fade-in}
+::: {.fragment .grow}
+$$U_{SU(2)}
+=
+\begin{pmatrix}
+    \cos\theta \, e^{i\alpha_1}  & \sin\theta \, e^{i\alpha_2} \\
+    -\sin\theta \, e^{-i\alpha_2} & \cos\theta \, e^{-i\alpha_1}
+\end{pmatrix}$$
+:::
+::::
+:::::::::
+
+<!-- KOLOM KANAN: ANIMASI BERGANTI (R-STACK) -->
+
+:::::::::::: {.column .fragment width="62%" style="text-align: left;"}
+<!-- TAMPILAN 1: Syarat Grup SU(2) -->
+
+### Sifat Grup $SU(2)$
+
+<!-- TAMPILAN 2: Rotasi Bidang & Generator Satu-Satu -->
+
+::::::::::: {.fragment .fade-in}
+untuk dimensi lebih tinggi, matriks kompleks 2 $\times$ 2 dapat dinyatakan sebagai rotasi pada bidang kompleks tertentu, misal:
+
+::::::::: r-stack
+::: {.fragment .fade-in-then-out}
+$$U_{12}(\phi) = \begin{pmatrix} \cos\phi & i\sin\phi \\ i\sin\phi & \cos\phi \end{pmatrix}=e^{i\phi \sigma_1} $$ dengan generator $$ \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
+:::
+
+::: {.fragment .fade-in-then-out}
+$$U_{13}(\theta) = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix}=e^{i\theta \sigma_2} $$ dengan generator $$\sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$$
+:::
+
+::: {.fragment .fade-in-then-out}
+$$U_{23}(\psi) = \begin{pmatrix} e^{i\psi} & 0 \\ 0 & e^{-i\psi} \end{pmatrix}=e^{i\psi \sigma_3} $$ dengan generator $$ \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+:::
+
+::: {.fragment .fade-in-then-out}
+$$U_{SU(2)} = e^{i\phi \sigma_1} e^{i\theta \sigma_2} e^{i\psi \sigma_3}$$
+:::
+
+::: {.fragment .fade-in-then-out}
+$$U_{SU(2)} = e^{i(\alpha_1 \sigma_1+\alpha_2\sigma_2+\alpha_3 \sigma_3)}$$
+:::
+
+::: fragment
+$$U_{SU(2)} = e^{\left( i \frac{\alpha_1 - \alpha_2}{2} \sigma_z \right)} e^{\left( i \theta \sigma_y \right)} e^{\left( i \frac{\alpha_1 + \alpha_2}{2} \sigma_z \right)}$$
+:::
+:::::::::
+
+::: {.fragment .fade-up}
+> Ketiga generator ini membentuk basis bagi **Aljabar Lie** $\mathfrak{su}(2)$ (berupa matriks Pauli murni $\sigma_k$). Mereka memenuhi relasi komutasi komutator: $[\sigma_i, \sigma_j] = 2i \epsilon_{ijk} \sigma_k$ dengan $\epsilon$ adalah konstanta permutasi ganjil.
+:::
+:::::::::::
+::::::::::::
+::::::::::::::::::::
+
+
+------------------------------------------------------------------------
+
+### Generator Grup $SU(4)$
+
+Matriks generator standar $\lambda_k$ ($k=1, \dots, 15$) untuk aljabar Lie $\mathfrak{su}(4)$ dimensi $4 \times 4$ yang memenuhi ortogonalitas $\text{Tr}(\lambda_i \lambda_j) = 2\delta_{ij}$:
+
+::: r-stack
+
+::: {.fragment .fade-out}
+$$\begin{aligned}
+\lambda_1 &= \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_2 &= \begin{pmatrix} 0 & -i & 0 & 0 \\ i & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_3 &= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix} \\
+\lambda_4 &= \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_5 &= \begin{pmatrix} 0 & 0 & -i & 0 \\ 0 & 0 & 0 & 0 \\ i & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_6 &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix} \\
+\lambda_7 &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & -i & 0 \\ 0 & i & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_8 &= \frac{1}{\sqrt{3}}\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & -2 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}
+\end{aligned}$$
+:::
+
+::: {.fragment}
+$$\begin{aligned}
+\lambda_9 &= \begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_{10} &= \begin{pmatrix} 0 & 0 & 0 & -i \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ i & 0 & 0 & 0 \end{pmatrix}, &
+\lambda_{11} &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix} \\
+\lambda_{12} &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & -i \\ 0 & 0 & 0 & 0 \\ 0 & i & 0 & 0 \end{pmatrix}, &
+\lambda_{13} &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}, &
+\lambda_{14} &= \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & -i \\ 0 & 0 & i & 0 \end{pmatrix}
+\end{aligned}$$
+
+$$\lambda_{15} = \frac{1}{\sqrt{6}}\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -3 \end{pmatrix}$$
+:::
+
+:::
+
+------------------------------------------------------------------------
+
+### Representasi Eksponensial $SU(4)$
+
+Elemen umum dari Grup Lie Kontinu $SU(4)$ dibangun melalui kombinasi linier dari seluruh 15 generator di atas menggunakan pemetaan eksponensial:
+
+::: {.card .quantum-box}
+$$U_{SU(4)}(\boldsymbol{\theta}) = \exp\left( -i \sum_{k=1}^{15} \theta_k \lambda_k \right)$$
+:::
+
+di mana $\theta_k$ adalah 15 parameter sudut riil kontinu, dan $\lambda_k$ membentuk Aljabar Lie $\mathfrak{su}(4)$ dengan relasi komutasi:
+
+$$[\lambda_i, \lambda_j] = 2i \sum_{k=1}^{15} f_{ijk} \lambda_k$$
+
+
+-------------------------------------------------------------------------
+
+### Parametrisasi $SU(4)$ via Penyisipan $SU(2)$
+
+Konstruksi dilakukan dengan menyisipkan subgroup $SU(2)$ ke dalam 6 pasangan bidang dua-dimensi pada ruang empat-dimensi dengan total $6 \times 3 = 18$ parameter riil $(\theta_k, \phi_k, \psi_k)$:
+
+$$U_{SU(4)} = R_{12}(\theta_6, \phi_6, \psi_6) R_{13}(\theta_5, \phi_5, \psi_5) R_{14}(\theta_4, \phi_4, \psi_4) R_{23}(\theta_3, \phi_3, \psi_3) R_{24}(\theta_2, \phi_2, \psi_2) R_{34}(\theta_1, \phi_1, \psi_1)$$
+
+::: r-stack
+
+::: {.fragment .fade-in-then-out}
+### Struktur Blok Penyisipan Bidang (1,2) hingga (1,4)
+$$\begin{aligned}
+R_{12} &= \begin{pmatrix} C_6 e^{i\phi_6} & S_6 e^{i\psi_6} & 0 & 0 \\ -S_6 e^{-i\psi_6} & C_6 e^{-i\phi_6} & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}, &
+R_{13} &= \begin{pmatrix} C_5 e^{i\phi_5} & 0 & S_5 e^{i\psi_5} & 0 \\ 0 & 1 & 0 & 0 \\ -S_5 e^{-i\psi_5} & 0 & C_5 e^{-i\phi_5} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \\
+R_{14} &= \begin{pmatrix} C_4 e^{i\phi_4} & 0 & 0 & S_4 e^{i\psi_4} \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ -S_4 e^{-i\psi_4} & 0 & 0 & C_4 e^{-i\phi_4} \end{pmatrix}
+\end{aligned}$$
+:::
+
+::: {.fragment}
+### Struktur Blok Penyisipan Bidang (2,3) hingga (3,4)
+$$\begin{aligned}
+R_{23} &= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & C_3 e^{i\phi_3} & S_3 e^{i\psi_3} & 0 \\ 0 & -S_3 e^{-i\psi_3} & C_3 e^{-i\phi_3} & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}, &
+R_{24} &= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & C_2 e^{i\phi_2} & 0 & S_2 e^{i\psi_2} \\ 0 & 0 & 1 & 0 \\ 0 & -S_2 e^{-i\psi_2} & 0 & C_2 e^{-i\phi_2} \end{pmatrix} \\
+R_{34} &= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & C_1 e^{i\phi_1} & S_1 e^{i\psi_1} \\ 0 & 0 & -S_1 e^{-i\psi_1} & C_1 e^{-i\phi_1} \end{pmatrix}
+\end{aligned}$$
+:::
+
+:::
+
+-------------------------------------------------------------------------
+
+### Hasil Dekomposisi Eksponensial Penuh $SU(4)$
+
+Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal ($\lambda_3, \lambda_8, \lambda_{15}$) dan rotasi ($\lambda_2, \lambda_5, \lambda_{10}, \lambda_7, \lambda_{12}, \lambda_{14}$):
+
+:::{.r-stack}
+:::{.fragment .fade-out}
+$$\boxed{\begin{align}
+U_{SU(4)} =\;& \exp\!\Bigl(i\tfrac{\phi_6+\psi_6}{2}\,\lambda_3\Bigr) \cdot \exp\!\bigl(i\,\theta_6\,\lambda_2\bigr) \notag \\
+&\cdot\exp\!\Bigl(i\bigl[ \bigl(\tfrac{\phi_5+\psi_5}{4}+\tfrac{\phi_6-\psi_6}{2}\bigr)\lambda_3 +\tfrac{\sqrt{3}(\phi_5+\psi_5)}{12}\lambda_8 \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_5\,\lambda_5\bigr) \notag \\
+&\cdot\exp\!\Bigl(i\bigl[ \tfrac{\phi_4+\psi_4+ \phi_5-\psi_5}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_4+\psi_4+3\phi_5-3\psi_5)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_4+\psi_4)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_4\,\lambda_{10}\bigr) \notag \\
+&\cdot\exp\!\Bigl(i\bigl[ \tfrac{\phi_4-\psi_4-\phi_3-\psi_3}{4}\lambda_3 +\tfrac{\sqrt{3}(3\phi_3+3\psi_3+\phi_4-\psi_4)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_4-\psi_4)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_3\,\lambda_{7}\bigr) \notag \\
+&\cdot\exp\!\Bigl(i\bigl[ -\tfrac{\phi_2+\psi_2+\phi_3-\psi_3}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_2+\psi_2+3\phi_3-3\psi_3)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_2+\psi_2)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_2\,\lambda_{12}\bigr) \notag \\
+&\cdot\exp\!\Bigl(i\bigl[ \tfrac{\psi_2-\phi_2}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_2-\psi_2-2\phi_1-2\psi_1)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_1+\psi_1+\phi_2-\psi_2)}{36}\lambda_{15} \bigr]\Bigr) \notag \\
+&\cdot\exp\!\bigl(i\,\theta_1\,\lambda_{14}\bigr) \cdot \exp\!\Bigl(i\bigl[ -\tfrac{\sqrt{3}(\phi_1-\psi_1)}{18}\lambda_8 +\tfrac{\sqrt{6}(\phi_1-\psi_1)}{36}\lambda_{15} \bigr]\Bigr).
+\end{align}}$$
+:::
+
+:::{.fragment .success-box}
+$$
+\begin{align}
+U_{SU(4)} &=
+e^{i\lambda_3\alpha_1}
+e^{i\lambda_2\alpha_2}
+e^{i\lambda_3\alpha_3}
+e^{i\lambda_5\alpha_4}
+e^{i\lambda_3\alpha_5}
+e^{i\lambda_{10}\alpha_6}
+e^{i\lambda_3\alpha_7}
+e^{i\lambda_2\alpha_8}
+e^{i\lambda_3\alpha_9}
+e^{i\lambda_5\alpha_{10}}
+e^{i\lambda_3\alpha_{11}}
+e^{i\lambda_2\alpha_{12}}\\
+&
+e^{i\lambda_3\alpha_{13}}
+e^{i\lambda_8\alpha_{14}}
+e^{i\lambda_{15}\alpha_{15}}\\
+\end{align}
+$$
+dan bentuk ini didapatkan dari Tilma,Sudarshan dkk dengan 15 parameter $\alpha_k$ yang merupakan kombinasi linier dari 18 parameter $(\theta_k, \phi_k, \psi_k)$.
+:::
+
+:::

@@ -1,0 +1,33 @@
+project:
+  type: default
+  output-dir: output
+
+format:
+  revealjs:
+    navigation-mode: linear
+    incremental: false
+    width: 1400      # Memperlebar kanvas slide (default biasanya 1050)
+    # height: 900      # Menyesuaikan tinggi slide
+    margin: 0.05     # Mengatur margin keliling (0.05 berarti hanya 5% dari lebar layar)
+    theme:
+      - simple
+      - template/custom.scss
+    slide-number: true
+    transition: fade
+    chalkboard: true
+    progress: false
+    include-after-body: template/header.html
+# format:
+#   revealjs:
+#     theme: [simple, template/custom.scss]
+#     slide-number: true
+#     transition: fade
+#     chalkboard: true
+#     include-after-body: template/header.html
+
+  pdf: default
+
+  pptx:
+    reference-doc: template/template.pptx
+
+# bibliography: referensi.bib

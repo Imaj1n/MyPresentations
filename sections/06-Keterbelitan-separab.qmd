@@ -1,6 +1,6 @@
 ## Definisi Formal Keterbelitan
 
-Secara matematis, keadaan kuantum gabungan $|\Psi\rangle$ dikatakan **terbelit** jika ia **tidak dapat didekomposisi** menjadi perkalian Kronecker ($\otimes$) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit
+Keadaan kuantum gabungan $|\Psi\rangle$ dikatakan **terbelit** jika ia **tidak dapat didekomposisi** menjadi perkalian Kronecker ($\otimes$) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit
 
 ::::::: {.columns style="display: flex; justify-content: space-between;"}
 :::: {.column .fragment width="48%"}
@@ -55,7 +55,7 @@ bc &= 0,bd = \frac1{\sqrt2}
 ::::: {.column .fragment width="48%"}
 :::: {.fragment .fade-up}
 ::: {.card .success-box}
-Kontradiksi nilai di atas menunjukkan bahwa sistem persamaan ini: $$\boxed{\textbf{Tidak memiliki solusi}}$$
+Kontradiksi dari persamaan koefisien ini menunjukkan : $$\boxed{|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle}$$
 :::
 ::::
 :::::
@@ -73,34 +73,324 @@ $$|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle$$
 
 ------------------------------------------------------------------------
 
-## Keterbelitan pada Sistem 3-Qubit (GHZ vs W State)
-
-Pada sistem 3-qubit, terdapat dua kelas keterbelitan maksimal yang secara topologi berbeda dan tidak dapat diubah satu sama lain via operasi uniter lokal dan komunikasi klasik (*LOCC*):
+## Keterbelitan pada Sistem 3-Qubit 
 
 ::::::: {.columns style="display: flex; justify-content: space-between;"}
 :::: {.column width="48%"}
-**1. Keadaan GHZ (*Greenberger-Horne-Zeilinger*)**
-
-Superposisi dari dua keadaan ekstrem:
+**Keadaan GHZ**
 
 ::: {.card .quantum-box}
-$$|GHZ\rangle = \frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$$
-:::
 
-- **Sifat:** Memiliki keterbelitan tripartit global yang sangat kuat.
-- **Kelemahan:** Jika salah satu qubit diukur atau hilang, keterbelitan pada dua qubit sisanya akan **hancur total** menjadi *separable state* ($|00\rangle$ atau $|11\rangle$).
+$$
+|GHZ\rangle
+=
+\frac1{\sqrt2}
+(|000\rangle+|111\rangle)
+$$
+:::
+Jika diasumsikan separabel,
+
+$$
+|\psi\rangle=|\psi_A\rangle
+\otimes
+|\psi_B\rangle
+\otimes
+|\psi_C\rangle$$
+
+$$
+|\psi\rangle =
+(a|0\rangle+b|1\rangle)
+(c|0\rangle+d|1\rangle)
+(e|0\rangle+f|1\rangle)
+$$
+
+
+maka
+
+$$
+ace=\frac1{\sqrt2},
+\qquad
+bdf=\frac1{\sqrt2},
+$$
+
+tetapi juga harus memenuhi
+
+$$
+acf=ade=\cdots=bde=0.
+$$
 ::::
 
 :::: {.column .fragment width="48%"}
-**2. Keadaan W (*W-State*)**
 
-Superposisi dari semua permutasi satu eksitasi:
+Karena
+$ace\neq0$
+dan
+$bdf\neq0$,
+maka
+$a,b,c,d,e,f\neq0$,
+yang menyebabkan
+$acf\neq0$.
 
-::: {.card .success-box}
-$$|W\rangle = \frac{1}{\sqrt{3}}(|100\rangle + |010\rangle + |001\rangle)$$
+::: {.card .warning-box}
+**Kontradiksi.**
+
+Sehingga
+
+$$
+\boxed{|GHZ\rangle
+\neq
+|\psi_A\rangle
+\otimes
+|\psi_B\rangle
+\otimes
+|\psi_C\rangle}.
+$$
 :::
 
-- **Sifat:** Keterbelitannya didistribusikan secara merata antar pasangan qubit.
-- **Kelebihan:** Sangat kokoh (*robust*). Jika satu qubit hilang atau diukur, dua qubit sisanya **tetap saling terbelit** membentuk state tipe Bell.
 ::::
 :::::::
+
+---
+
+## Matriks Densitas dan Reduksi Parsial {auto-animate=true}
+
+Untuk keadaan murni tiga qubit
+
+$$
+|\psi\rangle
+=
+\sum_{i,j,k=0}^{1}
+c_{ijk}|ijk\rangle,
+\qquad
+\sum_{i,j,k=0}^{1}|c_{ijk}|^2=1,
+$$
+
+matriks densitas didefinisikan sebagai
+
+$$
+\rho=|\psi\rangle\langle\psi|.
+$$
+
+::: {.columns}
+
+::: {.column width="38%" .fragment}
+
+### Matriks Densitas
+
+- $\rho$ berukuran $8\times8$.
+
+- Bersifat Hermitian,
+
+$$
+\rho^\dagger=\rho.
+$$
+
+- Memenuhi
+
+$$
+\mathrm{Tr}(\rho)=1.
+$$
+
+:::
+
+::: {.column width="62%" .fragment}
+
+### Reduksi Parsial
+
+Reduksi terhadap salah satu qubit menghasilkan matriks densitas dua qubit
+
+$$
+\rho_{12}
+=
+\mathrm{Tr}_3(\rho),
+$$
+
+$$
+\rho_{13}
+=
+\mathrm{Tr}_2(\rho),
+$$
+
+$$
+\rho_{23}
+=
+\mathrm{Tr}_1(\rho).
+$$
+
+Sebagai contoh,
+
+$$
+\rho_{12}
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\mathbb I\otimes\langle k|)
+\,\rho\,
+(\mathbb I\otimes\mathbb I\otimes|k\rangle).
+$$
+
+Hasil reduksi memenuhi
+
+$$
+\rho_{ij}\in\mathbb C^{4\times4}.
+$$
+
+:::
+
+:::
+
+## Matriks Densitas Tereduksi
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Matriks Densitas Tereduksi Dua Qubit
+
+Reduksi parsial terhadap satu qubit menghasilkan
+
+$$
+\rho_{12}
+=
+\mathrm{Tr}_3(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\mathbb I\otimes\langle k|)
+\,\rho\,
+(\mathbb I\otimes\mathbb I\otimes|k\rangle).
+$$
+
+$$
+\rho_{13}
+=
+\mathrm{Tr}_2(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\langle k|\otimes\mathbb I)
+\,\rho\,
+(\mathbb I\otimes|k\rangle\otimes\mathbb I).
+$$
+
+$$
+\rho_{23}
+=
+\mathrm{Tr}_1(\rho)
+=
+\sum_{k=0}^{1}
+(\langle k|\otimes\mathbb I\otimes\mathbb I)
+\,\rho\,
+(|k\rangle\otimes\mathbb I\otimes\mathbb I).
+$$
+
+:::
+
+::: {.column width="50%"}
+
+### Matriks Densitas Tereduksi Satu Qubit
+
+Selanjutnya dilakukan reduksi kembali sehingga diperoleh
+
+$$
+\rho_{1}
+=
+\mathrm{Tr}_{2}(\rho_{12})
+=
+\mathrm{Tr}_{3}(\rho_{13}).
+$$
+
+$$
+\rho_{2}
+=
+\mathrm{Tr}_{1}(\rho_{12})
+=
+\mathrm{Tr}_{3}(\rho_{23}).
+$$
+
+$$
+\rho_{3}
+=
+\mathrm{Tr}_{1}(\rho_{13})
+=
+\mathrm{Tr}_{2}(\rho_{23}).
+$$
+
+Secara eksplisit,
+
+$$
+\rho_{1}
+=
+\sum_{p=0}^{1}
+(\mathbb I\otimes\langle p|)
+\,\rho_{12}\,
+(\mathbb I\otimes|p\rangle).
+$$
+
+$$
+\rho_{2}
+=
+\sum_{q=0}^{1}
+(\langle q|\otimes\mathbb I)
+\,\rho_{12}\,
+(|q\rangle\otimes\mathbb I).
+$$
+
+$$
+\rho_{3}
+=
+\sum_{r=0}^{1}
+(\langle r|\otimes\mathbb I)
+\,\rho_{13}\,
+(|r\rangle\otimes\mathbb I).
+$$
+
+:::
+
+:::
+
+---
+
+## Entropi Von Neumann
+::: {.columns}
+
+::: {.column width="40%"}
+Matriks densitas tereduksi $\rho_i$ selanjutnya digunakan untuk menghitung entropi von Neumann yang didefinisikan sebagai
+
+$$
+S(\rho_i)
+=
+-\operatorname{Tr}
+\left(
+\rho_i \log \rho_i
+\right).
+$$
+
+Dengan proses matematis lebih lanjut dan diagonalisasi matriks didapatkan :
+
+$$
+S(\rho_i)
+=
+-\sum_{j}\lambda_j\log \lambda_j,
+$$
+
+dengan $\lambda_j$ merupakan nilai eigen dari $\rho_i$ yang memenuhi
+
+$$
+\sum_j \lambda_j = 1,
+\qquad
+0 \le \lambda_j \le 1.
+$$
+:::
+
+
+::: {.column width="60%"}
+| Keadaan | $S(\rho_A)$ | $S(\rho_B)$ | $S(\rho_C)$ |
+|:----------------|:----------------:|:----------------:|:----------------:|
+| Terpisah sepenuhnya $S(\rho^{(\mathrm{sep})})$ | $0$ | $0$ | $0$ |
+| Terbelit sepenuhnya $S(\rho^{(\mathrm{ent})})$ | $>0$ | $>0$ | $>0$ |
+| Gabungan $(12)\vert3$, $S(\rho^{(\mathrm{cp2})})$ | $>0$ | $>0$ | $0$ |
+| Gabungan $1\vert(23)$, $S(\rho^{(\mathrm{cp1})})$ | $0$ | $>0$ | $>0$ |
+| Gabungan $2\vert(13)$, $S(\rho^{(\mathrm{cp3})})$ | $>0$ | $0$ | $>0$ |
+
+<!-- : Nilai kriteria entropi von Neumann untuk klasifikasi keadaan kuantum {#tbl-entropi-qubit} -->
+:::
+
+:::

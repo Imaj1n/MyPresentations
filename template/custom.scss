@@ -341,6 +341,7 @@ $footer-blue: #3c6e94;
   overflow: hidden;
 
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  font-size: 0.80em;
 }
 
 .my-table th {
@@ -348,12 +349,16 @@ $footer-blue: #3c6e94;
   color: white;
   padding: 12px;
   text-align: center;
+  height: 5px; // tinggi table
+  font-size: 1.1em;
 }
 
 .my-table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
   text-align: center;
+  height: 5px; //tinggi table
+  font-size: 1.35em;
 }
 
 .my-table tr:nth-child(even) {
@@ -379,6 +384,51 @@ $footer-blue: #3c6e94;
   display: block;
   border: none;
 }
+
+// Table Color 
+.cluster1 {
+  background-color: #d6f5d6;
+}
+
+.cluster2 {
+  background-color: #d6eaff;
+}
+
+.cluster3 {
+  background-color: #ffe6d6;
+}
+
+.cluster1 td {
+  transition: 0.4s;
+}
+
+.cluster2 td {
+  transition: 0.4s;
+}
+
+.cluster3 td {
+  transition: 0.4s;
+}
+
+/* highlight aktif */
+.cluster1-active td {
+  background: #d6f5d6 !important;
+}
+
+.cluster2-active td {
+  background: #d6eaff !important;
+}
+
+.cluster3-active td {
+  background: #ffe6d6 !important;
+}
+
+.c1 { background:#d6f5d6; }
+.c2 { background:#d6eaff; }
+.c3 { background:#fff4cc; }
+.c4 { background:#ffe6d6; }
+.c5 { background:#eadcff; }
+.c6 { background:#eeeeee; }
 
 // //  FLow Box
 

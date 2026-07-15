@@ -1,0 +1,7 @@
+## Kesimpulan
+
+- Sistem **tiga qubit** berhasil dibangkit menggunakan hierarki Grup Lie **SU(2)** dan **SU(4)** sebagai kerangka transformasi keadaan kuantum.
+
+- Variasi parameter pada transformasi **SU(4)** menghasilkan berbagai jenis keadaan kuantum, yaitu **separabel**, **biseparabel**, dan **terbelit tripartit**.
+
+- Klasifikasi menggunakan **entropi von Neumann** berhasil menunjukkan bahwa konfigurasi parameter dan generator Lie menentukan struktur keterbelitan yang terbentuk.

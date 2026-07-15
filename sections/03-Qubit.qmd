@@ -52,37 +52,11 @@ Istilah *Quantum Bit* berasal dari gabungan kata
 
 ::: {.column width="50%"}
 
-<div style="display: flex; flex-direction: column; gap: 1em; justify-content: center; gap: 2rem; text-align: center;">
-
-<div class="fragment">
-  <b>Bit</b>
-  <img src="gambar/Bit.png" class="img-border">
-</div>
-
-<div class="fragment">
-  <b>Qubit</b>
-  <img src="gambar/Qubit_Spin.png" class="img-border">
-</div>
-
-</div>
-
-::: 
-
-:::: 
-
-## Konsep Superposisi Qubit
-
-Qubit memiliki sifat unik yang berasal dari mekanika 
-[**Kuantum**]{.fragment .highlight-blue fragment-index=1}, yaitu kemampuan untuk berada di dalam kondisi 
-[**Superposisi**]{.fragment .highlight-red fragment-index=2}.
-
-## Konsep Superposisi Qubit
-
-Qubit memiliki sifat unik yang berasal dari mekanika 
-[**Kuantum**]{.fragment .highlight-blue fragment-index=1}, yaitu kemampuan untuk berada di dalam kondisi 
-[**Superposisi**]{.fragment .highlight-red fragment-index=2}.
-
-<table style="margin: 2em auto; border-collapse: collapse; font-size: 0.8em; width: 42%; table-layout: fixed; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+Karena Qubit bersifat
+<span class="fragment highlight-blue" data-fragment-index="1"><strong>Kuantum</strong></span>,
+, maka Qubit dapat mengalami
+<span class="fragment highlight-red" data-fragment-index="2"><strong>Superposisi</strong></span>.
+<table style="margin: 2em auto; border-collapse: collapse; font-size: 0.8em; width: 90%; table-layout: fixed; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
   <thead>
     <tr>
       <!-- Judul Kolom Kiri -->
@@ -115,6 +89,15 @@ Qubit memiliki sifat unik yang berasal dari mekanika
   </tbody>
 </table>
 
+::: 
+
+:::: 
+
+---
+
+
+## Representasi Standard Qubit 
+
 :::: {.columns style="display: flex; gap: 4%; margin-top: 1.5em; text-align: left;"}
 
 ::: {.column width="48%" .fragment}
@@ -145,6 +128,33 @@ $$\begin{aligned}
 :::
 
 ::::
+
+**Bentuk Fisis Bit dan Qubit**
+
+<div style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; text-align: center; align-items: flex-start;">
+
+<div class="fragment" style="display:flex; align-items:center; gap:1rem;">
+  <div style="width:100px; text-align:right; font-weight:bold;">
+    Bit
+  </div>
+
+  <img src="gambar/2.png"
+       class="img-border"
+       style="width:360px; height:auto;">
+</div>
+
+<div class="fragment" style="display:flex; align-items:center; gap:1rem;">
+  <div style="width:100px; text-align:right; font-weight:bold;">
+    Qubit
+  </div>
+
+  <img src="gambar/1.png"
+       class="img-border"
+       style="width:360px; height:auto;">
+</div>
+
+</div>
+
 
 ---
 
@@ -240,9 +250,26 @@ $$|01\rangle = |0\rangle \otimes |1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix
 
 <br>
 
-**Representasi 4 Basis Gabungan**
+**Representasi 3 Basis Gabungan**
 
-$$|00\rangle = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} \quad |01\rangle = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}$$
+<div style="font-size: 0.7em;">
+
+$$
+|011\rangle = |0\rangle \otimes |1\rangle \otimes |1\rangle=
+\begin{pmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{pmatrix}
+$$
+
+</div>
+
 :::
 
 <!-- KOLOM 2 (KANAN): Berisi Kotak Kartu Sistem 2-Qubit & 3-Qubit -->

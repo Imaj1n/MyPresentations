@@ -1,0 +1,5 @@
+## Tujuan Metodologi
+
+- Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit berbasis hierarki Grup Lie $SU(2)$, $SU(3)$, dan $SU(4)$ beserta aljabar generatornya.
+- Menganalisis mekanisme pembentukan korelasi non-lokal atau keterbelitan yang dihasilkan oleh operator $SU(2)$ dan $SU(4)$ melalui representasi ekponensial terhadap keadaan awal $|000\rangle$.
+- Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit, serta menghitung derajat keterbelitannya secara analitik menggunakan entropi von Neumann dari matriks densitas tereduksi.

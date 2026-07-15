@@ -1,0 +1,364 @@
+## Kontruksi Parameterisasi SU(4) dan SU(2)
+
+**Konstruksi SU(2)**
+
+Dari persamaan 
+$$\boxed{U_{SU(2)}(\theta, \phi, \lambda) = e^{i\lambda \sigma_z} e^{i\theta \sigma_y} e^{i\phi \sigma_z}}$$ dipilih parameter $\theta=\phi=\lambda=0$ sehingga $U_{SU(2) }(0,0,0) = I$
+
+**Konstruksi SU(4)**
+
+Dari persamaan
+$$
+\boxed{\begin{align}
+U_{SU(4)} &=
+e^{i\lambda_3\alpha_1}
+e^{i\lambda_2\alpha_2}
+e^{i\lambda_3\alpha_3}
+e^{i\lambda_5\alpha_4}
+e^{i\lambda_3\alpha_5}
+e^{i\lambda_{10}\alpha_6}
+e^{i\lambda_3\alpha_7}
+e^{i\lambda_2\alpha_8}
+e^{i\lambda_3\alpha_9}
+e^{i\lambda_5\alpha_{10}}
+e^{i\lambda_3\alpha_{11}}
+e^{i\lambda_2\alpha_{12}}\\
+&
+e^{i\lambda_3\alpha_{13}}
+e^{i\lambda_8\alpha_{14}}
+e^{i\lambda_{15}\alpha_{15}}\\
+\end{align}}
+$$
+dan parameter berupa $\alpha_2,\alpha_4,\alpha_6,\alpha_8,\alpha_{10},\alpha_{12}$
+secara berpasangan dan dengan pasangan nilai yang dipilih $\frac{\pi}{12},\frac{\pi}{2}$. Selanjutnya,Pengembangan matriks dari produk tensor untuk model 
+
+$$U_{24} = I \otimes U_{SU(4)}(\alpha_i,\alpha_j)$$
+
+dan 
+
+$$U_{42} = U_{SU(4)}(\alpha_i,\alpha_j) \otimes I $$
+
+---
+:::{.r-stack}
+
+:::{.fragment .fade-out}
+
+sebagai contoh pada parameter $\alpha_2$ dan $\alpha_4$:
+$$U_4(\alpha_{2},\alpha_{4})
+=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4} &
+\sin\alpha_{2} &
+\sin\alpha_{4}\cos\alpha_{2} &
+0\\
+-\sin\alpha_{2}\cos\alpha_{4} &
+\cos\alpha_{2} &
+-\sin\alpha_{2}\sin\alpha_{4} &
+0\\
+-\sin\alpha_{4} &
+0 &
+\cos\alpha_{4} &
+0\\
+0&0&0&1
+\end{pmatrix}$$
+dan
+$$\begin{align*}
+U_{42}(\alpha_{2},\alpha_{4})
+&=U_4(\alpha_{2},\alpha_{4})\otimes U_2,\\
+\\
+U_{42}(\alpha_{2},\alpha_{4})
+&=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4} &0&\sin\alpha_{2}&0&\sin\alpha_{4}\cos\alpha_{2}&0&0&0\\
+0&\cos\alpha_{2}\cos\alpha_{4}&0&\sin\alpha_{2}&0&\sin\alpha_{4}\cos\alpha_{2}&0&0\\
+-\sin\alpha_{2}\cos\alpha_{4}&0&\cos\alpha_{2}&0&-\sin\alpha_{2}\sin\alpha_{4}&0&0&0\\
+0&-\sin\alpha_{2}\cos\alpha_{4}&0&\cos\alpha_{2}&0&-\sin\alpha_{2}\sin\alpha_{4}&0&0\\
+-\sin\alpha_{4}&0&0&0&\cos\alpha_{4}&0&0&0\\
+0&-\sin\alpha_{4}&0&0&0&\cos\alpha_{4}&0&0\\
+0&0&0&0&0&0&1&0\\
+0&0&0&0&0&0&0&1
+\end{pmatrix}.
+\end{align*}$$
+
+:::
+
+:::{.fragment}
+dan 
+
+$$\begin{align*}
+U_{24}(\alpha_{2},\alpha_{4})
+&=U_2\otimes U_4(\alpha_{2},\alpha_{4})\\
+&=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4}&\sin\alpha_{2}&\sin\alpha_{4}\cos\alpha_{2}&0&0&0&0&0\\
+-\sin\alpha_{2}\cos\alpha_{4}&\cos\alpha_{2}&-\sin\alpha_{2}\sin\alpha_{4}&0&0&0&0&0\\
+-\sin\alpha_{4}&0&\cos\alpha_{4}&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&0&0&\cos\alpha_{2}\cos\alpha_{4}&\sin\alpha_{2}&\sin\alpha_{4}\cos\alpha_{2}&0\\
+0&0&0&0&-\sin\alpha_{2}\cos\alpha_{4}&\cos\alpha_{2}&-\sin\alpha_{2}\sin\alpha_{4}&0\\
+0&0&0&0&-\sin\alpha_{4}&0&\cos\alpha_{4}&0\\
+0&0&0&0&0&0&0&1
+\end{pmatrix}.
+\end{align*}$$
+
+:::
+
+:::
+
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}$$
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}$$
+:::
+
+
+:::
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\begin{align*}
+{\left|\psi_{2,4}\right\rangle} &= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
+ &=  \begin{pmatrix}\cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{4} \right)}\\ 0 \\ 0 \\ 0 \end{pmatrix}  \\
+% &= \cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|010\right\rangle} - \sin{\left(\alpha_{4} \right)} {\left|100\right\rangle}
+\end{align*}$$
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\begin{align*}
+{\left|\phi_{2,4}\right\rangle} &= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi_{2,4}\right\rangle}\\ 
+&=  \begin{pmatrix}\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \left(\alpha_{2} + \alpha_{4}\right) \right)}}{4} + \frac{1}{4}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)}\\- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\\ 0 \\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\sin^{2}{\left(\alpha_{4} \right)}\\ 0 \end{pmatrix}  \\
+% &= \left(\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \alpha_{2} + 2 \alpha_{4} \right)}}{4} + \frac{1}{4}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)} {\left|001\right\rangle} \\
+% &\quad + \left(- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\right) {\left|010\right\rangle} + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} \\
+% &\quad + \left(\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|101\right\rangle} + \sin^{2}{\left(\alpha_{4} \right)} {\left|110\right\rangle}
+\end{align*}$$
+:::
+
+
+:::
+
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+
+$$
+\begin{aligned}
+|\psi_{2,4}\rangle
+&= U_{42}(\alpha_{2}, \alpha_{4})\,|000\rangle \\
+&= \cos(\alpha_{2})\cos(\alpha_{4})\,|000\rangle \\
+&\quad - \sin(\alpha_{2})\cos(\alpha_{4})\,|010\rangle \\
+&\quad - \sin(\alpha_{4})\,|100\rangle
+\end{aligned}
+$$
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+
+$$
+\begin{aligned}
+|\phi_{2,4}\rangle
+&= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi_{2,4}\rangle \\[4pt]
+&= \left(
+\frac{\cos(2\alpha_{2})}{4}
++ \frac{\cos(2\alpha_{4})}{4}
++ \frac{\cos(2\alpha_{2}+2\alpha_{4})}{4}
++ \frac{1}{4}
+\right)|000\rangle \\[4pt]
+&\quad - \sin(\alpha_{2})\cos(\alpha_{4})\cos(\alpha_{2}+\alpha_{4})\,|001\rangle \\[4pt]
+&\quad - \frac{\sin(\alpha_{2}) + \sin(\alpha_{2}+2\alpha_{4})}{2}\,|010\rangle \\[4pt]
+&\quad + \frac{\sin(\alpha_{2}-2\alpha_{4}) - \sin(\alpha_{2}+2\alpha_{4})}{4}\,|100\rangle \\[4pt]
+&\quad + \frac{\cos(\alpha_{2}-2\alpha_{4}) - \cos(\alpha_{2}+2\alpha_{4})}{4}\,|101\rangle \\[4pt]
+&\quad + \sin^{2}(\alpha_{4})\,|110\rangle
+\end{aligned}
+$$
+:::
+
+:::
+:::
+
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}$$
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}}$$
+:::
+
+
+:::
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}}$$
+
+$$\Downarrow$$
+:::
+
+
+:::
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}}$$
+
+$$\Downarrow$$
+:::
+
+
+:::
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::{.card .success-box}
+$$\text{Jenis Keterbelitan}$$
+:::
+
+
+
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::{.card .success-box}
+$$\text{Jenis Keterbelitan}$$
+:::
+
+:::
+
+
+:::
+
+
+## Pembangkitan Keadaan 3-Qubit dari Keadaan Awal $|000\rangle${auto-animate=true}
+::: {.columns}
+
+::: {.column width="40%"}
+### Tahap 1
+$$\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::{.card .info-box}
+$$\text{Entropi von Neumann}$$
+:::
+
+
+$$\Downarrow$$
+
+:::{.card .success-box}
+$$\text{Jenis Keterbelitan}$$
+:::
+
+
+
+:::
+
+::: {.column width="60%"}
+### Tahap 2
+$$\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\ 
+\end{align*}}$$
+
+$$\Downarrow$$
+
+:::{.card .info-box}
+$$\text{Entropi von Neumann}$$
+:::
+
+
+$$\Downarrow$$
+
+:::{.card .success-box}
+$$\text{Jenis Keterbelitan}$$
+:::
+
+
+:::
+
+
+:::
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Dosen Pembimbing Prof.&nbsp;Agus Purwanto, D.Sc.">
-  <meta name="dcterms.date" content="2026-07-03">
+  <meta name="dcterms.date" content="2026-07-13">
   <title>Konstruksi Keadaan 3-Qubit Menggunakan Transformasi Matriks SU(2) dan SU(4)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-ed82462b700517f877cbfe135013b184.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-5cdcbf794c54c95125dc25e3fbcb231c.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -147,7 +147,7 @@ Dosen Pembimbing<br>Prof.&nbsp;Agus Purwanto, D.Sc.
     </div>
 </div>
 
-  <p class="date">2026-07-03</p>
+  <p class="date">2026-07-13</p>
 </section>
 <section class="slide level2">
 
@@ -212,24 +212,8 @@ Dosen Pembimbing<br>Prof.&nbsp;Agus Purwanto, D.Sc.
 </table>
 </div>
 </div><div class="column" style="width:50%;">
-<div style="display: flex; flex-direction: column; gap: 1em; justify-content: center; gap: 2rem; text-align: center;">
-<div class="fragment">
-<p><b>Bit</b> <img src="gambar/Bit.png" class="img-border"></p>
-</div>
-<div class="fragment">
-<p><b>Qubit</b> <img src="gambar/Qubit_Spin.png" class="img-border"></p>
-</div>
-</div>
-</div></div>
-</section>
-<section id="konsep-superposisi-qubit" class="slide level2">
-<h2>Konsep Superposisi Qubit</h2>
-<p>Qubit memiliki sifat unik yang berasal dari mekanika <span class="fragment highlight-blue" data-fragment-index="1"><strong>Kuantum</strong></span>, yaitu kemampuan untuk berada di dalam kondisi <span class="fragment highlight-red" data-fragment-index="2"><strong>Superposisi</strong></span>.</p>
-</section>
-<section id="konsep-superposisi-qubit-1" class="slide level2">
-<h2>Konsep Superposisi Qubit</h2>
-<p>Qubit memiliki sifat unik yang berasal dari mekanika <span class="fragment highlight-blue" data-fragment-index="1"><strong>Kuantum</strong></span>, yaitu kemampuan untuk berada di dalam kondisi <span class="fragment highlight-red" data-fragment-index="2"><strong>Superposisi</strong></span>.</p>
-<table style="margin: 2em auto; border-collapse: collapse; font-size: 0.8em; width: 42%; table-layout: fixed; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+Karena Qubit bersifat <span class="fragment highlight-blue" data-fragment-index="1"><strong>Kuantum</strong></span>, , maka Qubit dapat mengalami <span class="fragment highlight-red" data-fragment-index="2"><strong>Superposisi</strong></span>.
+<table style="margin: 2em auto; border-collapse: collapse; font-size: 0.8em; width: 90%; table-layout: fixed; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
 <thead>
 <tr>
 <!-- Judul Kolom Kiri -->
@@ -268,6 +252,10 @@ Dosen Pembimbing<br>Prof.&nbsp;Agus Purwanto, D.Sc.
 </tr>
 </tbody>
 </table>
+</div></div>
+</section>
+<section id="representasi-standard-qubit" class="slide level2">
+<h2>Representasi Standard Qubit</h2>
 <div class="columns" style="display: flex; gap: 4%; margin-top: 1.5em; text-align: left;">
 <div class="column fragment" style="width:48%;">
 <p><strong>Vektor Kolom</strong></p>
@@ -289,6 +277,21 @@ Dosen Pembimbing<br>Prof.&nbsp;Agus Purwanto, D.Sc.
   &amp;= |\alpha|^2 + |\beta|^2 = 1
 \end{aligned}\]</span></p>
 </div></div>
+<p><strong>Bentuk Fisis Bit dan Qubit</strong></p>
+<div style="display: flex; flex-direction: row; justify-content: center; gap: 2rem; text-align: center; align-items: flex-start;">
+<div class="fragment" style="display:flex; align-items:center; gap:1rem;">
+<div style="width:100px; text-align:right; font-weight:bold;">
+<pre><code>Bit</code></pre>
+</div>
+<p><img src="gambar/2.png" class="img-border" style="width:360px; height:auto;"></p>
+</div>
+<div class="fragment" style="display:flex; align-items:center; gap:1rem;">
+<div style="width:100px; text-align:right; font-weight:bold;">
+<pre><code>Qubit</code></pre>
+</div>
+<p><img src="gambar/1.png" class="img-border" style="width:360px; height:auto;"></p>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
@@ -363,8 +366,22 @@ z-index:1;
 <p><strong>Representasi 2 Basis Gabungan</strong></p>
 <p><span class="math display">\[|01\rangle = |0\rangle \otimes |1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}\]</span></p>
 <p><br></p>
-<p><strong>Representasi 4 Basis Gabungan</strong></p>
-<p><span class="math display">\[|00\rangle = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} \quad |01\rangle = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}\]</span></p>
+<p><strong>Representasi 3 Basis Gabungan</strong></p>
+<div style="font-size: 0.7em;">
+<p><span class="math display">\[
+|011\rangle = |0\rangle \otimes |1\rangle \otimes |1\rangle=
+\begin{pmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{pmatrix}
+\]</span></p>
+</div>
 </div><!-- KOLOM 2 (KANAN): Berisi Kotak Kartu Sistem 2-Qubit & 3-Qubit --><div class="column" style="text-align: left;">
 <p><strong>Sistem 2-Qubit</strong></p>
 <div class="fragment card success-box" style="padding: 1em; text-align: center; margin-top: 0.2em; margin-bottom: 0.8em;">
@@ -403,7 +420,7 @@ $$|0\rangle \quad \text{dan} \quad |1\rangle$$
 </section>
 <section id="definisi-formal-keterbelitan" class="slide level2">
 <h2>Definisi Formal Keterbelitan</h2>
-<p>Secara matematis, keadaan kuantum gabungan <span class="math inline">\(|\Psi\rangle\)</span> dikatakan <strong>terbelit</strong> jika ia <strong>tidak dapat didekomposisi</strong> menjadi perkalian Kronecker (<span class="math inline">\(\otimes\)</span>) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit</p>
+<p>Keadaan kuantum gabungan <span class="math inline">\(|\Psi\rangle\)</span> dikatakan <strong>terbelit</strong> jika ia <strong>tidak dapat didekomposisi</strong> menjadi perkalian Kronecker (<span class="math inline">\(\otimes\)</span>) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit</p>
 <div class="columns" style="display: flex; justify-content: space-between;">
 <div class="column fragment" style="width:48%;">
 <p><strong>Keadaan Terpisahkan (<em>Separable State</em>)</strong></p>
@@ -438,7 +455,7 @@ bc &amp;= 0,bd = \frac1{\sqrt2}
 </div><div class="column fragment" style="width:48%;">
 <div class="fragment fade-up">
 <div class="card success-box">
-<p>Kontradiksi nilai di atas menunjukkan bahwa sistem persamaan ini: <span class="math display">\[\boxed{\textbf{Tidak memiliki solusi}}\]</span></p>
+<p>Kontradiksi dari persamaan koefisien ini menunjukkan : <span class="math display">\[\boxed{|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle}\]</span></p>
 </div>
 </div>
 </div></div>
@@ -452,35 +469,290 @@ bc &amp;= 0,bd = \frac1{\sqrt2}
 </blockquote>
 </div>
 </section>
-<section id="keterbelitan-pada-sistem-3-qubit-ghz-vs-w-state" class="slide level2">
-<h2>Keterbelitan pada Sistem 3-Qubit (GHZ vs W State)</h2>
-<p>Pada sistem 3-qubit, terdapat dua kelas keterbelitan maksimal yang secara topologi berbeda dan tidak dapat diubah satu sama lain via operasi uniter lokal dan komunikasi klasik (<em>LOCC</em>):</p>
+<section id="keterbelitan-pada-sistem-3-qubit" class="slide level2">
+<h2>Keterbelitan pada Sistem 3-Qubit</h2>
 <div class="columns" style="display: flex; justify-content: space-between;">
 <div class="column" style="width:48%;">
-<p><strong>1. Keadaan GHZ (<em>Greenberger-Horne-Zeilinger</em>)</strong></p>
-<p>Superposisi dari dua keadaan ekstrem:</p>
+<p><strong>Keadaan GHZ</strong></p>
 <div class="card quantum-box">
-<p><span class="math display">\[|GHZ\rangle = \frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)\]</span></p>
+<p><span class="math display">\[
+|GHZ\rangle
+=
+\frac1{\sqrt2}
+(|000\rangle+|111\rangle)
+\]</span></p>
 </div>
-<ul>
-<li><strong>Sifat:</strong> Memiliki keterbelitan tripartit global yang sangat kuat.</li>
-<li><strong>Kelemahan:</strong> Jika salah satu qubit diukur atau hilang, keterbelitan pada dua qubit sisanya akan <strong>hancur total</strong> menjadi <em>separable state</em> (<span class="math inline">\(|00\rangle\)</span> atau <span class="math inline">\(|11\rangle\)</span>).</li>
-</ul>
+<p>Jika diasumsikan separabel,</p>
+<p><span class="math display">\[
+|\psi\rangle=|\psi_A\rangle
+\otimes
+|\psi_B\rangle
+\otimes
+|\psi_C\rangle\]</span></p>
+<p><span class="math display">\[
+|\psi\rangle =
+(a|0\rangle+b|1\rangle)
+(c|0\rangle+d|1\rangle)
+(e|0\rangle+f|1\rangle)
+\]</span></p>
+<p>maka</p>
+<p><span class="math display">\[
+ace=\frac1{\sqrt2},
+\qquad
+bdf=\frac1{\sqrt2},
+\]</span></p>
+<p>tetapi juga harus memenuhi</p>
+<p><span class="math display">\[
+acf=ade=\cdots=bde=0.
+\]</span></p>
 </div><div class="column fragment" style="width:48%;">
-<p><strong>2. Keadaan W (<em>W-State</em>)</strong></p>
-<p>Superposisi dari semua permutasi satu eksitasi:</p>
-<div class="card success-box">
-<p><span class="math display">\[|W\rangle = \frac{1}{\sqrt{3}}(|100\rangle + |010\rangle + |001\rangle)\]</span></p>
+<p>Karena <span class="math inline">\(ace\neq0\)</span> dan <span class="math inline">\(bdf\neq0\)</span>, maka <span class="math inline">\(a,b,c,d,e,f\neq0\)</span>, yang menyebabkan <span class="math inline">\(acf\neq0\)</span>.</p>
+<div class="card warning-box">
+<p><strong>Kontradiksi.</strong></p>
+<p>Sehingga</p>
+<p><span class="math display">\[
+\boxed{|GHZ\rangle
+\neq
+|\psi_A\rangle
+\otimes
+|\psi_B\rangle
+\otimes
+|\psi_C\rangle}.
+\]</span></p>
 </div>
+</div></div>
+</section>
+<section id="matriks-densitas-dan-reduksi-parsial" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Matriks Densitas dan Reduksi Parsial</h2>
+<p>Untuk keadaan murni tiga qubit</p>
+<p><span class="math display">\[
+|\psi\rangle
+=
+\sum_{i,j,k=0}^{1}
+c_{ijk}|ijk\rangle,
+\qquad
+\sum_{i,j,k=0}^{1}|c_{ijk}|^2=1,
+\]</span></p>
+<p>matriks densitas didefinisikan sebagai</p>
+<p><span class="math display">\[
+\rho=|\psi\rangle\langle\psi|.
+\]</span></p>
+<div class="columns">
+<div class="column fragment" style="width:38%;">
+<h3 id="matriks-densitas">Matriks Densitas</h3>
 <ul>
-<li><strong>Sifat:</strong> Keterbelitannya didistribusikan secara merata antar pasangan qubit.</li>
-<li><strong>Kelebihan:</strong> Sangat kokoh (<em>robust</em>). Jika satu qubit hilang atau diukur, dua qubit sisanya <strong>tetap saling terbelit</strong> membentuk state tipe Bell.</li>
+<li><p><span class="math inline">\(\rho\)</span> berukuran <span class="math inline">\(8\times8\)</span>.</p></li>
+<li><p>Bersifat Hermitian,</p></li>
 </ul>
+<p><span class="math display">\[
+\rho^\dagger=\rho.
+\]</span></p>
+<ul>
+<li>Memenuhi</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{Tr}(\rho)=1.
+\]</span></p>
+</div><div class="column fragment" style="width:62%;">
+<h3 id="reduksi-parsial">Reduksi Parsial</h3>
+<p>Reduksi terhadap salah satu qubit menghasilkan matriks densitas dua qubit</p>
+<p><span class="math display">\[
+\rho_{12}
+=
+\mathrm{Tr}_3(\rho),
+\]</span></p>
+<p><span class="math display">\[
+\rho_{13}
+=
+\mathrm{Tr}_2(\rho),
+\]</span></p>
+<p><span class="math display">\[
+\rho_{23}
+=
+\mathrm{Tr}_1(\rho).
+\]</span></p>
+<p>Sebagai contoh,</p>
+<p><span class="math display">\[
+\rho_{12}
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\mathbb I\otimes\langle k|)
+\,\rho\,
+(\mathbb I\otimes\mathbb I\otimes|k\rangle).
+\]</span></p>
+<p>Hasil reduksi memenuhi</p>
+<p><span class="math display">\[
+\rho_{ij}\in\mathbb C^{4\times4}.
+\]</span></p>
+</div></div>
+</section>
+<section id="matriks-densitas-tereduksi" class="slide level2">
+<h2>Matriks Densitas Tereduksi</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="matriks-densitas-tereduksi-dua-qubit">Matriks Densitas Tereduksi Dua Qubit</h3>
+<p>Reduksi parsial terhadap satu qubit menghasilkan</p>
+<p><span class="math display">\[
+\rho_{12}
+=
+\mathrm{Tr}_3(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\mathbb I\otimes\langle k|)
+\,\rho\,
+(\mathbb I\otimes\mathbb I\otimes|k\rangle).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{13}
+=
+\mathrm{Tr}_2(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\langle k|\otimes\mathbb I)
+\,\rho\,
+(\mathbb I\otimes|k\rangle\otimes\mathbb I).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{23}
+=
+\mathrm{Tr}_1(\rho)
+=
+\sum_{k=0}^{1}
+(\langle k|\otimes\mathbb I\otimes\mathbb I)
+\,\rho\,
+(|k\rangle\otimes\mathbb I\otimes\mathbb I).
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="matriks-densitas-tereduksi-satu-qubit">Matriks Densitas Tereduksi Satu Qubit</h3>
+<p>Selanjutnya dilakukan reduksi kembali sehingga diperoleh</p>
+<p><span class="math display">\[
+\rho_{1}
+=
+\mathrm{Tr}_{2}(\rho_{12})
+=
+\mathrm{Tr}_{3}(\rho_{13}).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{2}
+=
+\mathrm{Tr}_{1}(\rho_{12})
+=
+\mathrm{Tr}_{3}(\rho_{23}).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{3}
+=
+\mathrm{Tr}_{1}(\rho_{13})
+=
+\mathrm{Tr}_{2}(\rho_{23}).
+\]</span></p>
+<p>Secara eksplisit,</p>
+<p><span class="math display">\[
+\rho_{1}
+=
+\sum_{p=0}^{1}
+(\mathbb I\otimes\langle p|)
+\,\rho_{12}\,
+(\mathbb I\otimes|p\rangle).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{2}
+=
+\sum_{q=0}^{1}
+(\langle q|\otimes\mathbb I)
+\,\rho_{12}\,
+(|q\rangle\otimes\mathbb I).
+\]</span></p>
+<p><span class="math display">\[
+\rho_{3}
+=
+\sum_{r=0}^{1}
+(\langle r|\otimes\mathbb I)
+\,\rho_{13}\,
+(|r\rangle\otimes\mathbb I).
+\]</span></p>
+</div></div>
+</section>
+<section id="entropi-von-neumann" class="slide level2">
+<h2>Entropi Von Neumann</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Matriks densitas tereduksi <span class="math inline">\(\rho_i\)</span> selanjutnya digunakan untuk menghitung entropi von Neumann yang didefinisikan sebagai</p>
+<p><span class="math display">\[
+S(\rho_i)
+=
+-\operatorname{Tr}
+\left(
+\rho_i \log \rho_i
+\right).
+\]</span></p>
+<p>Dengan proses matematis lebih lanjut dan diagonalisasi matriks didapatkan :</p>
+<p><span class="math display">\[
+S(\rho_i)
+=
+-\sum_{j}\lambda_j\log \lambda_j,
+\]</span></p>
+<p>dengan <span class="math inline">\(\lambda_j\)</span> merupakan nilai eigen dari <span class="math inline">\(\rho_i\)</span> yang memenuhi</p>
+<p><span class="math display">\[
+\sum_j \lambda_j = 1,
+\qquad
+0 \le \lambda_j \le 1.
+\]</span></p>
+</div><div class="column" style="width:60%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Keadaan</th>
+<th style="text-align: center;"><span class="math inline">\(S(\rho_A)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(S(\rho_B)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(S(\rho_C)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Terpisah sepenuhnya <span class="math inline">\(S(\rho^{(\mathrm{sep})})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Terbelit sepenuhnya <span class="math inline">\(S(\rho^{(\mathrm{ent})})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gabungan <span class="math inline">\((12)\vert3\)</span>, <span class="math inline">\(S(\rho^{(\mathrm{cp2})})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gabungan <span class="math inline">\(1\vert(23)\)</span>, <span class="math inline">\(S(\rho^{(\mathrm{cp1})})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gabungan <span class="math inline">\(2\vert(13)\)</span>, <span class="math inline">\(S(\rho^{(\mathrm{cp3})})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
+</tr>
+</tbody>
+</table>
+<!-- : Nilai kriteria entropi von Neumann untuk klasifikasi keadaan kuantum {#tbl-entropi-qubit} -->
 </div></div>
 </section>
 <section id="dasar-teori-grup-grup-diskrit" class="slide level2">
 <h2>Dasar Teori Grup &amp; Grup Diskrit</h2>
-<p>Sebelum masuk ke Grup Lie (kontinu), sebuah himpunan <span class="math inline">\(G\)</span> dengan operasi biner <span class="math inline">\(*\)</span> harus memenuhi aksioma formal grup:</p>
+<p>Sebelum masuk ke Grup Lie (kontinu), sebuah himpunan <span class="math inline">\(G\)</span> dengan operasi grup <span class="math inline">\(*\)</span> harus memenuhi aksioma formal grup:</p>
 <div class="columns" style="display: flex; justify-content: space-between;">
 <!-- KOLOM KIRI: 4 Syarat / Aksioma Grup --><div class="column fragment" style="text-align: left;">
 <p><strong>4 Aksioma Utama Grup</strong> <span class="math inline">\((G, *)\)</span></p>
@@ -762,18 +1034,28 @@ R_{34} &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &am
 <section class="slide level2">
 
 <h3 id="hasil-dekomposisi-eksponensial-penuh-su4">Hasil Dekomposisi Eksponensial Penuh <span class="math inline">\(SU(4)\)</span></h3>
-<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2, \lambda_5, \lambda_{10}, \lambda_7, \lambda_{12}, \lambda_{14}\)</span>):</p>
+<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2,\lambda_2, \lambda_3, \cdots, \lambda_{11}, \lambda_{14}\)</span>):</p>
 <div class="r-stack">
 <div class="fragment fade-out">
-<p><span class="math display">\[\boxed{\begin{align}
-U_{SU(4)} =\;&amp; \exp\!\Bigl(i\tfrac{\phi_6+\psi_6}{2}\,\lambda_3\Bigr) \cdot \exp\!\bigl(i\,\theta_6\,\lambda_2\bigr) \notag \\
-&amp;\cdot\exp\!\Bigl(i\bigl[ \bigl(\tfrac{\phi_5+\psi_5}{4}+\tfrac{\phi_6-\psi_6}{2}\bigr)\lambda_3 +\tfrac{\sqrt{3}(\phi_5+\psi_5)}{12}\lambda_8 \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_5\,\lambda_5\bigr) \notag \\
-&amp;\cdot\exp\!\Bigl(i\bigl[ \tfrac{\phi_4+\psi_4+ \phi_5-\psi_5}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_4+\psi_4+3\phi_5-3\psi_5)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_4+\psi_4)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_4\,\lambda_{10}\bigr) \notag \\
-&amp;\cdot\exp\!\Bigl(i\bigl[ \tfrac{\phi_4-\psi_4-\phi_3-\psi_3}{4}\lambda_3 +\tfrac{\sqrt{3}(3\phi_3+3\psi_3+\phi_4-\psi_4)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_4-\psi_4)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_3\,\lambda_{7}\bigr) \notag \\
-&amp;\cdot\exp\!\Bigl(i\bigl[ -\tfrac{\phi_2+\psi_2+\phi_3-\psi_3}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_2+\psi_2+3\phi_3-3\psi_3)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_2+\psi_2)}{36}\lambda_{15} \bigr]\Bigr) \cdot \exp\!\bigl(i\,\theta_2\,\lambda_{12}\bigr) \notag \\
-&amp;\cdot\exp\!\Bigl(i\bigl[ \tfrac{\psi_2-\phi_2}{4}\lambda_3 +\tfrac{\sqrt{3}(\phi_2-\psi_2-2\phi_1-2\psi_1)}{36}\lambda_8 +\tfrac{\sqrt{6}(\phi_1+\psi_1+\phi_2-\psi_2)}{36}\lambda_{15} \bigr]\Bigr) \notag \\
-&amp;\cdot\exp\!\bigl(i\,\theta_1\,\lambda_{14}\bigr) \cdot \exp\!\Bigl(i\bigl[ -\tfrac{\sqrt{3}(\phi_1-\psi_1)}{18}\lambda_8 +\tfrac{\sqrt{6}(\phi_1-\psi_1)}{36}\lambda_{15} \bigr]\Bigr).
-\end{align}}\]</span></p>
+<p><span class="math display">\[\boxed{
+\begin{align}
+U_{SU(4)} =\;&amp; \exp\!\left(i\,\theta_6\bigl[\cos\tilde{\phi}_{12}\,\lambda_2 + \sin\tilde{\phi}_{12}\,\lambda_1\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_5\bigl[\cos\tilde{\phi}_{13}\,\lambda_5 + \sin\tilde{\phi}_{13}\,\lambda_4\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_4\bigl[\cos\tilde{\phi}_{14}\,\lambda_{10} + \sin\tilde{\phi}_{14}\,\lambda_9\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_3\bigl[\cos\tilde{\phi}_{23}\,\lambda_7 + \sin\tilde{\phi}_{23}\,\lambda_6\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_2\bigl[\cos\tilde{\phi}_{24}\,\lambda_{12} + \sin\tilde{\phi}_{24}\,\lambda_{11}\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_1\bigl[\cos\tilde{\phi}_{34}\,\lambda_{14} + \sin\tilde{\phi}_{34}\,\lambda_{13}\bigr]\right) \notag \\
+&amp;\cdot \exp\left[
+i\left(
+\Phi_1\lambda_3
++
+\Phi_2\lambda_8
++
+\Phi_3\lambda_{15}
+\right)\right].
+\label{eq:USU4_exp}
+\end{align}
+}\]</span></p>
 </div>
 <div class="fragment success-box">
 <p><span class="math display">\[
@@ -800,6 +1082,856 @@ e^{i\lambda_{15}\alpha_{15}}\\
 </div>
 </div>
 <!-- {{< include sections/05-Matriks_Densitas_NQubit.qmd >}} -->
+<!-- {{< include sections/07-Entropi.qmd >}} -->
+</section>
+<section id="tujuan-metodologi" class="slide level2">
+<h2>Tujuan Metodologi</h2>
+<ul>
+<li>Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit berbasis hierarki Grup Lie <span class="math inline">\(SU(2)\)</span>, <span class="math inline">\(SU(3)\)</span>, dan <span class="math inline">\(SU(4)\)</span> beserta aljabar generatornya.</li>
+<li>Menganalisis mekanisme pembentukan korelasi non-lokal atau keterbelitan yang dihasilkan oleh operator <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> melalui representasi ekponensial terhadap keadaan awal <span class="math inline">\(|000\rangle\)</span>.</li>
+<li>Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit, serta menghitung derajat keterbelitannya secara analitik menggunakan entropi von Neumann dari matriks densitas tereduksi.</li>
+</ul>
+</section>
+<section id="kontruksi-parameterisasi-su4-dan-su2" class="slide level2">
+<h2>Kontruksi Parameterisasi SU(4) dan SU(2)</h2>
+<p><strong>Konstruksi SU(2)</strong></p>
+<p>Dari persamaan <span class="math display">\[\boxed{U_{SU(2)}(\theta, \phi, \lambda) = e^{i\lambda \sigma_z} e^{i\theta \sigma_y} e^{i\phi \sigma_z}}\]</span> dipilih parameter <span class="math inline">\(\theta=\phi=\lambda=0\)</span> sehingga <span class="math inline">\(U_{SU(2) }(0,0,0) = I\)</span></p>
+<p><strong>Konstruksi SU(4)</strong></p>
+<p>Dari persamaan <span class="math display">\[
+\boxed{\begin{align}
+U_{SU(4)} &amp;=
+e^{i\lambda_3\alpha_1}
+e^{i\lambda_2\alpha_2}
+e^{i\lambda_3\alpha_3}
+e^{i\lambda_5\alpha_4}
+e^{i\lambda_3\alpha_5}
+e^{i\lambda_{10}\alpha_6}
+e^{i\lambda_3\alpha_7}
+e^{i\lambda_2\alpha_8}
+e^{i\lambda_3\alpha_9}
+e^{i\lambda_5\alpha_{10}}
+e^{i\lambda_3\alpha_{11}}
+e^{i\lambda_2\alpha_{12}}\\
+&amp;
+e^{i\lambda_3\alpha_{13}}
+e^{i\lambda_8\alpha_{14}}
+e^{i\lambda_{15}\alpha_{15}}\\
+\end{align}}
+\]</span> dan parameter berupa <span class="math inline">\(\alpha_2,\alpha_4,\alpha_6,\alpha_8,\alpha_{10},\alpha_{12}\)</span> secara berpasangan dan dengan pasangan nilai yang dipilih <span class="math inline">\(\frac{\pi}{12},\frac{\pi}{2}\)</span>. Selanjutnya,Pengembangan matriks dari produk tensor untuk model</p>
+<p><span class="math display">\[U_{24} = I \otimes U_{SU(4)}(\alpha_i,\alpha_j)\]</span></p>
+<p>dan</p>
+<p><span class="math display">\[U_{42} = U_{SU(4)}(\alpha_i,\alpha_j) \otimes I \]</span></p>
+</section>
+<section class="slide level2">
+
+<div class="r-stack">
+<div class="fragment fade-out">
+<p>sebagai contoh pada parameter <span class="math inline">\(\alpha_2\)</span> dan <span class="math inline">\(\alpha_4\)</span>: <span class="math display">\[U_4(\alpha_{2},\alpha_{4})
+=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4} &amp;
+\sin\alpha_{2} &amp;
+\sin\alpha_{4}\cos\alpha_{2} &amp;
+0\\
+-\sin\alpha_{2}\cos\alpha_{4} &amp;
+\cos\alpha_{2} &amp;
+-\sin\alpha_{2}\sin\alpha_{4} &amp;
+0\\
+-\sin\alpha_{4} &amp;
+0 &amp;
+\cos\alpha_{4} &amp;
+0\\
+0&amp;0&amp;0&amp;1
+\end{pmatrix}\]</span> dan <span class="math display">\[\begin{align*}
+U_{42}(\alpha_{2},\alpha_{4})
+&amp;=U_4(\alpha_{2},\alpha_{4})\otimes U_2,\\
+\\
+U_{42}(\alpha_{2},\alpha_{4})
+&amp;=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4} &amp;0&amp;\sin\alpha_{2}&amp;0&amp;\sin\alpha_{4}\cos\alpha_{2}&amp;0&amp;0&amp;0\\
+0&amp;\cos\alpha_{2}\cos\alpha_{4}&amp;0&amp;\sin\alpha_{2}&amp;0&amp;\sin\alpha_{4}\cos\alpha_{2}&amp;0&amp;0\\
+-\sin\alpha_{2}\cos\alpha_{4}&amp;0&amp;\cos\alpha_{2}&amp;0&amp;-\sin\alpha_{2}\sin\alpha_{4}&amp;0&amp;0&amp;0\\
+0&amp;-\sin\alpha_{2}\cos\alpha_{4}&amp;0&amp;\cos\alpha_{2}&amp;0&amp;-\sin\alpha_{2}\sin\alpha_{4}&amp;0&amp;0\\
+-\sin\alpha_{4}&amp;0&amp;0&amp;0&amp;\cos\alpha_{4}&amp;0&amp;0&amp;0\\
+0&amp;-\sin\alpha_{4}&amp;0&amp;0&amp;0&amp;\cos\alpha_{4}&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1
+\end{pmatrix}.
+\end{align*}\]</span></p>
+</div>
+<div class="fragment">
+<p>dan</p>
+<p><span class="math display">\[\begin{align*}
+U_{24}(\alpha_{2},\alpha_{4})
+&amp;=U_2\otimes U_4(\alpha_{2},\alpha_{4})\\
+&amp;=
+\begin{pmatrix}
+\cos\alpha_{2}\cos\alpha_{4}&amp;\sin\alpha_{2}&amp;\sin\alpha_{4}\cos\alpha_{2}&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-\sin\alpha_{2}\cos\alpha_{4}&amp;\cos\alpha_{2}&amp;-\sin\alpha_{2}\sin\alpha_{4}&amp;0&amp;0&amp;0&amp;0&amp;0\\
+-\sin\alpha_{4}&amp;0&amp;\cos\alpha_{4}&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;\cos\alpha_{2}\cos\alpha_{4}&amp;\sin\alpha_{2}&amp;\sin\alpha_{4}\cos\alpha_{2}&amp;0\\
+0&amp;0&amp;0&amp;0&amp;-\sin\alpha_{2}\cos\alpha_{4}&amp;\cos\alpha_{2}&amp;-\sin\alpha_{2}\sin\alpha_{4}&amp;0\\
+0&amp;0&amp;0&amp;0&amp;-\sin\alpha_{4}&amp;0&amp;\cos\alpha_{4}&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1
+\end{pmatrix}.
+\end{align*}\]</span></p>
+</div>
+</div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1">Tahap 1</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2">Tahap 2</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-1">Tahap 1</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\psi_{2,4}\right\rangle} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
+&amp;=  \begin{pmatrix}\cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{4} \right)}\\ 0 \\ 0 \\ 0 \end{pmatrix}  \\
+% &amp;= \cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|010\right\rangle} - \sin{\left(\alpha_{4} \right)} {\left|100\right\rangle}
+\end{align*}\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-1">Tahap 2</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\phi_{2,4}\right\rangle} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi_{2,4}\right\rangle}\\
+&amp;=  \begin{pmatrix}\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \left(\alpha_{2} + \alpha_{4}\right) \right)}}{4} + \frac{1}{4}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)}\\- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\\ 0 \\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\sin^{2}{\left(\alpha_{4} \right)}\\ 0 \end{pmatrix}  \\
+% &amp;= \left(\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \alpha_{2} + 2 \alpha_{4} \right)}}{4} + \frac{1}{4}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)} {\left|001\right\rangle} \\
+% &amp;\quad + \left(- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\right) {\left|010\right\rangle} + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} \\
+% &amp;\quad + \left(\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|101\right\rangle} + \sin^{2}{\left(\alpha_{4} \right)} {\left|110\right\rangle}
+\end{align*}\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-2">Tahap 1</h3>
+<p><span class="math display">\[
+\begin{aligned}
+|\psi_{2,4}\rangle
+&amp;= U_{42}(\alpha_{2}, \alpha_{4})\,|000\rangle \\
+&amp;= \cos(\alpha_{2})\cos(\alpha_{4})\,|000\rangle \\
+&amp;\quad - \sin(\alpha_{2})\cos(\alpha_{4})\,|010\rangle \\
+&amp;\quad - \sin(\alpha_{4})\,|100\rangle
+\end{aligned}
+\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-2">Tahap 2</h3>
+<p><span class="math display">\[
+\begin{aligned}
+|\phi_{2,4}\rangle
+&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi_{2,4}\rangle \\[4pt]
+&amp;= \left(
+\frac{\cos(2\alpha_{2})}{4}
++ \frac{\cos(2\alpha_{4})}{4}
++ \frac{\cos(2\alpha_{2}+2\alpha_{4})}{4}
++ \frac{1}{4}
+\right)|000\rangle \\[4pt]
+&amp;\quad - \sin(\alpha_{2})\cos(\alpha_{4})\cos(\alpha_{2}+\alpha_{4})\,|001\rangle \\[4pt]
+&amp;\quad - \frac{\sin(\alpha_{2}) + \sin(\alpha_{2}+2\alpha_{4})}{2}\,|010\rangle \\[4pt]
+&amp;\quad + \frac{\sin(\alpha_{2}-2\alpha_{4}) - \sin(\alpha_{2}+2\alpha_{4})}{4}\,|100\rangle \\[4pt]
+&amp;\quad + \frac{\cos(\alpha_{2}-2\alpha_{4}) - \cos(\alpha_{2}+2\alpha_{4})}{4}\,|101\rangle \\[4pt]
+&amp;\quad + \sin^{2}(\alpha_{4})\,|110\rangle
+\end{aligned}
+\]</span></p>
+</div></div>
+</div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-3">Tahap 1</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-3">Tahap 2</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}}\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-4">Tahap 1</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-4">Tahap 2</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-5">Tahap 1</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-5">Tahap 2</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-6">Tahap 1</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card success-box">
+<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
+</div>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-6">Tahap 2</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card success-box">
+<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
+</div>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="tahap-1-7">Tahap 1</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card info-box">
+<p><span class="math display">\[\text{Entropi von Neumann}\]</span></p>
+</div>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card success-box">
+<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
+</div>
+</div><div class="column" style="width:60%;">
+<h3 id="tahap-2-7">Tahap 2</h3>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card info-box">
+<p><span class="math display">\[\text{Entropi von Neumann}\]</span></p>
+</div>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<div class="card success-box">
+<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
+</div>
+</div></div>
+</section>
+<section id="matriks-densitas-tereduksi-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<div class="r-stack">
+<div data-id="box3" style="background: #e83e8c; color: white; width: 380px; height: 380px; border-radius: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+<div style="font-size: 20px; font-weight: bold; opacity: 0.8; letter-spacing: 1px;">
+SISTEM TOTAL
+</div>
+<div style="font-size: 24px; margin-top: 5px;">
+<span class="math display">\[\rho = |\psi \rangle \langle \psi |\]</span>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<div class="r-stack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 380px; height: 380px; border-radius: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 25px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">
+<div style="font-size: 12px; font-weight: bold; opacity: 0.8; letter-spacing: 1px;">
+SISTEM 3
+</div>
+<div style="font-size: 15px; margin-top: 2px;">
+<span class="math display">\[\rho_3=\operatorname{Tr}_{12}(\rho)\]</span>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 260px; height: 260px; border-radius: 200px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 20px; box-shadow: 0 6px 12px rgba(0,0,0,0.2);">
+<div style="font-size: 13px; font-weight: bold; opacity: 0.8; letter-spacing: 1px;">
+SISTEM 2
+</div>
+<div style="font-size: 16px; margin-top: 5px;">
+<span class="math display">\[\rho_2=\operatorname{Tr}_{13}(\rho)\]</span>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 140px; height: 140px; border-radius: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+<div style="font-size: 14px; font-weight: bold; opacity: 0.8; letter-spacing: 1px;">
+SISTEM 1
+</div>
+<div style="font-size: 18px; margin-top: 5px;">
+<span class="math display">\[\rho_1=\operatorname{Tr}_{23}(\rho)\]</span>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 1
+</div>
+<p><span class="math display">\[\rho_1=\operatorname{Tr}_{23}(\rho)\]</span></p>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 2
+</div>
+<p><span class="math display">\[\rho_2=\operatorname{Tr}_{13}(\rho)\]</span></p>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 3
+</div>
+<p><span class="math display">\[\rho_3=\operatorname{Tr}_{12}(\rho)\]</span></p>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-4" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 1
+</div>
+<p><span class="math display">\[\rho_1=\operatorname{Tr}_{23}(\rho)\]</span></p>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 2
+</div>
+<p><span class="math display">\[\rho_2=\operatorname{Tr}_{13}(\rho)\]</span></p>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 3
+</div>
+<p><span class="math display">\[\rho_3=\operatorname{Tr}_{12}(\rho)\]</span></p>
+</div>
+</div>
+<div class="r-hstack fragment">
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_1\)</span>
+</div>
+<p><span class="math display">\[\lambda_i^{(1)}\]</span></p>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_2\)</span>
+</div>
+<p><span class="math display">\[\lambda_j^{(2)}\]</span></p>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_3\)</span>
+</div>
+<p><span class="math display">\[\lambda_k^{(3)}\]</span></p>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-5" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 1
+</div>
+<p><span class="math display">\[\rho_1=\operatorname{Tr}_{23}(\rho)\]</span></p>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 2
+</div>
+<p><span class="math display">\[\rho_2=\operatorname{Tr}_{13}(\rho)\]</span></p>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Sistem 3
+</div>
+<p><span class="math display">\[\rho_3=\operatorname{Tr}_{12}(\rho)\]</span></p>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_1\)</span>
+</div>
+<p><span class="math display">\[\lambda_i^{(1)}\]</span></p>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_2\)</span>
+</div>
+<p><span class="math display">\[\lambda_j^{(2)}\]</span></p>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_3\)</span>
+</div>
+<p><span class="math display">\[\lambda_k^{(3)}\]</span></p>
+</div>
+</div>
+<div class="r-hstack fragment">
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 260px; margin: 0 10px; text-align: center; font-size: 28px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="entropy1" style="background: #2780e3; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_1\)</span>
+</div>
+<p><span class="math display">\[-\sum \lambda_i^{(1)} \ln \lambda_i^{(1)}\]</span></p>
+</div>
+<div data-id="entropy2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_2\)</span>
+</div>
+<p><span class="math display">\[-\sum \lambda_j^{(2)} \ln \lambda_j^{(2)}\]</span></p>
+</div>
+<div data-id="entropy3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_3\)</span>
+</div>
+<p><span class="math display">\[-\sum \lambda_k^{(3)} \ln \lambda_k^{(3)}\]</span></p>
+</div>
+</div>
+</section>
+<section id="hasil-tabel-pengelompokkan-grup-berdasarkan-pola-keterbelitan" class="slide level2">
+<h2>Hasil Tabel Pengelompokkan Grup Berdasarkan Pola Keterbelitan</h2>
+<div class="r-stack">
+<div class="fragment fade-out">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.65em; font-family: sans-serif;">
+<thead>
+<!-- Baris Kondisi Utama -->
+<tr style="border-bottom: 2px solid #555;">
+<th style="padding: 8px; font-weight: bold;">
+Grup
+</th>
+<th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">
+Before
+</th>
+<th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">
+After
+</th>
+</tr>
+<!-- Baris Pasangan Sudut Parameter -->
+<tr style="border-bottom: 2px solid #333; font-size: 0.9em;">
+<th>
+</th>
+<th style="padding: 6px;">
+π/12, π/12
+</th>
+<th style="padding: 6px;">
+π/12, π/2
+</th>
+<th style="padding: 6px;">
+π/2, π/12
+</th>
+<th style="padding: 6px; border-right: 2px solid #bbb;">
+π/2, π/2
+</th>
+<th style="padding: 6px;">
+π/12, π/12
+</th>
+<th style="padding: 6px;">
+π/12, π/2
+</th>
+<th style="padding: 6px;">
+π/2, π/12
+</th>
+<th style="padding: 6px;">
+π/2, π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<!-- Grup 1 -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 1
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 2 -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 2
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 3 -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 3
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 4 -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 4
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 5 -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 5
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 6 -->
+<tr style="border-bottom: 2px solid #333;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 6
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align:center; margin-top:20px; font-size:0.55em;">
+<p><span style="display:inline-block; margin:0 10px;"> <span style="display:inline-block;width:15px;height:15px;background:#225ea8;border:1px solid #333;vertical-align:middle;"></span> ABC (Tripartite) </span></p>
+<p><span style="display:inline-block; margin:0 10px;"> <span style="display:inline-block;width:15px;height:15px;background:#41b6c4;border:1px solid #333;vertical-align:middle;"></span> C-AB (Bipartite) </span></p>
+<p><span style="display:inline-block; margin:0 10px;"> <span style="display:inline-block;width:15px;height:15px;background:#a1dab4;border:1px solid #333;vertical-align:middle;"></span> A-BC (Bipartite) </span></p>
+<p><span style="display:inline-block; margin:0 10px;"> <span style="display:inline-block;width:15px;height:15px;background:#e0e0e0;border:1px solid #333;vertical-align:middle;"></span> A-B-C (Separabel) </span></p>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<table style="border-collapse:collapse;width:100%;text-align:left;">
+<thead>
+<tr>
+<th style="width:15%;">
+Grup
+</th>
+<th>
+Pasangan Parameter <span class="math inline">\((\alpha_i,\alpha_j)\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Grup 1
+</td>
+<td>
+<span class="math inline">\((\alpha_2,\alpha_6)\)</span>, <span class="math inline">\((\alpha_6,\alpha_2)\)</span>, <span class="math inline">\((\alpha_6,\alpha_8)\)</span>, <span class="math inline">\((\alpha_6,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_8,\alpha_6)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_6)\)</span>, <span class="math inline">\((\alpha_6,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_{10},\alpha_6)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+Grup 2
+</td>
+<td>
+<span class="math inline">\((\alpha_2,\alpha_4)\)</span>, <span class="math inline">\((\alpha_2,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_8,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_4,\alpha_8)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_{12})\)</span>
+</td>
+</tr>
+<tr>
+<td>
+Grup 3
+</td>
+<td>
+<span class="math inline">\((\alpha_4,\alpha_2)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_2)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_8)\)</span>, <span class="math inline">\((\alpha_8,\alpha_4)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_{10})\)</span>
+</td>
+</tr>
+<tr>
+<td>
+Grup 4
+</td>
+<td>
+<span class="math inline">\((\alpha_4,\alpha_6)\)</span>, <span class="math inline">\((\alpha_6,\alpha_4)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+Grup 5
+</td>
+<td>
+<span class="math inline">\((\alpha_2,\alpha_8)\)</span>, <span class="math inline">\((\alpha_2,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_8,\alpha_2)\)</span>, <span class="math inline">\((\alpha_8,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_{12},\alpha_2)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_8)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+Grup 6
+</td>
+<td>
+<span class="math inline">\((\alpha_4,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_{10},\alpha_4)\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<!-- ***Temuan Umum*** -->
+<!-- - $(\pi/12,\pi/12)$ paling stabil menghasilkan **tripartit (ABC)**
+- $\pi/2$ menyebabkan penurunan keterbelitan:
+  tripartit → bipartit → separabel
+- Keterbelitan dipengaruhi:
+  - besar sudut rotasi
+  - kombinasi parameter operator lokal -->
+<p><strong><em>Grup 1</em></strong></p>
+<ul>
+<li>ABC hanya pada <span class="math inline">\((\pi/12,\pi/12)\)</span> <!-- - Selain itu separabel --></li>
+<li>Sangat sensitif terhadap sudut</li>
+</ul>
+<p><strong><em>Grup 2</em></strong></p>
+<ul>
+<li>ABC pada <span class="math inline">\((\pi/12,\pi/12)\)</span> dan <span class="math inline">\((\pi/2,\pi/12)\)</span></li>
+<li>Dipengaruhi parameter kedua</li>
+</ul>
+<p><strong><em>Grup 3</em></strong></p>
+<ul>
+<li>Kebalikan Grup 2</li>
+<li>ABC muncul saat parameter pertama = <span class="math inline">\(\pi/12\)</span></li>
+<li>Efek urutan parameter jelas terlihat</li>
+</ul>
+<!-- ***Catatan Teoretis***
+
+- Tidak ada hubungan langsung yang pasti dengan generator Gell-Mann
+- Karena operator merupakan kombinasi beberapa generator
+- Perlu analisis Lie algebra lebih dalam -->
+</div><div class="column" style="width:50%;">
+<p><strong><em>Grup 4</em></strong></p>
+<ul>
+<li>Tripartit → bipartit → separabel</li>
+<li>Degradasi bertahap</li>
+</ul>
+<p><strong><em>Grup 5</em></strong></p>
+<ul>
+<li>Tidak pernah tripartit</li>
+<li>Hanya bipartit atau separabel</li>
+</ul>
+<p><strong><em>Grup 6</em></strong></p>
+<ul>
+<li>Selalu separabel</li>
+<li>Tidak ada keterbelitan terbentuk</li>
+</ul>
+</div></div>
+</div>
+</div>
+<!-- {{< include sections/12-interpretasi-su4.qmd >}} -->
+</section>
+<section id="kesimpulan" class="slide level2">
+<h2>Kesimpulan</h2>
+<ul>
+<li><p>Sistem <strong>tiga qubit</strong> berhasil dibangkit menggunakan hierarki Grup Lie <strong>SU(2)</strong> dan <strong>SU(4)</strong> sebagai kerangka transformasi keadaan kuantum.</p></li>
+<li><p>Variasi parameter pada transformasi <strong>SU(4)</strong> menghasilkan berbagai jenis keadaan kuantum, yaitu <strong>separabel</strong>, <strong>biseparabel</strong>, dan <strong>terbelit tripartit</strong>.</p></li>
+<li><p>Klasifikasi menggunakan <strong>entropi von Neumann</strong> berhasil menunjukkan bahwa konfigurasi parameter dan generator Lie menentukan struktur keterbelitan yang terbentuk.</p></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div style="height:30vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+<h1>
+Terima Kasih
+</h1>
+<p>
+Ada pertanyaan?
+</p>
+</div>
 
 </section>
     </div>

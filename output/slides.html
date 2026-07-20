@@ -293,256 +293,616 @@ Karena Qubit bersifat <span class="fragment highlight-blue" data-fragment-index=
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="representasi-bola-bloch">Representasi Bola Bloch</h3>
-<div class="columns" style="display: flex; gap: 1%; margin-top: 1.5em; text-align: left;">
-<div class="column fragment" style="width:48%;">
-<p>Representasi Keadaan dalam Bola Bloch <!-- <div class="fragment" 
-    style="
-    background-color: #f0f7ff;
-    border: 2px solid #41a6fc;
-    border-radius: 6px;
-    width: 800px;
-    height: 180px;
-    padding: 20px;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-">
-$$
-|\psi\rangle = \cos\left(\frac{\theta}{2}\right)|0\rangle +
-e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle
-$$
-</div> --></p>
-<div style="position:relative; width:600px; height:180px;">
-<div style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:2;
-">
-<p><span class="math display">\[
-|\psi\rangle = \cos\left(\frac{\theta}{2}\right)|0\rangle +
-e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle
-\]</span></p>
+<section id="transisi-keadaan-sistem-2-qubit-dan-3-qubit" class="slide level2">
+<h2>Transisi Keadaan Sistem 2-Qubit dan 3-Qubit</h2>
+<p>Bagaimana untuk sistem 2 Bit dan 3 Bit?</p>
+<div class="columns fragment">
+<div class="column" style="width:50%;">
+<h3 id="sistem-2-bit-klasik">Sistem 2-Bit Klasik</h3>
+<p><span class="math display">\[\{00, 01, 10, 11\}\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="sistem-2-qubit-kuantum">Sistem 2-Qubit Kuantum</h3>
+<ul>
+<li>Basis keadaannya dilambangkan dengan ket biner: <span class="math display">\[|00\rangle, |01\rangle, |10\rangle, |11\rangle\]</span></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[|\psi\rangle = c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle\]</span></p>
 </div>
-<div class="fragment" style="
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:2px solid #41a6fc;
-background:#f0f7ff;
-border-radius:6px;
-z-index:1;
-">
-
+</div></div>
+<div class="columns fragment">
+<div class="column" style="width:50%;">
+<h3 id="sistem-3-bit-klasik">Sistem 3-Bit Klasik</h3>
+<p><span class="math display">\[\{000, 001, 010, 011, 100, 101, 110, 111\}\]</span> <!-- [$M=SU(8)$]{.fragment .strike} --></p>
+</div><div class="column" style="width:50%;">
+<h3 id="sistem-3-qubit-kuantum">Sistem 3-Qubit Kuantum</h3>
+<ul>
+<li>Basis keadaannya dilambangkan dengan ket biner: <span class="math display">\[|000\rangle, |001\rangle, |010\rangle, |011\rangle\]</span> <span class="math display">\[|100\rangle,|101\rangle,|110\rangle,|111\rangle\]</span></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[{|\psi\rangle = c_{000}|000\rangle + c_{001}|001\rangle + \dots + c_{111}|111\rangle}\]</span></p>
 </div>
-</div>
-<p><span class="math display">\[\begin{align}
-&amp; 0 \le \theta \le \pi \\
-&amp; 0 \le \phi &lt; 2\pi \\
-\end{align}\]</span></p>
-</div><div class="column fragment" style="text-align: center;">
-<p>Diagram Bola Bloch</p>
-<p><img data-src="gambar/bloch.png" style="width:50.0%"></p>
-<!-- <p style="font-size: 0.75em; text-align: left; margin-top: 1em; color: #aaa;">
-  **Penjelasan Diagram:**
-  * Kutub utara mewakili keadaan $|0\rangle$ ($\theta = 0$).
-  * Kutub selatan mewakili keadaan $|1\rangle$ ($\theta = \pi$).
-  * Sudut $\theta$ menentukan posisi lintang, sedangkan $\phi$ menentukan posisi bujur pada permukaan bola. Setiap titik unik pada bola merepresentasikan satu keadaan superposisi qubit yang valid.
-</p> -->
 </div></div>
 </section>
-<section id="struktur-basis-multi-qubit-tensor-product" class="slide level2">
-<h2>Struktur Basis Multi-Qubit (Tensor Product)</h2>
-<p>Bagaimana keadaan basis gabungan terbentuk dari ruang vektor individual:</p>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<!-- KOLOM 1 (KIRI): Berisi Proses Perkalian DAN Semua 4 Basis Gabungan di Bawahnya --><div class="column fragment" style="text-align: left;">
-<p><strong>Representasi 2 Basis Gabungan</strong></p>
-<p><span class="math display">\[|01\rangle = |0\rangle \otimes |1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}\]</span></p>
-<p><br></p>
-<p><strong>Representasi 3 Basis Gabungan</strong></p>
-<div style="font-size: 0.7em;">
+<section id="keadaan-terbelit-dalam-2-qubit" class="slide level2">
+<h2>Keadaan Terbelit dalam 2-Qubit</h2>
+<p><span class="math display">\[| \psi \rangle_{AB} = c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle\]</span></p>
+<div class="fragment">
+<p><em>Apakah keadaan gabungan <span class="math inline">\(| \psi \rangle_{AB}\)</span> selalu menyatu, atau sebenarnya dapat diurai menjadi dua qubit berbeda?</em></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[| \psi \rangle_{AB} = | \psi \rangle_A \otimes | \psi \rangle_B\]</span></p>
+<ul>
+<li>Keadaan Qubit <span class="math inline">\(A\)</span>: <span class="math inline">\(| \psi \rangle_A = x_0|0\rangle + x_1|1\rangle\)</span></li>
+<li>Keadaan Qubit <span class="math inline">\(B\)</span>: <span class="math inline">\(| \psi \rangle_B = y_0|0\rangle + y_1|1\rangle\)</span></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column fragment" style="width:55%;">
 <p><span class="math display">\[
-|011\rangle = |0\rangle \otimes |1\rangle \otimes |1\rangle=
-\begin{pmatrix}
-0\\
-0\\
-0\\
-1\\
-0\\
-0\\
-0\\
-0
+\begin{aligned}
+| \psi \rangle_{AB} &amp;= (x_0|0\rangle + x_1|1\rangle)(y_0|0\rangle + y_1|1\rangle) \\
+&amp;= x_0|0\rangle(y_0|0\rangle + y_1|1\rangle) + x_1|1\rangle(y_0|0\rangle + y_1|1\rangle) \\
+&amp;= x_0 y_0|00\rangle + x_0 y_1|01\rangle + x_1 y_0|10\rangle + x_1 y_1|11\rangle\\
+&amp;= c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle
+\end{aligned}
+\]</span></p>
+<h4 id="hubungan-koefisien">Hubungan Koefisien:</h4>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<ul>
+<li>Basis <span class="math inline">\(|00\rangle \rightarrow c_{00} = x_0 y_0\)</span></li>
+<li>Basis <span class="math inline">\(|01\rangle \rightarrow c_{01} = x_0 y_1\)</span></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<ul>
+<li>Basis <span class="math inline">\(|10\rangle \rightarrow c_{10} = x_1 y_0\)</span></li>
+<li>Basis <span class="math inline">\(|11\rangle \rightarrow c_{11} = x_1 y_1\)</span></li>
+</ul>
+</div></div>
+</div><div class="column fragment" style="width:45%;">
+<ul>
+<li><strong>Keadaan Terpisah:</strong> Jika terdapat nilai <span class="math inline">\(x_0, x_1, y_0, y_1\)</span> nyata yang memenuhi sistem hubungan persamaan di samping.</li>
+</ul>
+<p><span class="math display">\[| \psi \rangle_{AB} = | \psi \rangle_A \otimes | \psi \rangle_B\]</span></p>
+<ul>
+<li><strong>Keadaan Terbelit:</strong> Jika tidak ada nilai <span class="math inline">\(x_0, x_1, y_0, y_1\)</span> nyata yang memenuhi sistem hubungan persamaan di samping.</li>
+</ul>
+<p><span class="math display">\[| \psi \rangle_{AB} \neq | \psi \rangle_A \otimes | \psi \rangle_B\]</span></p>
+</div></div>
+</section>
+<section id="keterbelitan-dalam-sistem-3-qubit" class="slide level2">
+<h2>Keterbelitan dalam Sistem 3-Qubit</h2>
+<p><span class="math display">\[|\psi\rangle_{ABC} = c_{000}|000\rangle + c_{001}|001\rangle + \dots + c_{111}|111\rangle\]</span></p>
+<div class="fragment">
+<p><em>Bagaimana kita menguji dan mengklasifikasikan jenis keterbelitan ketika sistem meluas menjadi tiga qubit?</em></p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column fragment" style="width:30%;">
+<p><span class="math display">\[|\psi\rangle_{ABC} = |\psi\rangle_A \otimes |\psi\rangle_B \otimes |\psi\rangle_C\]</span></p>
+<ul>
+<li><p><span class="math inline">\(|\psi\rangle_A = x_0|0\rangle + x_1|1\rangle\)</span>,</p></li>
+<li><p><span class="math inline">\(|\psi\rangle_B = y_0|0\rangle + y_1|1\rangle\)</span>, dan</p></li>
+<li><p><span class="math inline">\(|\psi\rangle_C = z_0|0\rangle + z_1|1\rangle\)</span>.</p></li>
+</ul>
+</div><div class="column fragment" style="width:70%;">
+<p><span class="math display">\[
+\begin{aligned}
+| \psi \rangle_{ABC} &amp;= (x_0|0\rangle + x_1|1\rangle)(y_0|0\rangle + y_1|1\rangle)(z_0|0\rangle + z_1|1\rangle) \\
+&amp;\quad + x_1 y_0|10\rangle(z_0|0\rangle + z_1|1\rangle) + x_1 y_1|11\rangle(z_0|0\rangle + z_1|1\rangle) \\
+&amp;= x_0 y_0 z_0|000\rangle + x_0 y_0 z_1|001\rangle + x_0 y_1 z_0|010\rangle + x_0 y_1 z_1|011\rangle \\
+&amp;\quad + x_1 y_0 z_0|100\rangle + x_1 y_0 z_1|101\rangle + x_1 y_1 z_0|110\rangle + x_1 y_1 z_1|111\rangle \\
+&amp;= c_{000}|000\rangle + c_{001}|001\rangle + c_{010}|010\rangle + c_{011}|011\rangle \\
+&amp;\quad + c_{100}|100\rangle + c_{101}|101\rangle + c_{110}|110\rangle + c_{111}|111\rangle
+\end{aligned}
+\]</span></p>
+</div></div>
+</div>
+<div class="columns">
+<div class="fragment">
+<h4 id="hubungan-koefisien-sebagai-syarat-terpisah-sempurna">Hubungan Koefisien sebagai syarat Terpisah Sempurna:</h4>
+</div><!-- Ekspansi perkalian tiga arah menghasilkan 8 sistem persamaan koefisien: --><div class="column fragment" style="width:50%;">
+<ul>
+<li><p>Basis <span class="math inline">\(|000\rangle \rightarrow c_{000} = x_0 y_0 z_0\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|001\rangle \rightarrow c_{001} = x_0 y_0 z_1\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|010\rangle \rightarrow c_{010} = x_0 y_1 z_0\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|011\rangle \rightarrow c_{011} = x_0 y_1 z_1\)</span></p></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<ul>
+<li><p>Basis <span class="math inline">\(|100\rangle \rightarrow c_{100} = x_1 y_0 z_0\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|101\rangle \rightarrow c_{101} = x_1 y_0 z_1\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|110\rangle \rightarrow c_{110} = x_1 y_1 z_0\)</span></p></li>
+<li><p>Basis <span class="math inline">\(|111\rangle \rightarrow c_{111} = x_1 y_1 z_1\)</span></p></li>
+</ul>
+</div></div>
+</section>
+<section id="jenis-keterbelitan-3-qubit" class="slide level2">
+<h2>Jenis Keterbelitan 3-Qubit</h2>
+<p>Berdasarkan sistem persamaan hubungan koefisien sebelumnya, jika tidak ada solusi nilai <span class="math inline">\(\{x_i, y_j, z_k\}\)</span> yang memenuhi, sistem 3-qubit tersebut memiliki 2 kemungkinan bentuk keterbelitan:</p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<h3 id="terbelit-sebagian">1. Terbelit Sebagian</h3>
+<p>bentuk 2-Qubit dari 3-Qubit tidak bisa difaktorisasi dalam perkalian tensor dan</p>
+<p><strong>Bentuk umum Terbelit sebagian :</strong> <span class="math display">\[|\psi\rangle_{A|BC} = |\psi\rangle_A \otimes |\psi\rangle_{BC}\]</span></p>
+<p><span class="math display">\[|\psi\rangle_{AB|C} = |\psi\rangle_{AB} \otimes |\psi\rangle_C\]</span></p>
+<p><span class="math display">\[|\psi\rangle_{B|AC} = |\psi\rangle_B \otimes |\psi\rangle_{AC}\]</span></p>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="terbelit-sejati">2. Terbelit sejati</h3>
+<p>bentuk 3-Qubit tidak bisa difaktorisasi dalam perkalian tensor dan <span class="math display">\[|\psi\rangle_{ABC} \neq |\psi\rangle_A \otimes |\psi\rangle_B \otimes |\psi\rangle_C\]</span></p>
+<p>Keterbelitan Sejati ini terdapat 2 bentuk</p>
+<ul>
+<li><p><strong>Keadaan GHZ (Greenberger-Horne-Zeilinger):</strong> <span class="math display">\[|GHZ\rangle = g_000 |000\rangle + g_000 |111\rangle\]</span></p></li>
+<li><p><strong>Keadaan W:</strong> <span class="math display">\[|W\rangle =  w_100 |100\rangle + w_010 |010\rangle +w_001 |001\rangle\]</span></p></li>
+</ul>
+</div></div>
+</section>
+<section id="representasi-matriks-transformasi-uniter-3-qubit" class="slide level2">
+<h2>Representasi Matriks &amp; Transformasi Uniter 3-Qubit</h2>
+<!-- Berdasarkan dasar representasi matriks basis keadaan:
+$$|0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \quad \text{dan} \quad |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$$ -->
+<div class="columns">
+<div class="column fragment" style="width:35%;">
+<h3 id="representasi-vektor">Representasi Vektor</h3>
+<p>Dari bentuk 3 Qubit tadi</p>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[|\psi\rangle_{ABC} = c_{000}|000\rangle + c_{001}|001\rangle + \dots + c_{111}|111\rangle\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+|\psi\rangle_{ABC} = \begin{pmatrix}
+c_{000} \\ c_{001} \\ c_{010} \\ c_{011} \\
+c_{100} \\ c_{101} \\ c_{110} \\ c_{111}
 \end{pmatrix}
 \]</span></p>
 </div>
-</div><!-- KOLOM 2 (KANAN): Berisi Kotak Kartu Sistem 2-Qubit & 3-Qubit --><div class="column" style="text-align: left;">
-<p><strong>Sistem 2-Qubit</strong></p>
-<div class="fragment card success-box" style="padding: 1em; text-align: center; margin-top: 0.2em; margin-bottom: 0.8em;">
-<p><span class="math display">\[|\psi\rangle = \sum_{i,j \in \{0,1\}} \alpha_{ij}|ij\rangle \rightarrow \sum_{i,j} |\alpha_{ij}|^2 = 1\]</span></p>
 </div>
-<p><strong>Sistem 3-Qubit</strong></p>
-<div class="fragment card info-box" style="padding: 1em; text-align: center; margin-top: 0.2em;">
-<p><span class="math display">\[|\psi\rangle = \sum_{i,j,k \in \{0,1\}} \alpha_{ijk}|ijk\rangle \rightarrow \sum_{i,j,k} |\alpha_{ijk}|^2 = 1\]</span></p>
+<div class="fragment">
+<p>Membentuk basis paling sederhana <span class="math inline">\(|000\rangle\)</span> menuju keadaan <span class="math inline">\(|\psi\rangle_{ABC}\)</span> melalui matriks transformasi <span class="math inline">\(M\)</span> berukuran <span class="math inline">\(8 \times 8\)</span>: <span class="math display">\[|\psi\rangle_{ABC} = M |000\rangle\]</span></p>
+</div>
+</div><div class="column fragment" style="width:65%;">
+<h3 id="jenis-matriks">Jenis Matriks</h3>
+<p>Berdasarkan syarat normalisasi :</p>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[
+\begin{align*}
+\langle\psi|\psi\rangle_{ABC} &amp;= 1\\
+\langle000| M^\dagger M |000\rangle &amp;= 1\\
+\end{align*}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align*}
+\langle\psi|\psi\rangle_{ABC} &amp;= 1\\
+\langle000| \boxed{M^\dagger M} |000\rangle &amp;= 1\\
+\end{align*}
+\]</span></p>
+</div>
+</div>
+<p>didapatkan <span class="math inline">\(M^\dagger M = I\)</span> dengan Matriks <span class="math inline">\(M\)</span> uniter yang dapat di modelkan dari grup lie <span class="math inline">\(SU(N)\)</span></p>
+<div class="columns" style="display: flex; justify-content: space-between;">
+<div class="column fragment card info-box" style="text-align: left;">
+<div class="fragment strike">
+<p><span class="math display">\[ M=SU(8) \]</span></p>
+</div>
+<div class="fragment strike">
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p>Terlalu banyak parameter (63 Parameter)</p>
+</div>
+</div><div class="column fragment card success-box" style="text-align: left;">
+<div class="fragment strike">
+<p><span class="math display">\[ M=SU(2) \otimes SU(2)\\
+\otimes SU(2)\]</span></p>
+</div>
+<div class="fragment strike">
+<p><span class="math display">\[\Downarrow\]</span> Selalu menghasilkan keadaan yang terpisah</p>
+</div>
+</div><div class="column fragment card warning-box" style="text-align: left;">
+<div class="fragment">
+<p><span class="math display">\[ M=SU(4) \otimes SU(2)\\
+M=SU(2) \otimes SU(4)\]</span></p>
+</div>
+<div class="fragment">
+<div class="fragment grow">
+<p><span class="math display">\[\Downarrow\]</span> dapat menghasilkan keadaan 3 qubit dengan semua jenis keterbelitannya</p>
+</div>
 </div>
 </div></div>
-<!-- ## Perbedaan dengan Komputer Klasik {auto-animate=true}
+<!-- ::: {.fragment}
+Agar persamaan di atas selalu terpenuhi untuk setiap keadaan basis kuantum, maka bagian matriks di tengah wajib bernilai identitas ($\mathbf{I}$):
+$$M^\dagger M = I \quad \rightarrow \quad M^\dagger = M^{-1}$$
 
-Komputer harian (laptop/PC) bekerja dengan sistem digital yang menggunakan miliaran transistor. Di dalamnya, elektron bekerja secara kolektif:
-
-::: {#computer-diff data-id="classic-vs-quantum"}
-$$\text{Arus Listrik Macroscopic (Kolektif)}$$
-:::
-
-## Perbedaan dengan Komputer Klasik {auto-animate=true}
-
-Komputer harian (laptop/PC) bekerja dengan sistem digital yang menggunakan miliaran transistor. Sedangkan komputer kuantum bekerja pada level individual:
-
-::: {#computer-diff data-id="classic-vs-quantum"}
-$$\text{Sifat Individual Elektron (Quantum Scale)}$$
-:::
-
----
-
-## Penerapan Spin pada Qubit {auto-animate=true}
-
-*Spin* (gerak berputar) elektron menjadi representasi fisik dari qubit. Keadaan *spin up* dan *spin down* diwakili oleh keadaan basis:
-
-::: {#spin-display data-id="spin-transform"}
-$$|0\rangle \quad \text{dan} \quad |1\rangle$$
+Matriks transformasi $M$ berukuran $8 \times 8$ harus berupa **Matriks Uniter**.
 ::: -->
+</div></div>
 </section>
-<section id="definisi-formal-keterbelitan" class="slide level2">
-<h2>Definisi Formal Keterbelitan</h2>
-<p>Keadaan kuantum gabungan <span class="math inline">\(|\Psi\rangle\)</span> dikatakan <strong>terbelit</strong> jika ia <strong>tidak dapat didekomposisi</strong> menjadi perkalian Kronecker (<span class="math inline">\(\otimes\)</span>) dari keadaan masing-masing qubit penyusunnya. Pada bentuk 2-Qubit</p>
+<section id="tujuan" class="slide level2">
+<h2>Tujuan</h2>
+<ul>
+<li>Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit dengan kombinasi Grup Lie <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> beserta generatornya.</li>
+<li>Menganalisis mekanisme pembentukan keterbelitan yang dihasilkan oleh operator <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> melalui representasi ekponensial terhadap keadaan awal <span class="math inline">\(|000\rangle\)</span>.</li>
+<li>Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit menggunakan entropi von Neumann dari matriks densitas tereduksi.</li>
+</ul>
+</section>
+<section id="dasar-teori-grup-grup-diskrit" class="slide level2">
+<h2>Dasar Teori Grup &amp; Grup Diskrit</h2>
+<p>Sebelum masuk ke Grup Lie (kontinu), sebuah himpunan <span class="math inline">\(G\)</span> dengan operasi grup <span class="math inline">\(*\)</span> harus memenuhi aksioma formal grup:</p>
 <div class="columns" style="display: flex; justify-content: space-between;">
-<div class="column fragment" style="width:48%;">
-<p><strong>Keadaan Terpisahkan (<em>Separable State</em>)</strong></p>
-<p>State yang dapat ditulis sebagai hasil kali langsung:</p>
+<!-- KOLOM KIRI: 4 Syarat / Aksioma Grup --><div class="column fragment" style="text-align: left;">
+<p><strong>4 Aksioma Utama Grup</strong> <span class="math inline">\((G, *)\)</span></p>
+<ul>
+<li><strong>Penutupan (<em>Closure</em>):</strong> Untuk setiap <span class="math inline">\(a, b \in G\)</span>, maka hasil <span class="math inline">\(a * b \in G\)</span>.</li>
+<li><strong>Asosiatif:</strong> Untuk setiap <span class="math inline">\(a, b, c \in G\)</span>, berlaku: <span class="math display">\[(a * b) * c = a * (b * c)\]</span></li>
+<li><strong>Elemen Identitas (</strong><span class="math inline">\(e\)</span>): Terdapat <span class="math inline">\(e \in G\)</span> sedemikian rupa sehingga untuk setiap <span class="math inline">\(a \in G\)</span>: <span class="math display">\[a * e = e * a = a\]</span></li>
+<li><strong>Elemen Invers (</strong><span class="math inline">\(a^{-1}\)</span>): Untuk setiap <span class="math inline">\(a \in G\)</span>, terdapat <span class="math inline">\(a^{-1} \in G\)</span> sehingga: <span class="math display">\[a * a^{-1} = a^{-1} * a = e\]</span></li>
+</ul>
+</div><!-- KOLOM KANAN: Contoh Grup Diskrit --><div class="column fragment" style="text-align: left;">
+<p><strong>Grup Diskrit</strong></p>
+<p>Contoh grup diskrit terhadap operasi perkalian bilangan kompleks.</p>
+<ul>
+<li>Grup <span class="math inline">\(\mu_4\)</span></li>
+</ul>
+<p><span class="math display">\[\mu_4 = \{1, i, -1, -i\}\]</span></p>
+<ul>
+<li>Grup <span class="math inline">\(\mu_2\)</span></li>
+</ul>
+<p><span class="math display">\[\mu_2 = \{1, -1\}\]</span></p>
+<p>Terlihat bahwa:</p>
+<p><span class="math display">\[\mu_2 \subset \mu_4 \iff \{1, -1\} \subset \{1, i, -1, -i\}\]</span></p>
+</div></div>
+</section>
+<section id="grup-lie-dan-generator" class="slide level2">
+<h2>Grup Lie dan Generator</h2>
+<p>Operasi pada sistem kuantum merupakan <strong>transformasi kontinu</strong> yang dimodelkan oleh <strong>Grup Lie</strong>, sedangkan arah transformasi infinitesimalnya dijelaskan oleh <strong>generator</strong> pada aljabar Lie.</p>
+<div class="columns" style="display: flex; justify-content: space-between;">
+<!-- KOLOM KIRI --><div class="column fragment" style="text-align: left;">
+<h3 id="pemetaan-eksponensial">Pemetaan Eksponensial</h3>
+<p>Setiap elemen Grup Lie dapat dinyatakan sebagai</p>
 <div class="card success-box">
-<p><span class="math display">\[|\Psi\rangle = |\psi_A\rangle \otimes |\psi_B\rangle\]</span></p>
+<p><span class="math display">\[U(\theta_1,\theta_2,\ldots,\theta_n)
+=
+\exp\!\left(
+-i\sum_{k}\theta_k G_k
+\right),\]</span></p>
 </div>
-<p><strong>Keadaan Terbelit (<em>Entangled State</em>)</strong></p>
-<p>State yang melanggar kondisi faktorisasi:</p>
+<!-- dengan
+
+- $\theta_k$ : parameter kontinu,
+- $G_k$ : generator aljabar Lie,
+- $U(\boldsymbol{\theta})$ : elemen Grup Lie. -->
+<!-- <br> -->
+<!-- ### Aljabar Lie -->
+<p>Generator-generator memenuhi relasi al-jabar :</p>
 <div class="card quantum-box">
-<p><span class="math display">\[|\Psi\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle\]</span></p>
+<p><span class="math display">\[[G_i,G_j]
+=
+G_iG_j-G_jG_i
+=
+\sum_k c_{ij}^{\,k}G_k,\]</span></p>
 </div>
-</div><div class="column fragment" style="width:48%;">
+<p>dengan <span class="math inline">\(c_{ij}^{\,k}\)</span> merupakan <strong>konstanta struktur</strong> (<em>structure constants</em>).</p>
+</div><!-- KOLOM KANAN --><div class="column fragment" style="text-align: left;">
 
 </div></div>
 </section>
-<section id="keterbelitan-pada-sistem-2-qubit" class="slide level2">
-<h2>Keterbelitan pada Sistem 2-Qubit</h2>
-<p>Contoh keterbelitan state Bell:</p>
-<div class="card quantum-box">
-<p><span class="math display">\[|\Phi^+\rangle = \frac{|00\rangle+|11\rangle}{\sqrt2}\]</span></p>
-</div>
+<section class="slide level2">
+
+<h3 id="grup-ortogonal-o2-dan-so2">Grup Ortogonal <span class="math inline">\(O(2)\)</span> dan <span class="math inline">\(SO(2)\)</span></h3>
 <div class="columns" style="display: flex; justify-content: space-between;">
-<div class="column fragment" style="width:48%;">
-<p>Misalkan <em>state</em> tersebut diasumsikan bersifat <strong>separable</strong>:</p>
-<p><span class="math display">\[|\Phi^+\rangle = |\psi_A\rangle \otimes |\psi_B\rangle\]</span></p>
-<p>dengan definisi keadaan masing-masing qubit adalah:</p>
-<p><span class="math display">\[|\psi_A\rangle = a|0\rangle+b|1\rangle\]</span> <span class="math display">\[|\psi_B\rangle = c|0\rangle+d|1\rangle\]</span> diperoleh sistem persamaan <span class="math display">\[\begin{aligned}
-ac &amp;= \frac1{\sqrt2}, ad = 0\\
-bc &amp;= 0,bd = \frac1{\sqrt2}
-\end{aligned}\]</span></p>
-</div><div class="column fragment" style="width:48%;">
+<!-- KOLOM KIRI --><div class="column" style="text-align: left;">
+<p><span class="math display">\[\boxed{OO^T = I}\]</span></p>
 <div class="fragment fade-up">
-<div class="card success-box">
-<p>Kontradiksi dari persamaan koefisien ini menunjukkan : <span class="math display">\[\boxed{|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle}\]</span></p>
+<p><span class="math display">\[O = \begin{pmatrix}
+    a_{11} &amp; a_{12} \\
+    a_{21} &amp; a_{22}
+\end{pmatrix} \rightarrow \text{4 parameter riil}\]</span></p>
 </div>
-</div>
-</div></div>
 <div class="fragment fade-up">
-<p><br> Dari hasil pengujian matematis di atas, terbukti secara formal bahwa:</p>
-<div class="card quantum-box">
-<p><span class="math display">\[|\Phi^+\rangle \neq |\psi_A\rangle \otimes |\psi_B\rangle\]</span></p>
+<p><span class="math display">\[\Downarrow \boxed{OO^T = I}\]</span></p>
 </div>
+<div class="fragment fade-up">
+<p><span class="math display">\[\underbrace{O = \begin{pmatrix}
+    \cos\alpha &amp; \sin\alpha \\
+    -\sin\alpha  &amp; \cos\alpha
+\end{pmatrix}}_{3 \text{ parameter riil}} \xrightarrow{\det O = 1} \underbrace{O = \begin{pmatrix}
+    \cos\alpha &amp; \sin\alpha \\
+    -\sin\alpha  &amp; \cos\alpha
+\end{pmatrix} }_{3 \text{ parameter riil}}\]</span></p>
+</div>
+<div class="fragment fade-up">
+<p><span class="math display">\[\Downarrow \boxed{\text{dalam bentuk eksponensial}}\]</span></p>
+</div>
+<div class="fragment fade-in">
+<div class="fragment grow">
+<p><span class="math display">\[O(\alpha) = e^{\alpha G}, \quad
+G = \begin{pmatrix}
+    0 &amp; -1 \\
+    1 &amp; 0
+\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div><!-- KOLOM KANAN --><div class="column fragment" style="text-align: left;">
+<p>untuk dimensi lebih tinggi, misal <span class="math inline">\(3\times 3\)</span>, maka matriks rotasi dapat dinyatakan sebagai rotasi pada bidang-bidang tertentu, misal:</p>
+<div class="r-stack">
+<!-- Matriks pertama muncul -->
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[O_{12}(\phi) = \begin{pmatrix} \cos\phi &amp; \sin\phi &amp; 0 \\ -\sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \]</span> dengan generator <span class="math display">\[ G_{12} = \begin{pmatrix}
+    0 &amp; 1 &amp; 0 \\
+   -1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0
+\end{pmatrix}\]</span></p>
+</div>
+<!-- Matriks kedua muncul menggantikan yang pertama -->
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[O_{13}(\theta) = \begin{pmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{pmatrix} \]</span> dengan generator <span class="math display">\[ G_{13} = \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 0 &amp; 0 \\
+   -1 &amp; 0 &amp; 0
+\end{pmatrix}\]</span></p>
+</div>
+<!-- Matriks ketiga muncul -->
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[O_{23}(\psi) = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\psi &amp; \sin\psi \\ 0 &amp; -\sin\psi &amp; \cos\psi \end{pmatrix} \]</span> dengan generator <span class="math display">\[
+G_{23} = \begin{pmatrix}
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; -1 &amp; 0
+\end{pmatrix}\]</span></p>
+</div>
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[\begin{align}
+O(\phi,\theta,\psi) &amp;= O_{12}(\phi) O_{13}(\theta) O_{23}(\psi)\\
+                    &amp;=\begin{pmatrix} \cos\phi &amp; \sin\phi &amp; 0 \\ -\sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{pmatrix}\\
+                    &amp;\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\psi &amp; \sin\psi \\ 0 &amp; -\sin\psi &amp; \cos\psi \end{pmatrix}\\
+\end{align}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\boxed{O(\phi,\theta,\psi) =  e^{\phi \cdot G_{12}} e^{\theta \cdot G_{13}} e^{\psi \cdot G_{23}}}\]</span></p>
+</div>
+</div>
+<div class="fragment fade-up">
 <blockquote>
-<p>Karena tidak dapat dinyatakan sebagai hasil perkalian tensor dari masing-masing keadaan penyusunnya, maka Bell State merupakan salah satu bentuk <strong>Entangled State</strong> (Keadaan Terbelit) yang murni.</p>
+<p>Ketiga generator ini memenuhi relasi komutasi komutator: <span class="math inline">\([G_{12}, G_{23}] = 2G_{13}\)</span>.</p>
 </blockquote>
 </div>
+</div></div>
 </section>
-<section id="keterbelitan-pada-sistem-3-qubit" class="slide level2">
-<h2>Keterbelitan pada Sistem 3-Qubit</h2>
+<section class="slide level2">
+
+<h3 id="grup-unitary-u2-dan-su2">Grup Unitary <span class="math inline">\(U(2)\)</span> dan <span class="math inline">\(SU(2)\)</span></h3>
 <div class="columns" style="display: flex; justify-content: space-between;">
-<div class="column" style="width:48%;">
-<p><strong>Keadaan GHZ</strong></p>
-<div class="card quantum-box">
-<p><span class="math display">\[
-|GHZ\rangle
-=
-\frac1{\sqrt2}
-(|000\rangle+|111\rangle)
-\]</span></p>
+<!-- KOLOM KIRI: ALUR DERIVASI MATRIKS --><div class="column" style="text-align: left;">
+<p><span class="math display">\[\boxed{U^\dagger U=I \text{ dan } U U^\dagger =I,\; \det(U)=1}\]</span></p>
+<div class="fragment fade-up">
+<p><span class="math display">\[\underbrace{U = \begin{pmatrix}
+    a_{1}e^{i\alpha_{1}} &amp; a_{2}e^{i\alpha_{2}} \\
+    b_{1}e^{i\beta_{1}}  &amp; b_{2}e^{i\beta_{2}}
+\end{pmatrix}}_{U(2)} \rightarrow \text{8 parameter riil}\]</span></p>
 </div>
-<p>Jika diasumsikan separabel,</p>
-<p><span class="math display">\[
-|\psi\rangle=|\psi_A\rangle
-\otimes
-|\psi_B\rangle
-\otimes
-|\psi_C\rangle\]</span></p>
-<p><span class="math display">\[
-|\psi\rangle =
-(a|0\rangle+b|1\rangle)
-(c|0\rangle+d|1\rangle)
-(e|0\rangle+f|1\rangle)
-\]</span></p>
-<p>maka</p>
-<p><span class="math display">\[
-ace=\frac1{\sqrt2},
-\qquad
-bdf=\frac1{\sqrt2},
-\]</span></p>
-<p>tetapi juga harus memenuhi</p>
-<p><span class="math display">\[
-acf=ade=\cdots=bde=0.
-\]</span></p>
-</div><div class="column fragment" style="width:48%;">
-<p>Karena <span class="math inline">\(ace\neq0\)</span> dan <span class="math inline">\(bdf\neq0\)</span>, maka <span class="math inline">\(a,b,c,d,e,f\neq0\)</span>, yang menyebabkan <span class="math inline">\(acf\neq0\)</span>.</p>
-<div class="card warning-box">
-<p><strong>Kontradiksi.</strong></p>
-<p>Sehingga</p>
-<p><span class="math display">\[
-\boxed{|GHZ\rangle
-\neq
-|\psi_A\rangle
-\otimes
-|\psi_B\rangle
-\otimes
-|\psi_C\rangle}.
-\]</span></p>
+<div class="fragment fade-up">
+<p><span class="math display">\[\Downarrow \boxed{U^\dagger U=I \text{ dan } U U^\dagger =I}\]</span></p>
+</div>
+<div class="fragment fade-up">
+<p><span class="math display">\[\underbrace{U =
+\begin{pmatrix}
+    \cos\theta \, e^{i\alpha_1} &amp; \sin\theta \, e^{i\alpha_{2}} \\
+    -\sin\theta \, e^{i\beta_1} &amp; \cos\theta \, e^{i(\alpha_2-\alpha_1+\beta_1)}
+\end{pmatrix}}_{SU(2)} \rightarrow \text{4 parameter riil}\]</span></p>
+</div>
+<div class="fragment fade-up">
+<p><span class="math display">\[\Downarrow \boxed{\det U = 1}\]</span></p>
+</div>
+<div class="fragment fade-in">
+<div class="fragment grow">
+<p><span class="math display">\[\underbrace{U_{SU(2)}
+=
+\begin{pmatrix}
+    \cos\theta \, e^{i\alpha_1}  &amp; \sin\theta \, e^{i\alpha_2} \\
+    -\sin\theta \, e^{-i\alpha_2} &amp; \cos\theta \, e^{-i\alpha_1}
+\end{pmatrix}}_{\text{3 parameter riil}}\]</span></p>
+</div>
+</div>
+</div><!-- KOLOM KANAN: ANIMASI BERGANTI (R-STACK) --><div class="column fragment" style="text-align: left;">
+<!-- TAMPILAN 1: Syarat Grup SU(2) -->
+<h3 id="sifat-grup-su2">Sifat Grup <span class="math inline">\(SU(2)\)</span></h3>
+<!-- TAMPILAN 2: Rotasi Bidang & Generator Satu-Satu -->
+<div class="fragment fade-in">
+<p>untuk dimensi lebih tinggi, matriks kompleks 2 <span class="math inline">\(\times\)</span> 2 dapat dinyatakan sebagai rotasi pada bidang kompleks tertentu, misal:</p>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[U_{12}(\phi) = \begin{pmatrix} \cos\phi &amp; i\sin\phi \\ i\sin\phi &amp; \cos\phi \end{pmatrix}=e^{i\phi \sigma_1} \]</span> dengan generator <span class="math display">\[ \sigma_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</span></p>
+</div>
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[U_{13}(\theta) = \begin{pmatrix} \cos\theta &amp; \sin\theta \\ -\sin\theta &amp; \cos\theta \end{pmatrix}=e^{i\theta \sigma_2} \]</span> dengan generator <span class="math display">\[\sigma_2 = \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}\]</span></p>
+</div>
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[U_{23}(\psi) = \begin{pmatrix} e^{i\psi} &amp; 0 \\ 0 &amp; e^{-i\psi} \end{pmatrix}=e^{i\psi \sigma_3} \]</span> dengan generator <span class="math display">\[ \sigma_3 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\]</span></p>
+</div>
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[\boxed{U_{SU(2)} = e^{i\phi \sigma_1} e^{i\theta \sigma_2} e^{i\psi \sigma_3}}\]</span></p>
+</div>
+<div class="fragment fade-in-then-out">
+<p><span class="math display">\[\boxed{U_{SU(2)} = e^{i(\alpha_1 \sigma_1+\alpha_2\sigma_2+\alpha_3 \sigma_3)}}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\boxed{U_{SU(2)} = e^{i \beta_1 \sigma_z} e^{i \beta_2 \sigma_y} e^{i \beta_3 \sigma_z}}\]</span></p>
+</div>
+</div>
+<div class="fragment fade-up">
+<blockquote>
+<p>Ketiga generator ini tidak lain adalah matriks pauli yang memenuhi relasi komutasi komutator: <span class="math inline">\([\sigma_i, \sigma_j] = 2i \epsilon_{ijk} \sigma_k\)</span> dengan <span class="math inline">\(\epsilon\)</span> adalah konstanta permutasi ganjil.</p>
+</blockquote>
+</div>
 </div>
 </div></div>
 </section>
-<section id="matriks-densitas-dan-reduksi-parsial" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Matriks Densitas dan Reduksi Parsial</h2>
+<section class="slide level2">
+
+<h3 id="representasi-eksponensial-su4">Representasi Eksponensial <span class="math inline">\(SU(4)\)</span></h3>
+<p>Elemen umum dari Grup Lie Kontinu <span class="math inline">\(SU(4)\)</span> dibangun melalui kombinasi linier dari seluruh 15 generator di atas menggunakan pemetaan eksponensial:</p>
+<div class="card quantum-box">
+<p><span class="math display">\[U_{SU(4)}(\boldsymbol{\theta}) = \exp\left( -i \sum_{k=1}^{15} \theta_k \lambda_k \right)\]</span></p>
+</div>
+<p>di mana <span class="math inline">\(\theta_k\)</span> adalah 15 parameter sudut riil kontinu, dan <span class="math inline">\(\lambda_k\)</span> membentuk Aljabar Lie <span class="math inline">\(\mathfrak{su}(4)\)</span> dengan relasi komutasi:</p>
+<p><span class="math display">\[[\lambda_i, \lambda_j] = 2i \sum_{k=1}^{15} f_{ijk} \lambda_k\]</span></p>
+</section>
+<section class="slide level2">
+
+<h3 id="generator-grup-su4">Generator Grup <span class="math inline">\(SU(4)\)</span></h3>
+<p>Generator standar <span class="math inline">\(\lambda_k\)</span> (<span class="math inline">\(k=1, \dots, 15\)</span>) disajikan sebagai berikut:</p>
+<div class="r-stack">
+<div class="fragment fade-out">
+<p><span class="math display">\[\begin{aligned}
+\lambda_1 &amp;= \begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_2 &amp;= \begin{pmatrix} 0 &amp; -i &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_3 &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \\
+\lambda_4 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_5 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; -i &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_6 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \\
+\lambda_7 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -i &amp; 0 \\ 0 &amp; i &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_8 &amp;= \frac{1}{\sqrt{3}}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}
+\end{aligned}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\begin{aligned}
+\lambda_9 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_{10} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_{11} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix} \\
+\lambda_{12} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; i &amp; 0 &amp; 0 \end{pmatrix}, &amp;
+\lambda_{13} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix}, &amp;
+\lambda_{14} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; i &amp; 0 \end{pmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math display">\[\lambda_{15} = \frac{1}{\sqrt{6}}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -3 \end{pmatrix}\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="parametrisasi-su4-via-penyisipan-su2">Parametrisasi <span class="math inline">\(SU(4)\)</span> via Penyisipan <span class="math inline">\(SU(2)\)</span></h3>
+<p>Konstruksi dilakukan dengan menyisipkan subgroup <span class="math inline">\(SU(2)\)</span> ke dalam 6 matriks uniter elementer dengan parameter 18 riil <span class="math inline">\((\theta_k, \phi_k, \psi_k)\)</span>:</p>
+<p><span class="math display">\[U_{SU(4)} = R_{12}(\theta_6, \phi_6, \psi_6) R_{13}(\theta_5, \phi_5, \psi_5) R_{14}(\theta_4, \phi_4, \psi_4) R_{23}(\theta_3, \phi_3, \psi_3) R_{24}(\theta_2, \phi_2, \psi_2) R_{34}(\theta_1, \phi_1, \psi_1)\]</span></p>
+<p><span class="math display">\[C_j = \cos \theta_j,S_j = \sin \theta_j\]</span></p>
+<div class="r-stack">
+<!-- ::: {.fragment .fade-in-then-out}
+
+**Mekanisme Penyisipan Subgrup $SU(2)$**
+
+Mekanisme pembentukan matriks $R_{ij}$ berukuran $4 \times 4$ di atas dilakukan dengan memetakan elemen matriks transformasi $SU(2)$ berukuran $2 \times 2$:
+$$\begin{pmatrix} C_k e^{i\phi_k} & S_k e^{i\psi_k} \\ -S_k e^{-i\psi_k} & C_k e^{-i\phi_k} \end{pmatrix}$$
+
+Ke dalam entri-entri persilangan indeks baris dan kolom $(i,j)$ dari matriks Identitas $4 \times 4$ ($\mathbb{I}_4$):
+
+- Elemen diagonal ditempatkan pada posisi $(i,i)$ dan $(j,j)$.
+
+- Elemen *off-diagonal* ditempatkan pada posisi $(i,j)$ dan $(j,i)$.
+
+- Posisi diagonal lainnya tetap bernilai $1$, sementara entri sisanya diisi $0$.
+::: -->
+<!-- R12 Muncul -->
+<div class="fragment fade-in-then-out">
+<h4 id="struktur-blok-penyisipan-bidang-12">Struktur Blok Penyisipan Bidang (1,2)</h4>
+<p><span class="math display">\[R_{12} = \begin{pmatrix} C_6 e^{i\phi_6} &amp; S_6 e^{i\psi_6} &amp; 0 &amp; 0 \\ -S_6 e^{-i\psi_6} &amp; C_6 e^{-i\phi_6} &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\]</span></p>
+</div>
+<!-- R13 Muncul menggantikan R12 -->
+<div class="fragment fade-in-then-out">
+<h4 id="struktur-blok-penyisipan-bidang-13">Struktur Blok Penyisipan Bidang (1,3)</h4>
+<p><span class="math display">\[R_{13} = \begin{pmatrix} C_5 e^{i\phi_5} &amp; 0 &amp; S_5 e^{i\psi_5} &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ -S_5 e^{-i\psi_5} &amp; 0 &amp; C_5 e^{-i\phi_5} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\]</span></p>
+</div>
+<!-- R14 Muncul menggantikan R13 -->
+<div class="fragment fade-in-then-out">
+<h4 id="struktur-blok-penyisipan-bidang-14">Struktur Blok Penyisipan Bidang (1,4)</h4>
+<p><span class="math display">\[R_{14} = \begin{pmatrix} C_4 e^{i\phi_4} &amp; 0 &amp; 0 &amp; S_4 e^{i\psi_4} \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -S_4 e^{-i\psi_4} &amp; 0 &amp; 0 &amp; C_4 e^{-i\phi_4} \end{pmatrix}\]</span></p>
+</div>
+<!-- R23 Muncul menggantikan R14 -->
+<div class="fragment fade-in-then-out">
+<h4 id="struktur-blok-penyisipan-bidang-23">Struktur Blok Penyisipan Bidang (2,3)</h4>
+<p><span class="math display">\[R_{23} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; C_3 e^{i\phi_3} &amp; S_3 e^{i\psi_3} &amp; 0 \\ 0 &amp; -S_3 e^{-i\psi_3} &amp; C_3 e^{-i\phi_3} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}\]</span></p>
+</div>
+<!-- R24 Muncul menggantikan R23 -->
+<div class="fragment fade-in-then-out">
+<h4 id="struktur-blok-penyisipan-bidang-24">Struktur Blok Penyisipan Bidang (2,4)</h4>
+<p><span class="math display">\[R_{24} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; C_2 e^{i\phi_2} &amp; 0 &amp; S_2 e^{i\psi_2} \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; -S_2 e^{-i\psi_2} &amp; 0 &amp; C_2 e^{-i\phi_2} \end{pmatrix}\]</span></p>
+</div>
+<!-- R34 Muncul terakhir menggantikan R24 -->
+<div class="fragment">
+<h4 id="struktur-blok-penyisipan-bidang-34">Struktur Blok Penyisipan Bidang (3,4)</h4>
+<p><span class="math display">\[R_{34} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; C_1 e^{i\phi_1} &amp; S_1 e^{i\psi_1} \\ 0 &amp; 0 &amp; -S_1 e^{-i\psi_1} &amp; C_1 e^{-i\phi_1} \end{pmatrix}\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="hasil-dekomposisi-eksponensial-su4">Hasil Dekomposisi Eksponensial <span class="math inline">\(SU(4)\)</span></h3>
+<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi eksponensial baru dengan (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2,\lambda_2, \lambda_3, \cdots, \lambda_{13}, \lambda_{14}\)</span>) dan menghasilkan 15 parameter:</p>
+<div class="r-stack">
+<div class="fragment fade-out">
+<p><span class="math display">\[\boxed{
+\begin{align}
+U_{SU(4)} =\;&amp; \exp\!\left(i\,\theta_6\bigl[\cos\tilde{\phi}_{12}\,\lambda_2 + \sin\tilde{\phi}_{12}\,\lambda_1\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_5\bigl[\cos\tilde{\phi}_{13}\,\lambda_5 + \sin\tilde{\phi}_{13}\,\lambda_4\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_4\bigl[\cos\tilde{\phi}_{14}\,\lambda_{10} + \sin\tilde{\phi}_{14}\,\lambda_9\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_3\bigl[\cos\tilde{\phi}_{23}\,\lambda_7 + \sin\tilde{\phi}_{23}\,\lambda_6\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_2\bigl[\cos\tilde{\phi}_{24}\,\lambda_{12} + \sin\tilde{\phi}_{24}\,\lambda_{11}\bigr]\right) \notag \\
+&amp;\cdot\exp\!\left(i\,\theta_1\bigl[\cos\tilde{\phi}_{34}\,\lambda_{14} + \sin\tilde{\phi}_{34}\,\lambda_{13}\bigr]\right) \notag \\
+&amp;\cdot \exp\left[
+i\left(
+\Phi_1\lambda_3
++
+\Phi_2\lambda_8
++
+\Phi_3\lambda_{15}
+\right)\right].
+\label{eq:USU4_exp}
+\end{align}
+}\]</span></p>
+</div>
+<div class="fragment success-box">
+<p><span class="math display">\[
+\begin{align}
+U_{SU(4)} &amp;=
+e^{i\lambda_3\alpha_1}
+e^{i\lambda_2\alpha_2}
+e^{i\lambda_3\alpha_3}
+e^{i\lambda_5\alpha_4}
+e^{i\lambda_3\alpha_5}
+e^{i\lambda_{10}\alpha_6}
+e^{i\lambda_3\alpha_7}
+e^{i\lambda_2\alpha_8}
+e^{i\lambda_3\alpha_9}
+e^{i\lambda_5\alpha_{10}}
+e^{i\lambda_3\alpha_{11}}
+e^{i\lambda_2\alpha_{12}}\\
+&amp;
+e^{i\lambda_3\alpha_{13}}
+e^{i\lambda_8\alpha_{14}}
+e^{i\lambda_{15}\alpha_{15}}\\
+\end{align}
+\]</span> dan bentuk ini didapatkan dari (Tilma et al., 2002) dengan 15 parameter <span class="math inline">\(\alpha_k\)</span> yang merupakan kombinasi linier dari 18 parameter <span class="math inline">\((\theta_k, \phi_k, \psi_k)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-dan-trace-tereduksi" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Matriks Densitas dan Trace Tereduksi</h2>
 <p>Untuk keadaan murni tiga qubit</p>
 <p><span class="math display">\[
 |\psi\rangle
 =
-\sum_{i,j,k=0}^{1}
-c_{ijk}|ijk\rangle,
+\sum_{i_1,i_2 \cdots i_n =0}^{1}
+c_{i_1,i_2 \cdots i_n}|i_1,i_2 \cdots i_n\rangle,
 \qquad
-\sum_{i,j,k=0}^{1}|c_{ijk}|^2=1,
+\sum_{i_1,i_2 \cdots i_n=0}^{1}|c_{i_1,i_2 \cdots i_n}|^2=1,
 \]</span></p>
 <p>matriks densitas didefinisikan sebagai</p>
 <p><span class="math display">\[
 \rho=|\psi\rangle\langle\psi|.
 \]</span></p>
-<div class="columns">
-<div class="column fragment" style="width:38%;">
-<h3 id="matriks-densitas">Matriks Densitas</h3>
+<p>beberapa sifat properti matematis <span class="math inline">\(\rho\)</span> ini adalah</p>
 <ul>
-<li><p><span class="math inline">\(\rho\)</span> berukuran <span class="math inline">\(8\times8\)</span>.</p></li>
-<li><p>Bersifat Hermitian,</p></li>
+<li>Bersifat Hermitian,</li>
 </ul>
 <p><span class="math display">\[
 \rho^\dagger=\rho.
@@ -553,45 +913,28 @@ c_{ijk}|ijk\rangle,
 <p><span class="math display">\[
 \mathrm{Tr}(\rho)=1.
 \]</span></p>
-</div><div class="column fragment" style="width:62%;">
-<h3 id="reduksi-parsial">Reduksi Parsial</h3>
-<p>Reduksi terhadap salah satu qubit menghasilkan matriks densitas dua qubit</p>
-<p><span class="math display">\[
-\rho_{12}
-=
-\mathrm{Tr}_3(\rho),
-\]</span></p>
-<p><span class="math display">\[
-\rho_{13}
-=
-\mathrm{Tr}_2(\rho),
-\]</span></p>
-<p><span class="math display">\[
-\rho_{23}
-=
-\mathrm{Tr}_1(\rho).
-\]</span></p>
-<p>Sebagai contoh,</p>
-<p><span class="math display">\[
-\rho_{12}
-=
-\sum_{k=0}^{1}
-(\mathbb I\otimes\mathbb I\otimes\langle k|)
-\,\rho\,
-(\mathbb I\otimes\mathbb I\otimes|k\rangle).
-\]</span></p>
-<p>Hasil reduksi memenuhi</p>
-<p><span class="math display">\[
-\rho_{ij}\in\mathbb C^{4\times4}.
-\]</span></p>
-</div></div>
 </section>
 <section id="matriks-densitas-tereduksi" class="slide level2">
 <h2>Matriks Densitas Tereduksi</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="matriks-densitas-tereduksi-dua-qubit">Matriks Densitas Tereduksi Dua Qubit</h3>
-<p>Reduksi parsial terhadap satu qubit menghasilkan</p>
+<p>Reduksi parsial menjadi 2-Qubit menghasilkan</p>
+<div class="fragment">
+<p><span class="math display">\[
+\rho_{12} = \operatorname{Tr}_{3}(\rho)
+\]</span></p>
+<p><span class="math display">\[
+\rho_{13} = \operatorname{Tr}_{2}(\rho)
+\]</span></p>
+<p><span class="math display">\[
+\rho_{23} = \operatorname{Tr}_{1}(\rho)
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Secara eksplisit bentuk diatas adalah:</p>
+</div>
+<div class="fragment">
 <p><span class="math display">\[
 \rho_{12}
 =
@@ -622,55 +965,35 @@ c_{ijk}|ijk\rangle,
 \,\rho\,
 (|k\rangle\otimes\mathbb I\otimes\mathbb I).
 \]</span></p>
+</div>
 </div><div class="column" style="width:50%;">
 <h3 id="matriks-densitas-tereduksi-satu-qubit">Matriks Densitas Tereduksi Satu Qubit</h3>
-<p>Selanjutnya dilakukan reduksi kembali sehingga diperoleh</p>
+<p>Reduksi parsial menjadi 1-Qubit menghasilkan</p>
+<div class="fragment">
 <p><span class="math display">\[
-\rho_{1}
-=
-\mathrm{Tr}_{2}(\rho_{12})
-=
-\mathrm{Tr}_{3}(\rho_{13}).
+\rho_{1} = \operatorname{Tr}_{23}(\rho)
 \]</span></p>
 <p><span class="math display">\[
-\rho_{2}
-=
-\mathrm{Tr}_{1}(\rho_{12})
-=
-\mathrm{Tr}_{3}(\rho_{23}).
+\rho_{2} = \operatorname{Tr}_{13}(\rho)
 \]</span></p>
 <p><span class="math display">\[
-\rho_{3}
-=
-\mathrm{Tr}_{1}(\rho_{13})
-=
-\mathrm{Tr}_{2}(\rho_{23}).
+\rho_{3} = \operatorname{Tr}_{12}(\rho)
 \]</span></p>
-<p>Secara eksplisit,</p>
+</div>
+<div class="fragment">
+<p>Secara eksplisit bentuk diatas adalah:</p>
+</div>
+<div class="fragment">
 <p><span class="math display">\[
-\rho_{1}
-=
-\sum_{p=0}^{1}
-(\mathbb I\otimes\langle p|)
-\,\rho_{12}\,
-(\mathbb I\otimes|p\rangle).
+\rho_{1} = \sum_{p=0}^{1} \sum_{q=0}^{1} (\mathbb{I} \otimes \langle p| \otimes \langle q|) \, \rho \, (\mathbb{I} \otimes |p\rangle \otimes |q\rangle)
 \]</span></p>
 <p><span class="math display">\[
-\rho_{2}
-=
-\sum_{q=0}^{1}
-(\langle q|\otimes\mathbb I)
-\,\rho_{12}\,
-(|q\rangle\otimes\mathbb I).
+\rho_{2} = \sum_{p=0}^{1} \sum_{r=0}^{1} (\langle p| \otimes \mathbb{I} \otimes \langle r|) \, \rho \, (|p\rangle \otimes \mathbb{I} \otimes |r\rangle)
 \]</span></p>
 <p><span class="math display">\[
-\rho_{3}
-=
-\sum_{r=0}^{1}
-(\langle r|\otimes\mathbb I)
-\,\rho_{13}\,
-(|r\rangle\otimes\mathbb I).
+\rho_{3} = \sum_{q=0}^{1} \sum_{r=0}^{1} (\langle q| \otimes \langle r| \otimes \mathbb{I}) \, \rho \, (|q\rangle \otimes |r\rangle \otimes \mathbb{I})
 \]</span></p>
+</div>
 </div></div>
 </section>
 <section id="entropi-von-neumann" class="slide level2">
@@ -749,378 +1072,6 @@ S(\rho_i)
 </table>
 <!-- : Nilai kriteria entropi von Neumann untuk klasifikasi keadaan kuantum {#tbl-entropi-qubit} -->
 </div></div>
-</section>
-<section id="dasar-teori-grup-grup-diskrit" class="slide level2">
-<h2>Dasar Teori Grup &amp; Grup Diskrit</h2>
-<p>Sebelum masuk ke Grup Lie (kontinu), sebuah himpunan <span class="math inline">\(G\)</span> dengan operasi grup <span class="math inline">\(*\)</span> harus memenuhi aksioma formal grup:</p>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<!-- KOLOM KIRI: 4 Syarat / Aksioma Grup --><div class="column fragment" style="text-align: left;">
-<p><strong>4 Aksioma Utama Grup</strong> <span class="math inline">\((G, *)\)</span></p>
-<ul>
-<li><strong>Penutupan (<em>Closure</em>):</strong> Untuk setiap <span class="math inline">\(a, b \in G\)</span>, maka hasil <span class="math inline">\(a * b \in G\)</span>.</li>
-<li><strong>Asosiatif:</strong> Untuk setiap <span class="math inline">\(a, b, c \in G\)</span>, berlaku: <span class="math display">\[(a * b) * c = a * (b * c)\]</span></li>
-<li><strong>Elemen Identitas (</strong><span class="math inline">\(e\)</span>): Terdapat <span class="math inline">\(e \in G\)</span> sedemikian rupa sehingga untuk setiap <span class="math inline">\(a \in G\)</span>: <span class="math display">\[a * e = e * a = a\]</span></li>
-<li><strong>Elemen Invers (</strong><span class="math inline">\(a^{-1}\)</span>): Untuk setiap <span class="math inline">\(a \in G\)</span>, terdapat <span class="math inline">\(a^{-1} \in G\)</span> sehingga: <span class="math display">\[a * a^{-1} = a^{-1} * a = e\]</span></li>
-</ul>
-</div><!-- KOLOM KANAN: Contoh Grup Diskrit --><div class="column fragment" style="text-align: left;">
-<p><strong>Grup Diskrit</strong></p>
-<p>Contoh grup diskrit terhadap operasi perkalian bilangan kompleks.</p>
-<ul>
-<li>Grup <span class="math inline">\(\mu_4\)</span></li>
-</ul>
-<p><span class="math display">\[\mu_4 = \{1, i, -1, -i\}\]</span></p>
-<ul>
-<li>Grup <span class="math inline">\(\mu_2\)</span></li>
-</ul>
-<p><span class="math display">\[\mu_2 = \{1, -1\}\]</span></p>
-<p>Terlihat bahwa:</p>
-<p><span class="math display">\[\mu_2 \subset \mu_4 \iff \{1, -1\} \subset \{1, i, -1, -i\}\]</span></p>
-</div></div>
-</section>
-<section id="grup-lie-dan-generator" class="slide level2">
-<h2>Grup Lie dan Generator</h2>
-<p>Operasi pada sistem kuantum merupakan <strong>transformasi kontinu</strong> yang dimodelkan oleh <strong>Grup Lie</strong>, sedangkan arah transformasi infinitesimalnya dijelaskan oleh <strong>generator</strong> pada aljabar Lie.</p>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<!-- KOLOM KIRI --><div class="column fragment" style="text-align: left;">
-<h3 id="pemetaan-eksponensial">Pemetaan Eksponensial</h3>
-<p>Setiap elemen Grup Lie dapat dinyatakan sebagai</p>
-<div class="card success-box">
-<p><span class="math display">\[U(\theta_1,\theta_2,\ldots,\theta_n)
-=
-\exp\!\left(
--i\sum_{k}\theta_k G_k
-\right),\]</span></p>
-</div>
-<!-- dengan
-
-- $\theta_k$ : parameter kontinu,
-- $G_k$ : generator aljabar Lie,
-- $U(\boldsymbol{\theta})$ : elemen Grup Lie. -->
-<!-- <br> -->
-<!-- ### Aljabar Lie -->
-<p>Generator-generator memenuhi relasi al-jabar :</p>
-<div class="card quantum-box">
-<p><span class="math display">\[[G_i,G_j]
-=
-G_iG_j-G_jG_i
-=
-\sum_k c_{ij}^{\,k}G_k,\]</span></p>
-</div>
-<p>dengan <span class="math inline">\(c_{ij}^{\,k}\)</span> merupakan <strong>konstanta struktur</strong> (<em>structure constants</em>).</p>
-</div><!-- KOLOM KANAN --><div class="column fragment" style="text-align: left;">
-
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="grup-ortogonal-o2-dan-so2">Grup Ortogonal <span class="math inline">\(O(2)\)</span> dan <span class="math inline">\(SO(2)\)</span></h3>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<!-- KOLOM KIRI --><div class="column" style="text-align: left;">
-<p><span class="math display">\[\boxed{OO^T = I}\]</span></p>
-<div class="fragment fade-up">
-<p><span class="math display">\[O = \begin{pmatrix}
-    a_{11} &amp; a_{12} \\
-    a_{21} &amp; a_{22}
-\end{pmatrix}\]</span></p>
-</div>
-<div class="fragment fade-up">
-<p><span class="math display">\[\Downarrow \boxed{OO^T = I}\]</span></p>
-</div>
-<div class="fragment fade-up">
-<p><span class="math display">\[\underbrace{O = \begin{pmatrix}
-    \cos\alpha &amp; \sin\alpha \\
-    -\sin\alpha  &amp; \cos\alpha
-\end{pmatrix}}_{O(2)} \xrightarrow{\det O = 1} \underbrace{O = \begin{pmatrix}
-    \cos\alpha &amp; \sin\alpha \\
-    -\sin\alpha  &amp; \cos\alpha
-\end{pmatrix} }_{SO(2)}\]</span></p>
-</div>
-<!-- ::: {.video-frame}
-<video autoplay muted loop>
-  <source src="video/tes/DerivasiRotasi2D.mp4" type="video/mp4">
-</video>
-::: -->
-<div class="fragment fade-up">
-<p><span class="math display">\[\Downarrow \boxed{\text{dalam bentuk eksponensial}}\]</span></p>
-</div>
-<div class="fragment fade-in">
-<div class="fragment grow">
-<p><span class="math display">\[O(\alpha) = e^{\alpha G}, \quad
-G = \begin{pmatrix}
-    0 &amp; -1 \\
-    1 &amp; 0
-\end{pmatrix}\]</span></p>
-</div>
-</div>
-</div><!-- KOLOM KANAN --><div class="column fragment" style="text-align: left;">
-<p>untuk dimensi lebih tinggi, misal <span class="math inline">\(3\times 3\)</span>, maka matriks rotasi dapat dinyatakan sebagai rotasi pada bidang-bidang tertentu, misal:</p>
-<div class="r-stack">
-<!-- Matriks pertama muncul -->
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[O_{12}(\phi) = \begin{pmatrix} \cos\phi &amp; \sin\phi &amp; 0 \\ -\sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \]</span> dengan generator <span class="math display">\[ G_{12} = \begin{pmatrix}
-    0 &amp; 1 &amp; 0 \\
-   -1 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 0
-\end{pmatrix}\]</span></p>
-</div>
-<!-- Matriks kedua muncul menggantikan yang pertama -->
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[O_{13}(\theta) = \begin{pmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{pmatrix} \]</span> dengan generator <span class="math display">\[ G_{13} = \begin{pmatrix}
-    0 &amp; 0 &amp; 1 \\
-    0 &amp; 0 &amp; 0 \\
-   -1 &amp; 0 &amp; 0
-\end{pmatrix}\]</span></p>
-</div>
-<!-- Matriks ketiga muncul -->
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[O_{23}(\psi) = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\psi &amp; \sin\psi \\ 0 &amp; -\sin\psi &amp; \cos\psi \end{pmatrix} \]</span> dengan generator <span class="math display">\[
-G_{23} = \begin{pmatrix}
-    0 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 1 \\
-    0 &amp; -1 &amp; 0
-\end{pmatrix}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\begin{align}
-O(\phi,\theta,\psi) &amp;= O_{12}(\phi) O_{13}(\theta) O_{23}(\psi)\\
-                    &amp;=\begin{pmatrix} \cos\phi &amp; \sin\phi &amp; 0 \\ -\sin\phi &amp; \cos\phi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{pmatrix}\\
-                    &amp;\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\psi &amp; \sin\psi \\ 0 &amp; -\sin\psi &amp; \cos\psi \end{pmatrix}\\
-\end{align}\]</span></p>
-</div>
-<!-- ::: {.fragment}
-$$O(\phi,\theta,\psi) = \begin{pmatrix} \cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} \cos\theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos\theta \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\psi & \sin\psi \\ 0 & -\sin\psi & \cos\psi \end{pmatrix}$$
-::: -->
-</div>
-<div class="fragment fade-up">
-<blockquote>
-<p>Ketiga generator ini membentuk basis bagi <strong>Aljabar Lie</strong> <span class="math inline">\(\mathfrak{so}(3)\)</span>. Mereka memenuhi relasi komutasi komutator: <span class="math inline">\([G_{12}, G_{23}] = 2G_{13}\)</span>.</p>
-</blockquote>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="grup-unitary-u2-dan-su2">Grup Unitary <span class="math inline">\(U(2)\)</span> dan <span class="math inline">\(SU(2)\)</span></h3>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<!-- KOLOM KIRI: ALUR DERIVASI MATRIKS --><div class="column" style="text-align: left;">
-<p><span class="math display">\[\boxed{U^\dagger U=I \text{ dan } U U^\dagger =I,\; \det(U)=1}\]</span></p>
-<div class="fragment fade-up">
-<p><span class="math display">\[\underbrace{U = \begin{pmatrix}
-    a_{1}e^{i\alpha_{1}} &amp; a_{2}e^{i\alpha_{2}} \\
-    b_{1}e^{i\beta_{1}}  &amp; b_{2}e^{i\beta_{2}}
-\end{pmatrix}}_{U(2)}\]</span></p>
-</div>
-<div class="fragment fade-up">
-<p><span class="math display">\[\Downarrow \boxed{U^\dagger U=I \text{ dan } U U^\dagger =I}\]</span></p>
-</div>
-<div class="fragment fade-up">
-<p><span class="math display">\[\underbrace{U =
-\begin{pmatrix}
-    \cos\theta \, e^{i\alpha_1} &amp; \sin\theta \, e^{i\alpha_{2}} \\
-    -\sin\theta \, e^{i\beta_1} &amp; \cos\theta \, e^{i(\alpha_2-\alpha_1+\beta_1)}
-\end{pmatrix}}_{SU(2)}\]</span></p>
-</div>
-<div class="fragment fade-up">
-<p><span class="math display">\[\Downarrow \boxed{\det U = 1}\]</span></p>
-</div>
-<div class="fragment fade-in">
-<div class="fragment grow">
-<p><span class="math display">\[U_{SU(2)}
-=
-\begin{pmatrix}
-    \cos\theta \, e^{i\alpha_1}  &amp; \sin\theta \, e^{i\alpha_2} \\
-    -\sin\theta \, e^{-i\alpha_2} &amp; \cos\theta \, e^{-i\alpha_1}
-\end{pmatrix}\]</span></p>
-</div>
-</div>
-</div><!-- KOLOM KANAN: ANIMASI BERGANTI (R-STACK) --><div class="column fragment" style="text-align: left;">
-<!-- TAMPILAN 1: Syarat Grup SU(2) -->
-<h3 id="sifat-grup-su2">Sifat Grup <span class="math inline">\(SU(2)\)</span></h3>
-<!-- TAMPILAN 2: Rotasi Bidang & Generator Satu-Satu -->
-<div class="fragment fade-in">
-<p>untuk dimensi lebih tinggi, matriks kompleks 2 <span class="math inline">\(\times\)</span> 2 dapat dinyatakan sebagai rotasi pada bidang kompleks tertentu, misal:</p>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[U_{12}(\phi) = \begin{pmatrix} \cos\phi &amp; i\sin\phi \\ i\sin\phi &amp; \cos\phi \end{pmatrix}=e^{i\phi \sigma_1} \]</span> dengan generator <span class="math display">\[ \sigma_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</span></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[U_{13}(\theta) = \begin{pmatrix} \cos\theta &amp; \sin\theta \\ -\sin\theta &amp; \cos\theta \end{pmatrix}=e^{i\theta \sigma_2} \]</span> dengan generator <span class="math display">\[\sigma_2 = \begin{pmatrix} 0 &amp; -i \\ i &amp; 0 \end{pmatrix}\]</span></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[U_{23}(\psi) = \begin{pmatrix} e^{i\psi} &amp; 0 \\ 0 &amp; e^{-i\psi} \end{pmatrix}=e^{i\psi \sigma_3} \]</span> dengan generator <span class="math display">\[ \sigma_3 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\]</span></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[U_{SU(2)} = e^{i\phi \sigma_1} e^{i\theta \sigma_2} e^{i\psi \sigma_3}\]</span></p>
-</div>
-<div class="fragment fade-in-then-out">
-<p><span class="math display">\[U_{SU(2)} = e^{i(\alpha_1 \sigma_1+\alpha_2\sigma_2+\alpha_3 \sigma_3)}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[U_{SU(2)} = e^{\left( i \frac{\alpha_1 - \alpha_2}{2} \sigma_z \right)} e^{\left( i \theta \sigma_y \right)} e^{\left( i \frac{\alpha_1 + \alpha_2}{2} \sigma_z \right)}\]</span></p>
-</div>
-</div>
-<div class="fragment fade-up">
-<blockquote>
-<p>Ketiga generator ini membentuk basis bagi <strong>Aljabar Lie</strong> <span class="math inline">\(\mathfrak{su}(2)\)</span> (berupa matriks Pauli murni <span class="math inline">\(\sigma_k\)</span>). Mereka memenuhi relasi komutasi komutator: <span class="math inline">\([\sigma_i, \sigma_j] = 2i \epsilon_{ijk} \sigma_k\)</span> dengan <span class="math inline">\(\epsilon\)</span> adalah konstanta permutasi ganjil.</p>
-</blockquote>
-</div>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="generator-grup-su4">Generator Grup <span class="math inline">\(SU(4)\)</span></h3>
-<p>Matriks generator standar <span class="math inline">\(\lambda_k\)</span> (<span class="math inline">\(k=1, \dots, 15\)</span>) untuk aljabar Lie <span class="math inline">\(\mathfrak{su}(4)\)</span> dimensi <span class="math inline">\(4 \times 4\)</span> yang memenuhi ortogonalitas <span class="math inline">\(\text{Tr}(\lambda_i \lambda_j) = 2\delta_{ij}\)</span>:</p>
-<div class="r-stack">
-<div class="fragment fade-out">
-<p><span class="math display">\[\begin{aligned}
-\lambda_1 &amp;= \begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_2 &amp;= \begin{pmatrix} 0 &amp; -i &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_3 &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \\
-\lambda_4 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_5 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; -i &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_6 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \\
-\lambda_7 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -i &amp; 0 \\ 0 &amp; i &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_8 &amp;= \frac{1}{\sqrt{3}}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}
-\end{aligned}\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\begin{aligned}
-\lambda_9 &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_{10} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ i &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_{11} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix} \\
-\lambda_{12} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; i &amp; 0 &amp; 0 \end{pmatrix}, &amp;
-\lambda_{13} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix}, &amp;
-\lambda_{14} &amp;= \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -i \\ 0 &amp; 0 &amp; i &amp; 0 \end{pmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math display">\[\lambda_{15} = \frac{1}{\sqrt{6}}\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -3 \end{pmatrix}\]</span></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="representasi-eksponensial-su4">Representasi Eksponensial <span class="math inline">\(SU(4)\)</span></h3>
-<p>Elemen umum dari Grup Lie Kontinu <span class="math inline">\(SU(4)\)</span> dibangun melalui kombinasi linier dari seluruh 15 generator di atas menggunakan pemetaan eksponensial:</p>
-<div class="card quantum-box">
-<p><span class="math display">\[U_{SU(4)}(\boldsymbol{\theta}) = \exp\left( -i \sum_{k=1}^{15} \theta_k \lambda_k \right)\]</span></p>
-</div>
-<p>di mana <span class="math inline">\(\theta_k\)</span> adalah 15 parameter sudut riil kontinu, dan <span class="math inline">\(\lambda_k\)</span> membentuk Aljabar Lie <span class="math inline">\(\mathfrak{su}(4)\)</span> dengan relasi komutasi:</p>
-<p><span class="math display">\[[\lambda_i, \lambda_j] = 2i \sum_{k=1}^{15} f_{ijk} \lambda_k\]</span></p>
-</section>
-<section class="slide level2">
-
-<h3 id="parametrisasi-su4-via-penyisipan-su2">Parametrisasi <span class="math inline">\(SU(4)\)</span> via Penyisipan <span class="math inline">\(SU(2)\)</span></h3>
-<p>Konstruksi dilakukan dengan menyisipkan subgroup <span class="math inline">\(SU(2)\)</span> ke dalam 6 pasangan bidang dua-dimensi pada ruang empat-dimensi dengan total <span class="math inline">\(6 \times 3 = 18\)</span> parameter riil <span class="math inline">\((\theta_k, \phi_k, \psi_k)\)</span>:</p>
-<p><span class="math display">\[U_{SU(4)} = R_{12}(\theta_6, \phi_6, \psi_6) R_{13}(\theta_5, \phi_5, \psi_5) R_{14}(\theta_4, \phi_4, \psi_4) R_{23}(\theta_3, \phi_3, \psi_3) R_{24}(\theta_2, \phi_2, \psi_2) R_{34}(\theta_1, \phi_1, \psi_1)\]</span></p>
-<div class="r-stack">
-<div class="fragment fade-in-then-out">
-<h3 id="struktur-blok-penyisipan-bidang-12-hingga-14">Struktur Blok Penyisipan Bidang (1,2) hingga (1,4)</h3>
-<p><span class="math display">\[\begin{aligned}
-R_{12} &amp;= \begin{pmatrix} C_6 e^{i\phi_6} &amp; S_6 e^{i\psi_6} &amp; 0 &amp; 0 \\ -S_6 e^{-i\psi_6} &amp; C_6 e^{-i\phi_6} &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}, &amp;
-R_{13} &amp;= \begin{pmatrix} C_5 e^{i\phi_5} &amp; 0 &amp; S_5 e^{i\psi_5} &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ -S_5 e^{-i\psi_5} &amp; 0 &amp; C_5 e^{-i\phi_5} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \\
-R_{14} &amp;= \begin{pmatrix} C_4 e^{i\phi_4} &amp; 0 &amp; 0 &amp; S_4 e^{i\psi_4} \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -S_4 e^{-i\psi_4} &amp; 0 &amp; 0 &amp; C_4 e^{-i\phi_4} \end{pmatrix}
-\end{aligned}\]</span></p>
-</div>
-<div class="fragment">
-<h3 id="struktur-blok-penyisipan-bidang-23-hingga-34">Struktur Blok Penyisipan Bidang (2,3) hingga (3,4)</h3>
-<p><span class="math display">\[\begin{aligned}
-R_{23} &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; C_3 e^{i\phi_3} &amp; S_3 e^{i\psi_3} &amp; 0 \\ 0 &amp; -S_3 e^{-i\psi_3} &amp; C_3 e^{-i\phi_3} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix}, &amp;
-R_{24} &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; C_2 e^{i\phi_2} &amp; 0 &amp; S_2 e^{i\psi_2} \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; -S_2 e^{-i\psi_2} &amp; 0 &amp; C_2 e^{-i\phi_2} \end{pmatrix} \\
-R_{34} &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; C_1 e^{i\phi_1} &amp; S_1 e^{i\psi_1} \\ 0 &amp; 0 &amp; -S_1 e^{-i\psi_1} &amp; C_1 e^{-i\phi_1} \end{pmatrix}
-\end{aligned}\]</span></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="hasil-dekomposisi-eksponensial-penuh-su4">Hasil Dekomposisi Eksponensial Penuh <span class="math inline">\(SU(4)\)</span></h3>
-<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2,\lambda_2, \lambda_3, \cdots, \lambda_{13}, \lambda_{14}\)</span>):</p>
-<div class="r-stack">
-<div class="fragment fade-out">
-<p><span class="math display">\[\boxed{
-\begin{align}
-U_{SU(4)} =\;&amp; \exp\!\left(i\,\theta_6\bigl[\cos\tilde{\phi}_{12}\,\lambda_2 + \sin\tilde{\phi}_{12}\,\lambda_1\bigr]\right) \notag \\
-&amp;\cdot\exp\!\left(i\,\theta_5\bigl[\cos\tilde{\phi}_{13}\,\lambda_5 + \sin\tilde{\phi}_{13}\,\lambda_4\bigr]\right) \notag \\
-&amp;\cdot\exp\!\left(i\,\theta_4\bigl[\cos\tilde{\phi}_{14}\,\lambda_{10} + \sin\tilde{\phi}_{14}\,\lambda_9\bigr]\right) \notag \\
-&amp;\cdot\exp\!\left(i\,\theta_3\bigl[\cos\tilde{\phi}_{23}\,\lambda_7 + \sin\tilde{\phi}_{23}\,\lambda_6\bigr]\right) \notag \\
-&amp;\cdot\exp\!\left(i\,\theta_2\bigl[\cos\tilde{\phi}_{24}\,\lambda_{12} + \sin\tilde{\phi}_{24}\,\lambda_{11}\bigr]\right) \notag \\
-&amp;\cdot\exp\!\left(i\,\theta_1\bigl[\cos\tilde{\phi}_{34}\,\lambda_{14} + \sin\tilde{\phi}_{34}\,\lambda_{13}\bigr]\right) \notag \\
-&amp;\cdot \exp\left[
-i\left(
-\Phi_1\lambda_3
-+
-\Phi_2\lambda_8
-+
-\Phi_3\lambda_{15}
-\right)\right].
-\label{eq:USU4_exp}
-\end{align}
-}\]</span></p>
-</div>
-<div class="fragment success-box">
-<p><span class="math display">\[
-\begin{align}
-U_{SU(4)} &amp;=
-e^{i\lambda_3\alpha_1}
-e^{i\lambda_2\alpha_2}
-e^{i\lambda_3\alpha_3}
-e^{i\lambda_5\alpha_4}
-e^{i\lambda_3\alpha_5}
-e^{i\lambda_{10}\alpha_6}
-e^{i\lambda_3\alpha_7}
-e^{i\lambda_2\alpha_8}
-e^{i\lambda_3\alpha_9}
-e^{i\lambda_5\alpha_{10}}
-e^{i\lambda_3\alpha_{11}}
-e^{i\lambda_2\alpha_{12}}\\
-&amp;
-e^{i\lambda_3\alpha_{13}}
-e^{i\lambda_8\alpha_{14}}
-e^{i\lambda_{15}\alpha_{15}}\\
-\end{align}
-\]</span> dan bentuk ini didapatkan dari Tilma,Sudarshan dkk dengan 15 parameter <span class="math inline">\(\alpha_k\)</span> yang merupakan kombinasi linier dari 18 parameter <span class="math inline">\((\theta_k, \phi_k, \psi_k)\)</span>.</p>
-</div>
-</div>
-<!-- {{< include sections/05-Matriks_Densitas_NQubit.qmd >}} -->
-<!-- {{< include sections/07-Entropi.qmd >}} -->
-</section>
-<section id="tujuan-metodologi" class="slide level2">
-<h2>Tujuan Metodologi</h2>
-<ul>
-<li>Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit berbasis hierarki Grup Lie <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> beserta aljabar generatornya.</li>
-<li>Menganalisis mekanisme pembentukan keterbelitan yang dihasilkan oleh operator <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> melalui representasi ekponensial terhadap keadaan awal <span class="math inline">\(|000\rangle\)</span>.</li>
-<li>Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit menggunakan entropi von Neumann dari matriks densitas tereduksi.</li>
-</ul>
-</section>
-<section id="kontruksi-matriks-uniter-qubit" class="slide level2">
-<h2>Kontruksi Matriks Uniter Qubit</h2>
-<p><span class="math display">\[\boxed{|\psi'\rangle = M |000\rangle}\]</span></p>
-<p>dengan <span class="math inline">\(M\)</span> adalah matriks uniter yang dibangun oleh grup <span class="math inline">\(SU(N)\)</span></p>
-<div class="columns" style="display: flex; justify-content: space-between;">
-<div class="column fragment card info-box" style="text-align: left;">
-<div class="fragment strike">
-<p><span class="math display">\[ M=SU(8) \]</span></p>
-</div>
-<div class="fragment strike">
-<p><span class="math display">\[\Downarrow\]</span></p>
-<p>Terlalu banyak parameter (63 Parameter)</p>
-</div>
-</div><div class="column fragment card success-box" style="text-align: left;">
-<div class="fragment strike">
-<p><span class="math display">\[ M=SU(2) \otimes SU(2) \otimes SU(2)\]</span></p>
-</div>
-<div class="fragment strike">
-<p><span class="math display">\[\Downarrow\]</span> Selalu menghasilkan keadaan yang terpisah</p>
-</div>
-</div><div class="column fragment card warning-box" style="text-align: left;">
-<div class="fragment">
-<p><span class="math display">\[ M=SU(4) \otimes SU(2)\]</span> atau <span class="math display">\[ M=SU(2) \otimes SU(4)\]</span></p>
-</div>
-<div class="fragment grow">
-<p><span class="math display">\[\Downarrow\]</span> dapat menghasilkan keadaan 3 qubit dengan semua jenis keterbelitannya</p>
-</div>
-</div></div>
-<!-- $$|\psi'\rangle = M |\psi\rangle \rightarrow \langle \psi'|\psi'\rangle = 1 $$ -->
 </section>
 <section id="kontruksi-parameterisasi-su4-dan-su2" class="slide level2">
 <h2>Kontruksi Parameterisasi SU(4) dan SU(2)</h2>
@@ -1218,57 +1169,91 @@ U_{24}(\alpha_{2},\alpha_{4})
 {\left|\psi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
 \end{align*}}\]</span></p>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_1 (\alpha_i,\alpha_j)\right\rangle} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi (\alpha_i,\alpha_j)\right\rangle}\\
+{\left|\phi_1 (\alpha_i,\alpha_j)\right\rangle_{x}} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi (\alpha_i,\alpha_j)\right\rangle}\\
 &amp;=U_{24(x)}(\alpha_{i}, \alpha_{j}) U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
 \end{align*}}\]</span></p>
 </div><div class="column" style="width:60%;">
 <h3 id="variasi-kedua">Variasi Kedua</h3>
 <p>Pada Variasi <span class="math inline">\((SU(2) \otimes SU(4))(SU(4) \otimes SU(2))=U_{42} U_{24}\)</span></p>
-<p><span class="math display">\[ \boxed{{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}=U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}}\]</span></p>
+<p><span class="math display">\[ \boxed{{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle_{x}}=U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}}\]</span></p>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_2 (\alpha_i,\alpha_j)\right\rangle} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}\\
+{\left|\phi_2 (\alpha_i,\alpha_j)\right\rangle_{x}} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}\\
 &amp;=U_{42(x)}(\alpha_{i}, \alpha_{j}) U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\end{align*}}\]</span></p>
 </div></div>
 </section>
 <section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="contoh-tahap-1-pada-variasi-pertama">Contoh Tahap 1 pada Variasi pertama</h3>
+<div class="column" style="width:50%;">
+<h3 id="keadaan-psi_1rangle-u_24-u_42">Keadaan <span class="math inline">\(|\psi_1\rangle\)</span> (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
 <p><span class="math display">\[\begin{align*}
-{\left|\psi (\alpha_2,\alpha_4)\right\rangle} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
+{\left|\psi_1 (\alpha_2,\alpha_4)\right\rangle_1} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
 &amp;=  \begin{pmatrix}\cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{4} \right)}\\ 0 \\ 0 \\ 0 \end{pmatrix}  \\
 % &amp;= \cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|010\right\rangle} - \sin{\left(\alpha_{4} \right)} {\left|100\right\rangle}
 \end{align*}\]</span></p>
-</div><div class="column" style="width:60%;">
-<h3 id="contoh-tahap-2-pada-variasi-pertama">Contoh Tahap 2 pada Variasi pertama</h3>
+</div><div class="column" style="width:50%;">
+<h3 id="keadaan-psi_2rangle-u_42-u_24">Keadaan <span class="math inline">\(|\psi_2\rangle\)</span> (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
 <p><span class="math display">\[\begin{align*}
-{\left|\phi (\alpha_2,\alpha_4)\right\rangle} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi (\alpha_2,\alpha_4)\right\rangle}\\
-&amp;=  \begin{pmatrix}\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \left(\alpha_{2} + \alpha_{4}\right) \right)}}{4} + \frac{1}{4}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)}\\- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\\ 0 \\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\sin^{2}{\left(\alpha_{4} \right)}\\ 0 \end{pmatrix}  \\
-% &amp;= \left(\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \alpha_{2} + 2 \alpha_{4} \right)}}{4} + \frac{1}{4}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)} {\left|001\right\rangle} \\
-% &amp;\quad + \left(- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\right) {\left|010\right\rangle} + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} \\
-% &amp;\quad + \left(\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|101\right\rangle} + \sin^{2}{\left(\alpha_{4} \right)} {\left|110\right\rangle}
+{\left|\psi_2 (\alpha_2,\alpha_4)\right\rangle_1} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
+&amp;=  \begin{pmatrix}\cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\- \sin{\left(\alpha_{4} \right)}\\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}  \\
+% &amp;= \cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|001\right\rangle} - \sin{\left(\alpha_{4} \right)} {\left|010\right\rangle}
 \end{align*}\]</span></p>
 </div></div>
 </section>
 <section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
 <div class="columns">
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1">Tahap 1</h3>
+<div class="column" style="width:50%;">
+<h3 id="keadaan-psi_1rangle-u_24-u_42-1">Keadaan <span class="math inline">\(|\psi_1\rangle\)</span> (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
 <p><span class="math display">\[\begin{aligned}
-|\psi (\alpha_2,\alpha_4)\rangle
+|\psi_1 (\alpha_2,\alpha_4)\rangle_1
 &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,|000\rangle \\
 &amp;= \cos(\alpha_{2})\cos(\alpha_{4})\,|000\rangle \\
 &amp;\quad - \sin(\alpha_{2})\cos(\alpha_{4})\,|010\rangle \\
 &amp;\quad - \sin(\alpha_{4})\,|100\rangle
 \end{aligned}\]</span></p>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2">Tahap 2</h3>
+</div><div class="column" style="width:50%;">
+<h3 id="keadaan-psi_2rangle-u_42-u_24-1">Keadaan <span class="math inline">\(|\psi_2\rangle\)</span> (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
 <p><span class="math display">\[\begin{aligned}
-|\phi (\alpha_2,\alpha_4)\rangle
-&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi (\alpha_2,\alpha_4)\rangle \\[4pt]
+|\psi_2 (\alpha_2,\alpha_4)\rangle_1
+&amp;= U_{42}(\alpha_{2}, \alpha_{4})\,|000\rangle \\
+&amp;= \cos(\alpha_{2})\cos(\alpha_{4})\,|000\rangle \\
+&amp;\quad - \sin(\alpha_{2})\cos(\alpha_{4})\,|001\rangle \\
+&amp;\quad - \sin(\alpha_{4})\,|010\rangle
+\end{aligned}\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="keadaan-phi_1rangle-u_24-u_42">Keadaan <span class="math inline">\(|\phi_1\rangle\)</span> (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\phi_1 (\alpha_2,\alpha_4)\right\rangle_1} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi_1 (\alpha_2,\alpha_4)\right\rangle}\\
+&amp;=  \begin{pmatrix}\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \left(\alpha_{2} + \alpha_{4}\right) \right)}}{4} + \frac{1}{4}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)}\\- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\\ 0 \\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\sin^{2}{\left(\alpha_{4} \right)}\\ 0 \end{pmatrix}  \\
+% &amp;= \left(\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \alpha_{2} + 2 \alpha_{4} \right)}}{4} + \frac{1}{4}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)} {\left|001\right\rangle} \\
+% &amp;\quad + \left(- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\right) {\left|010\right\rangle} + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} \\
+% &amp;\quad + \left(\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|101\right\rangle} + \sin^{2}{\left(\alpha_{4} \right)} {\left|110\right\rangle}
+\end{align*}\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="keadaan-phi_2rangle-u_42-u_24">Keadaan <span class="math inline">\(|\phi_2\rangle\)</span> (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
+<p><span class="math display">\[\begin{align*}
+{\left|\phi_2 (\alpha_2,\alpha_4)\right\rangle_1} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi_2 (\alpha_2,\alpha_4)\right\rangle}\\
+&amp;=  \begin{pmatrix}- \sin{\left(\alpha_{2} \right)} \sin{\left(\alpha_{4} \right)} + \cos^{2}{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)}\\- \left(\sin{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)} + \sin{\left(\alpha_{4} \right)}\right) \cos{\left(\alpha_{2} \right)}\\\sin^{2}{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)}\\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\ 0 \\ 0 \end{pmatrix}  \\
+% &amp;= \left(- \sin{\left(\alpha_{2} \right)} \sin{\left(\alpha_{4} \right)} + \cos^{2}{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)} {\left|001\right\rangle} \\
+% &amp;\quad - \left(\sin{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)} + \sin{\left(\alpha_{4} \right)}\right) \cos{\left(\alpha_{2} \right)} {\left|010\right\rangle} + \sin^{2}{\left(\alpha_{2} \right)} \cos^{2}{\left(\alpha_{4} \right)} {\left|011\right\rangle} \\
+% &amp;\quad + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} + \left(\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|101\right\rangle}
+\end{align*}\]</span></p>
+</div></div>
+</section>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="keadaan-phi_1rangle-u_24-u_42-1">Keadaan <span class="math inline">\(|\phi_1\rangle\)</span> (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
+<p><span class="math display">\[\begin{aligned}
+|\phi_1 (\alpha_2,\alpha_4)\rangle_1
+&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi_1 (\alpha_2,\alpha_4)\rangle \\[4pt]
 &amp;= \left(
 \frac{\cos(2\alpha_{2})}{4}
 + \frac{\cos(2\alpha_{4})}{4}
@@ -1281,8 +1266,19 @@ U_{24}(\alpha_{2},\alpha_{4})
 &amp;\quad + \frac{\cos(\alpha_{2}-2\alpha_{4}) - \cos(\alpha_{2}+2\alpha_{4})}{4}\,|101\rangle \\[4pt]
 &amp;\quad + \sin^{2}(\alpha_{4})\,|110\rangle
 \end{aligned}\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="keadaan-phi_2rangle-u_42-u_24-1">Keadaan <span class="math inline">\(|\phi_2\rangle\)</span> (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
+<p><span class="math display">\[\begin{aligned}
+|\phi_2 (\alpha_2,\alpha_4)\rangle_1
+&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi_2 (\alpha_2,\alpha_4)\rangle \\[4pt]
+&amp;= \left(- \sin(\alpha_{2})\sin(\alpha_{4}) + \cos^{2}(\alpha_{2})\cos^{2}(\alpha_{4})\right)|000\rangle \\[4pt]
+&amp;\quad - \sin(\alpha_{2})\cos(\alpha_{2})\cos^{2}(\alpha_{4})\,|001\rangle \\[4pt]
+&amp;\quad - \left(\sin(\alpha_{2})\cos^{2}(\alpha_{4}) + \sin(\alpha_{4})\right)\cos(\alpha_{2})\,|010\rangle \\[4pt]
+&amp;\quad + \sin^{2}(\alpha_{2})\cos^{2}(\alpha_{4})\,|011\rangle \\[4pt]
+&amp;\quad + \frac{\sin(\alpha_{2}-2\alpha_{4}) - \sin(\alpha_{2}+2\alpha_{4})}{4}\,|100\rangle \\[4pt]
+&amp;\quad + \frac{\cos(\alpha_{2}-2\alpha_{4}) - \cos(\alpha_{2}+2\alpha_{4})}{4}\,|101\rangle
+\end{aligned}\]</span></p>
 </div></div>
-</div>
 </section>
 <section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal</h2>
@@ -1544,6 +1540,234 @@ Entropi <span class="math inline">\(S_3\)</span>
 </div>
 <div style="font-size: 18px; width: 100%; text-align: center;">
 <p><span class="math display">\[S_3 = -\sum \lambda_k^{(3)} \log_2 \lambda_k^{(3)}\]</span></p>
+</div>
+</div>
+</div>
+<!-- Psi1 -->
+</section>
+<section id="matriks-densitas-tereduksi-6" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\left|\psi_1(\alpha_{2},\alpha_{4})\right\rangle = \cos \alpha_{2} \cos \alpha_{4} \left|000\right\rangle - \sin \alpha_{2} \cos \alpha_{4} \left|010\right\rangle - \sin \alpha_{4} \left|100\right\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.933013 &amp; -0.241481 \\ -0.241481 &amp; 0.066987\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.9375 &amp; -0.233253 \\ -0.233253 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}1.0 &amp; 0.0 \\ 0.0 &amp; 0.0\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_A\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{A,+} &amp;= 0.995796 \\ \lambda_{A,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_B\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{B,+} &amp;= 0.995796 \\ \lambda_{B,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_C\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{C,+} &amp;= 1.0 \\ \lambda_{C,-} &amp;= 0.0\end{aligned}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack fragment">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-stack">
+<!-- Keadaan Utama: 3 Blok Entropi Tampak -->
+<div class="r-hstack fragment fade-out" data-fragment-index="1">
+<div data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_A\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_A = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_B\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_B = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_C\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_C = 0.000000 \text{ bit}\]</span></p>
+</div>
+</div>
+</div>
+<!-- Keadaan Transformasi: Melebur Menjadi 1 Kotak Tengah -->
+<div class="fragment" data-fragment-index="1">
+<div data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;">
+<p>Jenis Keterbelitan: C-AB (Bipartit)</p>
+</div>
+</div>
+</div>
+<!-- Psi2 -->
+</section>
+<section id="matriks-densitas-tereduksi-7" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\left|\psi_2(\alpha_{2},\alpha_{4})\right\rangle = \cos \alpha_{2} \cos \alpha_{4} \left|000\right\rangle - \sin \alpha_{2} \cos \alpha_{4} \left|001\right\rangle - \sin \alpha_{4} \left|010\right\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}1.0 &amp; 0.0 \\ 0.0 &amp; 0.0\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.933013 &amp; -0.241481 \\ -0.241481 &amp; 0.066987\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.9375 &amp; -0.233253 \\ -0.233253 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_A\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{A,+} &amp;= 1.0 \\ \lambda_{A,-} &amp;= 0.0\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_B\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{B,+} &amp;= 0.995796 \\ \lambda_{B,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_C\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{C,+} &amp;= 0.995796 \\ \lambda_{C,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack fragment">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-stack">
+<!-- Keadaan Utama: 3 Blok Entropi Tampak -->
+<div class="r-hstack fragment fade-out" data-fragment-index="1">
+<div data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_A\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_A = 0.000000 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_B\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_B = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_C\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_C = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+</div>
+<!-- Keadaan Transformasi: Melebur Menjadi 1 Kotak Tengah -->
+<div class="fragment" data-fragment-index="1">
+<div data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;">
+<p>Jenis Keterbelitan: A-BC (Bipartit)</p>
 </div>
 </div>
 </div>
@@ -2622,6 +2846,380 @@ A-B-C
 </tr>
 </tbody>
 </table>
+</div>
+<!-- Phi1 -->
+</section>
+<section id="matriks-densitas-tereduksi-8" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &amp;\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.933013 &amp; -0.241481 \\ -0.241481 &amp; 0.066987\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76226 &amp; -0.406416 \\ -0.406416 &amp; 0.23774\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.948938 &amp; -0.190565 \\ -0.190565 &amp; 0.051062\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_A\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{A,+} &amp;= 0.995796 \\ \lambda_{A,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_B\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{B,+} &amp;= 0.983688 \\ \lambda_{B,-} &amp;= 0.016312\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_C\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{C,+} &amp;= 0.987710 \\ \lambda_{C,-} &amp;= 0.012290\end{aligned}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-9" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &amp;\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.933013 &amp; -0.241481 \\ -0.241481 &amp; 0.066987\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76226 &amp; -0.406416 \\ -0.406416 &amp; 0.23774\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.948938 &amp; -0.190565 \\ -0.190565 &amp; 0.051062\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_A\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_A = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_B\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_B = 0.120198 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_C\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_C = 0.095621 \text{ bit}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-10" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &amp;\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.933013 &amp; -0.241481 \\ -0.241481 &amp; 0.066987\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76226 &amp; -0.406416 \\ -0.406416 &amp; 0.23774\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.948938 &amp; -0.190565 \\ -0.190565 &amp; 0.051062\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div style="height: 120px;">
+
+</div>
+<div data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;">
+<p>Jenis Keterbelitan: ABC (Terbelit Maksimal)</p>
+</div>
+<div style="height: 120px;">
+
+</div>
+</div>
+<!-- Phi2 -->
+</section>
+<section id="matriks-densitas-tereduksi-11" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &amp;\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.9375 &amp; -0.209129 \\ -0.209129 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76256 &amp; -0.402885 \\ -0.402885 &amp; 0.23744\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.9375 &amp; -0.233253 \\ -0.233253 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_A\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{A,+} &amp;= 0.984914 \\ \lambda_{A,-} &amp;= 0.015086\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_B\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{B,+} &amp;= 0.980889 \\ \lambda_{B,-} &amp;= 0.019111\end{aligned}\]</span></p>
+</div>
+</div>
+<div data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Nilai Eigen <span class="math inline">\(\rho_C\)</span>
+</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+<p><span class="math display">\[\begin{aligned}\lambda_{C,+} &amp;= 0.995796 \\ \lambda_{C,-} &amp;= 0.004204\end{aligned}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-12" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &amp;\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.9375 &amp; -0.209129 \\ -0.209129 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76256 &amp; -0.402885 \\ -0.402885 &amp; 0.23744\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.9375 &amp; -0.233253 \\ -0.233253 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_A\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_A = 0.112882 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_B\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_B = 0.136422 \text{ bit}\]</span></p>
+</div>
+</div>
+<div data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Entropi <span class="math inline">\(S_C\)</span>
+</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+<p><span class="math display">\[S_C = 0.039242 \text{ bit}\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="matriks-densitas-tereduksi-13" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Matriks Densitas Tereduksi</h2>
+<p><span class="math display">\[\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &amp;= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &amp;\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &amp;\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}\]</span></p>
+<div class="r-hstack">
+<div data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(A\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{A} = \begin{pmatrix}0.9375 &amp; -0.209129 \\ -0.209129 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(B\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{B} = \begin{pmatrix}0.76256 &amp; -0.402885 \\ -0.402885 &amp; 0.23744\end{pmatrix}\]</span></p>
+</div>
+</div>
+<div data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
+Qubit <span class="math inline">\(C\)</span>
+</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+<p><span class="math display">\[\rho_{C} = \begin{pmatrix}0.9375 &amp; -0.233253 \\ -0.233253 &amp; 0.0625\end{pmatrix}\]</span></p>
+</div>
+</div>
+</div>
+<div class="r-hstack">
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">
+<span class="math display">\[\downarrow\]</span>
+</div>
+</div>
+<div class="r-hstack">
+<div style="height: 120px;">
+
+</div>
+<div data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;">
+<p>Jenis Keterbelitan: ABC (Terbelit Maksimal)</p>
+</div>
+<div style="height: 120px;">
+
+</div>
 </div>
 </section>
 <section id="hasil-keadaan-phi_1alpha_ialpha_jrangle" class="slide level2">
@@ -4233,26 +4831,26 @@ Grup 4
 <ul>
 <li><p>Hampir selalu menghasilkan keadaan <strong>separabel penuh</strong> (<code>A-B-C</code>).</p></li>
 <li><p>Secara matematis, sudut <span class="math inline">\(\pi/2\)</span> memberikan nilai <span class="math inline">\(\cos(\pi/2) = 0\)</span>.</p></li>
-<li><p>Nilai nol ini <strong>menghapus suku-suku qubit penting</strong> dalam fungsi gelombang, sehingga merusak superposisi.</p></li>
+<li><p>Nilai nol ini <strong>menghapus suku-suku qubit penting</strong> dalam sehingga memunculkan keadaan separabel.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Dampak Sudut Kecil (<span class="math inline">\(\pi/12\)</span>)</strong></p>
 <ul>
 <li><p>Jauh lebih berpotensi membentuk <strong>keterbelitan</strong> (sebagian maupun sejati).</p></li>
 <li><p>Nilai <span class="math inline">\(\cos(\pi/12) \approx 0.96\)</span> dan <span class="math inline">\(\sin(\pi/12) \approx 0.25\)</span> membuat kedua nilai trigonometri <strong>sama-sama aktif</strong>.</p></li>
-<li><p>Koefisien suku tidak bernilai 0 atau 1, sehingga menjaga kondisi <strong>superposisi kuantum</strong> sebagai syarat perlu keterbelitan.</p></li>
+<li><p>Koefisien suku qubit tidak bernilai sehingga berpotensi memunculkan keadaan terbelit.</p></li>
 </ul>
 </div></div>
 </section>
-<section id="analisis-grup-1-grup-2-struktur-4-grup" class="slide level2">
-<h2>Analisis Grup 1 &amp; Grup 2 (Struktur 4 Grup)</h2>
+<section id="analisis-generator" class="slide level2">
+<h2>Analisis Generator</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Grup 1 (Generator <span class="math inline">\(\lambda_{10}\)</span> / <span class="math inline">\(\alpha_6\)</span>)</strong></p>
 <ul>
 <li><p>Mampu menghasilkan keterbelitan sebagian hingga sejati (tripartit <code>ABC</code>).</p></li>
 <li><p><em>Sangat sensitif:</em> Keterbelitan hanya muncul pada sudut kecil (<span class="math inline">\(\pi/12\)</span> dan <span class="math inline">\(\pi/12\)</span>). Kombinasi <span class="math inline">\(\pi/2\)</span> selalu berujung separabel.</p></li>
-<li><p><em>Catatan:</em> Pasangan <span class="math inline">\((\alpha_4, \alpha_6)\)</span> kini melebur sempurna ke grup ini setelah urutan operator dibalik pada <span class="math inline">\(U_{42}U_{24}\)</span>.</p></li>
+<li><p>Pada urutan <span class="math inline">\(U_{42}U_{24}\)</span>, pasangan <span class="math inline">\((\lambda_5,\lambda_{10})\)</span> akan sama pola keterbelitannya dengan <span class="math inline">\((\lambda_2,\lambda_{10})\)</span>.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Grup 2 (Interaksi <span class="math inline">\(\lambda_2\)</span> - <span class="math inline">\(\lambda_5\)</span>)</strong></p>
@@ -4260,24 +4858,30 @@ Grup 4
 <li><p>Menunjukkan pergeseran konsisten: <strong>terbelit sebagian</strong> (tahap 1) <span class="math inline">\(\rightarrow\)</span> <strong>terbelit sejati</strong> (tahap 2).</p></li>
 <li><p>Muncul secara stabil setiap kali parameter yang terkait dengan generator <span class="math inline">\(\lambda_5\)</span> bernilai <span class="math inline">\(\pi/12\)</span>, tanpa memedulikan nilai parameter <span class="math inline">\(\lambda_2\)</span>.</p></li>
 </ul>
-</div></div>
-</section>
-<section id="analisis-grup-3-grup-4" class="slide level2">
-<h2>Analisis Grup 3 &amp; Grup 4</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Grup 3 (Kebalikan Grup 2)</strong></p>
-<ul>
-<li><p>Pola keterbelitan tripartit <code>ABC</code> muncul secara spesifik saat parameter pertama bernilai <span class="math inline">\(\pi/12\)</span>.</p></li>
-<li><p>Menunjukkan efek <strong>urutan parameter</strong> yang sangat jelas terlihat pada sistem kuantum.</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Grup 4 (Pasangan Sejenis)</strong></p>
-<ul>
+</div><p><strong>Pasangan Generator Sejenis</strong></p><ul>
 <li><p>Berisi pasangan generator sejenis (<span class="math inline">\(\lambda_2\)</span>-<span class="math inline">\(\lambda_2\)</span> dan <span class="math inline">\(\lambda_5\)</span>-<span class="math inline">\(\lambda_5\)</span>).</p></li>
 <li><p><em>Temuan Penting:</em> Setelah perbaikan perhitungan pada urutan <span class="math inline">\(U_{42}U_{24}\)</span>, grup ini <strong>selalu menghasilkan keadaan separabel penuh (<code>A-B-C</code>)</strong> di kedua tahap pengujian.</p></li>
 </ul>
-</div></div>
+</div>
+<!-- ## Analisis Grup 3 & Grup 4
+
+::: {.columns}
+::: {.column width="50%"}
+**Grup 3 (Kebalikan Grup 2)**
+
+- Pola keterbelitan tripartit `ABC` muncul secara spesifik saat parameter pertama bernilai $\pi/12$.
+
+- Menunjukkan efek **urutan parameter** yang sangat jelas terlihat pada sistem kuantum.
+:::
+
+::: {.column width="50%"}
+**Pasangan Generator Sejenis**
+
+- Berisi pasangan generator sejenis ($\lambda_2$-$\lambda_2$ dan $\lambda_5$-$\lambda_5$).
+
+- *Temuan Penting:* Setelah perbaikan perhitungan pada urutan $U_{42}U_{24}$, grup ini **selalu menghasilkan keadaan separabel penuh (`A-B-C`)** di kedua tahap pengujian.
+:::
+::: -->
 </section>
 <section id="tingkat-invariansi-sudut-u_42u_24-vs-u_24u_42" class="slide level2">
 <h2>Tingkat Invariansi Sudut (<span class="math inline">\(U_{42}U_{24}\)</span> vs <span class="math inline">\(U_{24}U_{42}\)</span>)</h2>

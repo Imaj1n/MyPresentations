@@ -1,131 +1,138 @@
-## Perkembangan Sistem Multi-Qubit
+## Matriks Densitas dan Trace Tereduksi {auto-animate=true}
 
-::::: columns
-::: {.column width="50%"}
-### Sistem Multi-Qubit
+Untuk keadaan murni tiga qubit
 
-State sistem multi-qubit dibangun melalui operasi hasil kali tensor dari beberapa qubit,
-
-$$|\Psi\rangle =
-|\psi_1\rangle
-\otimes
-|\psi_2\rangle
-\otimes
-\cdots
-\otimes
-|\psi_n\rangle.$$
-
-Semakin banyak jumlah qubit,
-
-$$\Longrightarrow$$
-
-dimensi ruang Hilbert semakin besar.
-:::
-
-::: {.column width="50%"}
-Semakin besarnya ruang Hilbert memungkinkan munculnya fenomena yang tidak dimiliki sistem klasik, yaitu
-
-\vspace{0.5cm}
-
-$$\boxed{\textbf{Keterbelitan Kuantum}}$$
-:::
-:::::
-
-------------------------------------------------------------------------
-
-## Konsep Keterbelitan
-
-Suatu state dikatakan **separabel** apabila dapat dituliskan sebagai hasil kali tensor dari masing-masing subsistem,
-
-$$|\Psi\rangle
+$$
+|\psi\rangle
 =
-|\psi_A\rangle
-\otimes
-|\psi_B\rangle.$$
-
-Namun, terdapat state yang **tidak dapat dipisahkan** ke dalam bentuk tersebut sehingga disebut sebagai **state terbelit (entangled state)**.
-
-------------------------------------------------------------------------
-
-## Keterbelitan pada Sistem Dua Qubit
-
-State Bell merupakan contoh sederhana state terbelit,
-
-$$|\Phi^+\rangle
-=
-\frac{|00\rangle+|11\rangle}{\sqrt2}.$$
-
-::: callout-note
-- Melibatkan dua subsistem.
-- Struktur keterbelitan relatif sederhana.
-- Hanya terdapat satu partisi, yaitu A–B.
-:::
-
-------------------------------------------------------------------------
-
-## Keterbelitan pada Sistem Tiga Qubit
-
-Salah satu contoh state tiga qubit adalah GHZ state,
-
-$$|\mathrm{GHZ}\rangle
-=
-\frac{|000\rangle+|111\rangle}{\sqrt2}.$$
-
-Partisi yang dapat ditinjau menjadi lebih banyak,
-
-$$A-BC,
+\sum_{i_1,i_2 \cdots i_n =0}^{1}
+c_{i_1,i_2 \cdots i_n}|i_1,i_2 \cdots i_n\rangle,
 \qquad
-B-AC,
-\qquad
-C-AB.$$
+\sum_{i_1,i_2 \cdots i_n=0}^{1}|c_{i_1,i_2 \cdots i_n}|^2=1,
+$$
 
-::: callout-note
-Jumlah partisi yang lebih banyak menyebabkan analisis keterbelitan menjadi lebih kompleks dibandingkan sistem dua qubit.
+matriks densitas didefinisikan sebagai
+
+$$
+\rho=|\psi\rangle\langle\psi|.
+$$
+
+beberapa sifat properti matematis $\rho$ ini adalah
+
+- Bersifat Hermitian,
+
+$$
+\rho^\dagger=\rho.
+$$
+
+- Memenuhi
+
+$$
+\mathrm{Tr}(\rho)=1.
+$$
+
+
+
+## Matriks Densitas Tereduksi
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### Matriks Densitas Tereduksi Dua Qubit
+
+Reduksi parsial menjadi 2-Qubit menghasilkan
+
+
+:::{.fragment}
+$$
+\rho_{12} = \operatorname{Tr}_{3}(\rho)
+$$
+
+$$
+\rho_{13} = \operatorname{Tr}_{2}(\rho)
+$$
+
+$$
+\rho_{23} = \operatorname{Tr}_{1}(\rho)
+$$
+:::
+:::{.fragment}
+Secara eksplisit bentuk diatas adalah:
+:::
+:::{.fragment}
+$$
+\rho_{12}
+=
+\mathrm{Tr}_3(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\mathbb I\otimes\langle k|)
+\,\rho\,
+(\mathbb I\otimes\mathbb I\otimes|k\rangle).
+$$
+
+$$
+\rho_{13}
+=
+\mathrm{Tr}_2(\rho)
+=
+\sum_{k=0}^{1}
+(\mathbb I\otimes\langle k|\otimes\mathbb I)
+\,\rho\,
+(\mathbb I\otimes|k\rangle\otimes\mathbb I).
+$$
+
+$$
+\rho_{23}
+=
+\mathrm{Tr}_1(\rho)
+=
+\sum_{k=0}^{1}
+(\langle k|\otimes\mathbb I\otimes\mathbb I)
+\,\rho\,
+(|k\rangle\otimes\mathbb I\otimes\mathbb I).
+$$
+:::
 :::
 
-------------------------------------------------------------------------
+::: {.column width="50%"}
 
-## Mengapa Diperlukan Matriks Densitas?
+### Matriks Densitas Tereduksi Satu Qubit
 
-Pada sistem tiga qubit, informasi mengenai masing-masing subsistem tidak dapat diperoleh secara langsung dari state total.
+Reduksi parsial menjadi 1-Qubit menghasilkan
 
-Oleh karena itu digunakan **matriks densitas**
+:::{.fragment}
+$$
+\rho_{1} = \operatorname{Tr}_{23}(\rho)
+$$
 
-$$\rho
-=
-|\Psi\rangle\langle\Psi|.$$
+$$
+\rho_{2} = \operatorname{Tr}_{13}(\rho)
+$$
 
-Selanjutnya dilakukan **partial trace** untuk memperoleh matriks densitas tereduksi,
+$$
+\rho_{3} = \operatorname{Tr}_{12}(\rho)
+$$
+:::
+::: {.fragment}
+Secara eksplisit bentuk diatas adalah:
+:::
 
-$$\rho_A=\mathrm{Tr}_{BC}(\rho),$$
+::: {.fragment}
+$$
+\rho_{1} = \sum_{p=0}^{1} \sum_{q=0}^{1} (\mathbb{I} \otimes \langle p| \otimes \langle q|) \, \rho \, (\mathbb{I} \otimes |p\rangle \otimes |q\rangle)
+$$
 
-$$\rho_B=\mathrm{Tr}_{AC}(\rho),$$
+$$
+\rho_{2} = \sum_{p=0}^{1} \sum_{r=0}^{1} (\langle p| \otimes \mathbb{I} \otimes \langle r|) \, \rho \, (|p\rangle \otimes \mathbb{I} \otimes |r\rangle)
+$$
 
-$$\rho_C=\mathrm{Tr}_{AB}(\rho).$$
+$$
+\rho_{3} = \sum_{q=0}^{1} \sum_{r=0}^{1} (\langle q| \otimes \langle r| \otimes \mathbb{I}) \, \rho \, (|q\rangle \otimes |r\rangle \otimes \mathbb{I})
+$$
+:::
 
-------------------------------------------------------------------------
+:::
 
-## Analisis Menggunakan Entropi Von Neumann
-
-Karakteristik masing-masing subsistem dianalisis menggunakan Entropi Von Neumann,
-
-$$S(\rho)
-=
--\mathrm{Tr}
-\left(
-\rho\log_2\rho
-\right).$$
-
-Nilai entropi digunakan untuk menunjukkan tingkat ketercampuran (mixedness) suatu subsistem, yang selanjutnya digunakan sebagai dasar dalam analisis keterbelitan pada sistem tiga qubit.
-
-------------------------------------------------------------------------
-
-## Transisi ke Metode Penelitian
-
-Berdasarkan uraian sebelumnya,
-
-- sistem tiga qubit memiliki struktur keterbelitan yang lebih kompleks,
-- diperlukan matriks densitas untuk merepresentasikan masing-masing subsistem,
-- serta Entropi Von Neumann digunakan sebagai alat analisis.
-
-Selanjutnya diperlukan suatu **transformasi uniter** untuk membangun state kuantum yang akan dianalisis pada penelitian ini.
+:::

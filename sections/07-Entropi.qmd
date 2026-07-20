@@ -1,0 +1,46 @@
+## Entropi Von Neumann
+::: {.columns}
+
+::: {.column width="40%"}
+Matriks densitas tereduksi $\rho_i$ selanjutnya digunakan untuk menghitung entropi von Neumann yang didefinisikan sebagai
+
+$$
+S(\rho_i)
+=
+-\operatorname{Tr}
+\left(
+\rho_i \log \rho_i
+\right).
+$$
+
+Dengan proses matematis lebih lanjut dan diagonalisasi matriks didapatkan :
+
+$$
+S(\rho_i)
+=
+-\sum_{j}\lambda_j\log \lambda_j,
+$$
+
+dengan $\lambda_j$ merupakan nilai eigen dari $\rho_i$ yang memenuhi
+
+$$
+\sum_j \lambda_j = 1,
+\qquad
+0 \le \lambda_j \le 1.
+$$
+:::
+
+
+::: {.column width="60%"}
+| Keadaan | $S(\rho_A)$ | $S(\rho_B)$ | $S(\rho_C)$ |
+|:----------------|:----------------:|:----------------:|:----------------:|
+| Terpisah sepenuhnya $S(\rho^{(\mathrm{sep})})$ | $0$ | $0$ | $0$ |
+| Terbelit sepenuhnya $S(\rho^{(\mathrm{ent})})$ | $>0$ | $>0$ | $>0$ |
+| Gabungan $(12)\vert3$, $S(\rho^{(\mathrm{cp2})})$ | $>0$ | $>0$ | $0$ |
+| Gabungan $1\vert(23)$, $S(\rho^{(\mathrm{cp1})})$ | $0$ | $>0$ | $>0$ |
+| Gabungan $2\vert(13)$, $S(\rho^{(\mathrm{cp3})})$ | $>0$ | $0$ | $>0$ |
+
+<!-- : Nilai kriteria entropi von Neumann untuk klasifikasi keadaan kuantum {#tbl-entropi-qubit} -->
+:::
+
+:::

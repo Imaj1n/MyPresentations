@@ -1,0 +1,315 @@
+<!-- Phi1 -->
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.933013 & -0.241481 \\ -0.241481 & 0.066987\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76226 & -0.406416 \\ -0.406416 & 0.23774\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.948938 & -0.190565 \\ -0.190565 & 0.051062\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+::: {data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_A$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{A,+} &= 0.995796 \\ \lambda_{A,-} &= 0.004204\end{aligned}$$
+</div>
+:::
+
+::: {data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_B$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{B,+} &= 0.983688 \\ \lambda_{B,-} &= 0.016312\end{aligned}$$
+</div>
+:::
+
+::: {data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_C$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{C,+} &= 0.987710 \\ \lambda_{C,-} &= 0.012290\end{aligned}$$
+</div>
+:::
+:::
+
+---
+
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.933013 & -0.241481 \\ -0.241481 & 0.066987\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76226 & -0.406416 \\ -0.406416 & 0.23774\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.948938 & -0.190565 \\ -0.190565 & 0.051062\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+::: {data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_A$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_A = 0.039242 \text{ bit}$$
+</div>
+:::
+
+::: {data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_B$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_B = 0.120198 \text{ bit}$$
+</div>
+:::
+
+::: {data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_C$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_C = 0.095621 \text{ bit}$$
+</div>
+:::
+:::
+
+---
+
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_1(\alpha_{2},\alpha_{4})\right\rangle &= \left(\frac{\cos 2 \alpha_{2}}{4} + \frac{\cos 2 \alpha_{4}}{4} + \frac{\cos(2 \alpha_{2} + 2 \alpha_{4})}{4} + \frac{1}{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{4} \cos(\alpha_{2} + \alpha_{4}) |001\rangle \\ &\quad + \left(- \frac{\sin \alpha_{2}}{2} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{2}\right) |010\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle + \sin^{2} \alpha_{4} |110\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.933013 & -0.241481 \\ -0.241481 & 0.066987\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76226 & -0.406416 \\ -0.406416 & 0.23774\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.948938 & -0.190565 \\ -0.190565 & 0.051062\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+<div style="height: 120px;"></div>
+::: {data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;"}
+Jenis Keterbelitan: ABC (Terbelit Maksimal) 
+:::
+<div style="height: 120px;"></div>
+:::
+
+<!-- Phi2 -->
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.9375 & -0.209129 \\ -0.209129 & 0.0625\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76256 & -0.402885 \\ -0.402885 & 0.23744\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.9375 & -0.233253 \\ -0.233253 & 0.0625\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+::: {data-id="eigen1" style="background: #2780e3; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_A$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{A,+} &= 0.984914 \\ \lambda_{A,-} &= 0.015086\end{aligned}$$
+</div>
+:::
+
+::: {data-id="eigen2" style="background: #3fb618; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_B$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{B,+} &= 0.980889 \\ \lambda_{B,-} &= 0.019111\end{aligned}$$
+</div>
+:::
+
+::: {data-id="eigen3" style="background: #e83e8c; color: white; width: 280px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Nilai Eigen $\rho_C$</div>
+<div style="font-size: 15px; width: 100%; text-align: center;">
+$$\begin{aligned}\lambda_{C,+} &= 0.995796 \\ \lambda_{C,-} &= 0.004204\end{aligned}$$
+</div>
+:::
+:::
+
+---
+
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.9375 & -0.209129 \\ -0.209129 & 0.0625\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76256 & -0.402885 \\ -0.402885 & 0.23744\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.9375 & -0.233253 \\ -0.233253 & 0.0625\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+::: {data-id="entropy1" style="background: #2780e3; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_A$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_A = 0.112882 \text{ bit}$$
+</div>
+:::
+
+::: {data-id="entropy2" style="background: #3fb618; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_B$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_B = 0.136422 \text{ bit}$$
+</div>
+:::
+
+::: {data-id="entropy3" style="background: #e83e8c; color: white; width: 280px; height: 120px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Entropi $S_C$</div>
+<div style="font-size: 20px; font-weight: bold; width: 100%; text-align: center;">
+$$S_C = 0.039242 \text{ bit}$$
+</div>
+:::
+:::
+
+---
+
+## Matriks Densitas Tereduksi {auto-animate=true auto-animate-easing="ease-in-out"}
+
+$$\begin{aligned} \left|\phi_2(\alpha_{2},\alpha_{4})\right\rangle &= \left(- \sin \alpha_{2} \sin \alpha_{4} + \cos^{2} \alpha_{2} \cos^{2} \alpha_{4}\right) |000\rangle - \sin \alpha_{2} \cos \alpha_{2} \cos^{2} \alpha_{4} |001\rangle \\ &\quad - \left(\sin \alpha_{2} \cos^{2} \alpha_{4} + \sin \alpha_{4}\right) \cos \alpha_{2} |010\rangle + \sin^{2} \alpha_{2} \cos^{2} \alpha_{4} |011\rangle + \left(\frac{\sin(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\sin(\alpha_{2} + 2 \alpha_{4})}{4}\right) |100\rangle \\ &\quad + \left(\frac{\cos(\alpha_{2} - 2 \alpha_{4})}{4} - \frac{\cos(\alpha_{2} + 2 \alpha_{4})}{4}\right) |101\rangle \Rightarrow \alpha_2 = \alpha_4 = \pi/12 \end{aligned}$$
+
+::: {.r-hstack}
+::: {data-id="box1" style="background: #2780e3; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $A$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{A} = \begin{pmatrix}0.9375 & -0.209129 \\ -0.209129 & 0.0625\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box2" style="background: #3fb618; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $B$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{B} = \begin{pmatrix}0.76256 & -0.402885 \\ -0.402885 & 0.23744\end{pmatrix}$$
+</div>
+:::
+
+::: {data-id="box3" style="background: #e83e8c; color: white; width: 280px; height: 160px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"}
+<div style="font-size: 16px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">Qubit $C$</div>
+<div style="font-size: 14px; width: 100%; text-align: center;">
+$$\rho_{C} = \begin{pmatrix}0.9375 & -0.233253 \\ -0.233253 & 0.0625\end{pmatrix}$$
+</div>
+:::
+:::
+
+::: {.r-hstack}
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+<div style="width: 280px; margin: 0 10px; text-align: center; font-size: 24px; color: #666;">$$\downarrow$$</div>
+:::
+
+::: {.r-hstack}
+<div style="height: 120px;"></div>
+::: {data-id="entropy2" style="background: #7a43b6; color: white; width: 450px; height: 100px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0,0,0,0.25); font-size: 24px; font-weight: bold;"}
+Jenis Keterbelitan: ABC (Terbelit Maksimal) 
+:::
+<div style="height: 120px;"></div>
+:::

@@ -280,7 +280,7 @@
 
 - Secara matematis, sudut $\pi/2$ memberikan nilai $\cos(\pi/2) = 0$.
 
-- Nilai nol ini **menghapus suku-suku qubit penting** dalam fungsi gelombang, sehingga merusak superposisi.
+- Nilai nol ini **menghapus suku-suku qubit penting** dalam sehingga memunculkan keadaan separabel.
 :::
 
 ::: {.column width="50%"}
@@ -290,11 +290,11 @@
 
 - Nilai $\cos(\pi/12) \approx 0.96$ dan $\sin(\pi/12) \approx 0.25$ membuat kedua nilai trigonometri **sama-sama aktif**.
 
-- Koefisien suku tidak bernilai 0 atau 1, sehingga menjaga kondisi **superposisi kuantum** sebagai syarat perlu keterbelitan.
+- Koefisien suku qubit tidak bernilai sehingga berpotensi memunculkan keadaan terbelit.
 :::
 :::
 
-## Analisis Grup 1 & Grup 2 (Struktur 4 Grup)
+## Analisis Generator
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -304,7 +304,7 @@
 
 - *Sangat sensitif:* Keterbelitan hanya muncul pada sudut kecil ($\pi/12$ dan $\pi/12$). Kombinasi $\pi/2$ selalu berujung separabel.
 
-- *Catatan:* Pasangan $(\alpha_4, \alpha_6)$ kini melebur sempurna ke grup ini setelah urutan operator dibalik pada $U_{42}U_{24}$.
+- Pada urutan $U_{42}U_{24}$, pasangan $(\lambda_5,\lambda_{10})$ akan sama pola keterbelitannya dengan $(\lambda_2,\lambda_{10})$.
 :::
 
 ::: {.column width="50%"}
@@ -314,9 +314,15 @@
 
 - Muncul secara stabil setiap kali parameter yang terkait dengan generator $\lambda_5$ bernilai $\pi/12$, tanpa memedulikan nilai parameter $\lambda_2$.
 :::
+
+**Pasangan Generator Sejenis**
+
+- Berisi pasangan generator sejenis ($\lambda_2$-$\lambda_2$ dan $\lambda_5$-$\lambda_5$).
+
+- *Temuan Penting:* Setelah perbaikan perhitungan pada urutan $U_{42}U_{24}$, grup ini **selalu menghasilkan keadaan separabel penuh (`A-B-C`)** di kedua tahap pengujian.
 :::
 
-## Analisis Grup 3 & Grup 4
+<!-- ## Analisis Grup 3 & Grup 4
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -328,13 +334,13 @@
 :::
 
 ::: {.column width="50%"}
-**Grup 4 (Pasangan Sejenis)**
+**Pasangan Generator Sejenis**
 
 - Berisi pasangan generator sejenis ($\lambda_2$-$\lambda_2$ dan $\lambda_5$-$\lambda_5$).
 
 - *Temuan Penting:* Setelah perbaikan perhitungan pada urutan $U_{42}U_{24}$, grup ini **selalu menghasilkan keadaan separabel penuh (`A-B-C`)** di kedua tahap pengujian.
 :::
-:::
+::: -->
 
 ## Tingkat Invariansi Sudut ($U_{42}U_{24}$ vs $U_{24}U_{42}$)
 

@@ -158,160 +158,52 @@ $$\begin{aligned}
 
 ---
 
-### Representasi Bola Bloch
+## Transisi Keadaan Sistem 2-Qubit dan 3-Qubit
 
-:::: {.columns style="display: flex; gap: 1%; margin-top: 1.5em; text-align: left;"}
+Bagaimana untuk sistem 2 Bit dan 3 Bit?
 
-::: {.column width="48%" .fragment}
-Representasi Keadaan dalam Bola Bloch
-<!-- <div class="fragment" 
-    style="
-    background-color: #f0f7ff;
-    border: 2px solid #41a6fc;
-    border-radius: 6px;
-    width: 800px;
-    height: 180px;
-    padding: 20px;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-">
-$$
-|\psi\rangle = \cos\left(\frac{\theta}{2}\right)|0\rangle +
-e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle
-$$
-</div> -->
+::: {.columns .fragment}
 
-<div style="position:relative; width:600px; height:180px;">
-
-<div style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:2;
-">
-$$
-|\psi\rangle = \cos\left(\frac{\theta}{2}\right)|0\rangle +
-e^{i\phi}\sin\left(\frac{\theta}{2}\right)|1\rangle
-$$
-</div>
-
-<div class="fragment"
-style="
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:2px solid #41a6fc;
-background:#f0f7ff;
-border-radius:6px;
-z-index:1;
-">
-</div>
-
-</div>
-
-\begin{align}
- & 0 \le \theta \le \pi \\
- & 0 \le \phi < 2\pi \\
-\end{align}
+::: {.column width="50%"}
+### Sistem 2-Bit Klasik
+  $$\{00, 01, 10, 11\}$$
 :::
 
-::: {.column width="48%" style="text-align: center;" .fragment}
-Diagram Bola Bloch
+::: {.column width="50%"}
+### Sistem 2-Qubit Kuantum
+- Basis keadaannya dilambangkan dengan ket biner:
+  $$|00\rangle, |01\rangle, |10\rangle, |11\rangle$$
 
-![](gambar/bloch.png){width="50%"}
-
-<!-- <p style="font-size: 0.75em; text-align: left; margin-top: 1em; color: #aaa;">
-  **Penjelasan Diagram:**
-  * Kutub utara mewakili keadaan $|0\rangle$ ($\theta = 0$).
-  * Kutub selatan mewakili keadaan $|1\rangle$ ($\theta = \pi$).
-  * Sudut $\theta$ menentukan posisi lintang, sedangkan $\phi$ menentukan posisi bujur pada permukaan bola. Setiap titik unik pada bola merepresentasikan satu keadaan superposisi qubit yang valid.
-</p> -->
+:::{.fragment}
+$$|\psi\rangle = c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle$$
 :::
-::::
-
----
-
-## Struktur Basis Multi-Qubit (Tensor Product)
-
-Bagaimana keadaan basis gabungan terbentuk dari ruang vektor individual:
-
-:::: {.columns style="display: flex; justify-content: space-between;"}
-
-<!-- KOLOM 1 (KIRI): Berisi Proses Perkalian DAN Semua 4 Basis Gabungan di Bawahnya -->
-::: {.column width="55%" style="text-align: left;" .fragment}
-**Representasi 2 Basis Gabungan**
-
-$$|01\rangle = |0\rangle \otimes |1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}$$
-
-<br>
-
-**Representasi 3 Basis Gabungan**
-
-<div style="font-size: 0.7em;">
-
-$$
-|011\rangle = |0\rangle \otimes |1\rangle \otimes |1\rangle=
-\begin{pmatrix}
-0\\
-0\\
-0\\
-1\\
-0\\
-0\\
-0\\
-0
-\end{pmatrix}
-$$
-
-</div>
 
 :::
 
-<!-- KOLOM 2 (KANAN): Berisi Kotak Kartu Sistem 2-Qubit & 3-Qubit -->
-::: {.column width="40%" style="text-align: left;"}
-**Sistem 2-Qubit**
-
-::: {.fragment .card .success-box style="padding: 1em; text-align: center; margin-top: 0.2em; margin-bottom: 0.8em;"}
-$$|\psi\rangle = \sum_{i,j \in \{0,1\}} \alpha_{ij}|ij\rangle \rightarrow \sum_{i,j} |\alpha_{ij}|^2 = 1$$
 :::
 
-**Sistem 3-Qubit**
+::: {.columns .fragment}
 
-::: {.fragment .card .info-box style="padding: 1em; text-align: center; margin-top: 0.2em;"}
-$$|\psi\rangle = \sum_{i,j,k \in \{0,1\}} \alpha_{ijk}|ijk\rangle \rightarrow \sum_{i,j,k} |\alpha_{ijk}|^2 = 1$$
-:::
-:::
-
-::::
-
-
-<!-- ## Perbedaan dengan Komputer Klasik {auto-animate=true}
-
-Komputer harian (laptop/PC) bekerja dengan sistem digital yang menggunakan miliaran transistor. Di dalamnya, elektron bekerja secara kolektif:
-
-::: {#computer-diff data-id="classic-vs-quantum"}
-$$\text{Arus Listrik Macroscopic (Kolektif)}$$
+::: {.column width="50%"}
+### Sistem 3-Bit Klasik
+  $$\{000, 001, 010, 011, 100, 101, 110, 111\}$$
+  <!-- [$M=SU(8)$]{.fragment .strike} -->
 :::
 
-## Perbedaan dengan Komputer Klasik {auto-animate=true}
+::: {.column width="50%"}
+### Sistem 3-Qubit Kuantum
+- Basis keadaannya dilambangkan dengan ket biner:
+$$|000\rangle, |001\rangle, |010\rangle, |011\rangle$$
+$$|100\rangle,|101\rangle,|110\rangle,|111\rangle$$
 
-Komputer harian (laptop/PC) bekerja dengan sistem digital yang menggunakan miliaran transistor. Sedangkan komputer kuantum bekerja pada level individual:
-
-::: {#computer-diff data-id="classic-vs-quantum"}
-$$\text{Sifat Individual Elektron (Quantum Scale)}$$
+:::{.fragment}
+$${|\psi\rangle = c_{000}|000\rangle + c_{001}|001\rangle + \dots + c_{111}|111\rangle}$$
 :::
 
----
+:::
 
-## Penerapan Spin pada Qubit {auto-animate=true}
+:::
 
-*Spin* (gerak berputar) elektron menjadi representasi fisik dari qubit. Keadaan *spin up* dan *spin down* diwakili oleh keadaan basis:
 
-::: {#spin-display data-id="spin-transform"}
-$$|0\rangle \quad \text{dan} \quad |1\rangle$$
-::: -->
+
+

@@ -161,12 +161,30 @@ $footer-blue: #3c6e94;
 }
 
 /* Footer text */
+
+// .footer-left {
+//   position: fixed;
+//   left: 25px;
+//   bottom: 30px;
+//   color: white;
+//   font-size: 1.55em;
+//   z-index: 999;
+// }
+
+// .footer-right {
+//   position: fixed;
+//   right: 20px;
+//   bottom: 30px;
+//   color: white;
+//   font-size: 1.55em;
+//   z-index: 999;
+// }
+
 .footer-left {
   position: fixed;
-  left: 25px;
+  left: 20px;
   bottom: 30px;
   color: white;
-  font-size: 1.55em;
   z-index: 999;
 }
 
@@ -179,13 +197,33 @@ $footer-blue: #3c6e94;
   z-index: 999;
 }
 
-/* Nomor slide */
+/* Nomor slide — ditempel di sebelah teks footer-right */
+
 .reveal .slide-number {
-  top: 18px !important;
-  right: 18px !important;
-  bottom: auto !important;
-  color: #d5d53f !important;
-  font-size: 0.7em !important;
+  position: static !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+
+  color: #ffffff !important;
+  opacity: 1 !important;
+
+  font-size: 2.95em !important;
+}
+
+.footer-left .slide-number a,
+.footer-left .slide-number a:link,
+.footer-left .slide-number a:visited,
+.footer-left .slide-number span {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.footer-left .slide-number,
+.footer-left .slide-number * {
+  font-size: 1.3em !important;
 }
 
 /* Hilangkan progress bar */

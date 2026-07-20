@@ -34,6 +34,8 @@ format:
 
 {{< include sections/10-matriks_Densitas.qmd >}}
 
+{{< include sections/11-Tabel_Hasil_Tranform.qmd >}}
+
 {{< include sections/11-hasil-klasifikasi.qmd >}}
 
 <!-- {{< include sections/12-interpretasi-su4.qmd >}} -->

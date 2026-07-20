@@ -12,10 +12,30 @@
   <div class="motto-second">"The Art of Thinking"</div>
 </div>
 
-<div class="footer-left">
+
+<!-- <div class="footer-left">
   www.its.ac.id
 </div>
 
 <div class="footer-right">
   INSTITUT TEKNOLOGI SEPULUH NOPEMBER, Surabaya - Indonesia
+</div> -->
+<div class="footer-left"></div>
+
+<div class="footer-right">
+  INSTITUT TEKNOLOGI SEPULUH NOPEMBER, Surabaya - Indonesia
 </div>
+
+<script>
+(function () {
+  const interval = setInterval(() => {
+    const slideNum = document.querySelector(".slide-number");
+    const footerLeft = document.querySelector(".footer-left");
+
+    if (slideNum && footerLeft) {
+      footerLeft.appendChild(slideNum);
+      clearInterval(interval);
+    }
+  }, 100);
+})();
+</script>

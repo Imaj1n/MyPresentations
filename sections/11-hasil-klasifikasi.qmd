@@ -7,8 +7,8 @@
     <!-- Baris Kondisi Utama -->
     <tr style="border-bottom: 2px solid #555;">
       <th style="padding: 8px; font-weight: bold;">Grup</th>
-      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">Before</th>
-      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">After</th>
+      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">Before ($|\psi_1\rangle$)</th>
+      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">After ($|\phi_1\rangle$)</th>
     </tr>
     <!-- Baris Pasangan Sudut Parameter -->
     <tr style="border-bottom: 2px solid #333; font-size: 0.9em;">
@@ -123,6 +123,7 @@
 
 :::
 
+
 :::{.fragment .fade-in-then-out}
 <table style="border-collapse:collapse;width:100%;text-align:left;">
 <thead>
@@ -160,68 +161,214 @@
 </table>
 :::
 
-:::{.fragment}
+:::{.fragment .fade-in-then-out}
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.65em; font-family: sans-serif;">
+  <thead>
+    <!-- Baris Kondisi Utama -->
+    <tr style="border-bottom: 2px solid #555;">
+      <th style="padding: 8px; font-weight: bold;">Grup</th>
+      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">Before ($|\psi_2\rangle$)</th>
+      <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">After ($|\phi_2\rangle$)</th>
+    </tr>
+    <!-- Baris Pasangan Sudut Parameter -->
+    <tr style="border-bottom: 2px solid #333; font-size: 0.9em;">
+      <th></th>
+      <th style="padding: 6px;">π/12, π/12</th>
+      <th style="padding: 6px;">π/12, π/2</th>
+      <th style="padding: 6px;">π/2, π/12</th>
+      <th style="padding: 6px; border-right: 2px solid #bbb;">π/2, π/2</th>
+      <th style="padding: 6px;">π/12, π/12</th>
+      <th style="padding: 6px;">π/12, π/2</th>
+      <th style="padding: 6px;">π/2, π/12</th>
+      <th style="padding: 6px;">π/2, π/2</th>
+    </tr>
+  </thead>
+
+  <tbody style="font-weight: bold;">
+    <!-- Grup 1 (Gabungan Eks-Grup 1, 4, dan 5) -->
+    <tr style="border-bottom: 1px solid #ddd;">
+      <td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">Grup 1</td>
+      <td style="background-color: #a1dab4; color: black;">A-BC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">A-B-C</td>
+      <td style="background-color: #225ea8; color: white;">ABC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+    </tr>
+    <!-- Grup 2 (Eks-Grup 2) -->
+    <tr style="border-bottom: 1px solid #ddd;">
+      <td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">Grup 2</td>
+      <td style="background-color: #a1dab4; color: black;">A-BC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #a1dab4; color: black;">A-BC</td>
+      <td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">A-B-C</td>
+      <td style="background-color: #225ea8; color: white;">ABC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #225ea8; color: white;">ABC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+    </tr>
+    <!-- Grup 3 (Eks-Grup 3) -->
+    <tr style="border-bottom: 1px solid #ddd;">
+      <td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">Grup 3</td>
+      <td style="background-color: #a1dab4; color: black;">A-BC</td>
+      <td style="background-color: #a1dab4; color: black;">A-BC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">A-B-C</td>
+      <td style="background-color: #225ea8; color: white;">ABC</td>
+      <td style="background-color: #225ea8; color: white;">ABC</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+    </tr>
+    <!-- Grup 4 (Eks-Grup 6) -->
+    <tr style="bordetabelr-bottom: 2px solid #333;">
+      <td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">Grup 4</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+      <td style="background-color: #e0e0e0; color: #555;">A-B-C</td>
+    </tr>
+  </tbody>
+</table>
+:::
+
+:::{.fragment .fade-in-then-out}
+<table style="border-collapse:collapse;width:100%;text-align:left;font-family:sans-serif;font-size:0.9em;">
+<thead>
+<tr style="border-bottom: 2px solid #333;">
+<th style="width:15%; padding: 8px 4px;">Grup</th>
+<th style="padding: 8px 4px;">Pasangan Parameter $(\alpha_i,\alpha_j)$</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">Grup 1</td>
+<td style="padding: 8px 4px;">$(\alpha_2,\alpha_6)$, $(\alpha_4,\alpha_6)$, $(\alpha_6,\alpha_2)$, $(\alpha_6,\alpha_4)$, $(\alpha_6,\alpha_8)$, $(\alpha_6,\alpha_{10})$, $(\alpha_6,\alpha_{12})$, $(\alpha_8,\alpha_6)$, $(\alpha_{10},\alpha_6)$, $(\alpha_{12},\alpha_6)$</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">Grup 2</td>
+<td style="padding: 8px 4px;">$(\alpha_2,\alpha_4)$, $(\alpha_2,\alpha_{10})$, $(\alpha_4,\alpha_8)$, $(\alpha_4,\alpha_{12})$, $(\alpha_8,\alpha_{10})$, $(\alpha_{10},\alpha_{12})$</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">Grup 3</td>
+<td style="padding: 8px 4px;">$(\alpha_4,\alpha_2)$, $(\alpha_8,\alpha_4)$, $(\alpha_{10},\alpha_2)$, $(\alpha_{10},\alpha_{8})$, $(\alpha_{12},\alpha_4)$, $(\alpha_{12},\alpha_{10})$</td>
+</tr>
+<tr style="border-bottom: 2px solid #333;">
+<td style="padding: 8px 4px; font-weight: bold;">Grup 4</td>
+<td style="padding: 8px 4px;">$(\alpha_2,\alpha_8)$, $(\alpha_2,\alpha_{12})$, $(\alpha_4,\alpha_{10})$, $(\alpha_8,\alpha_2)$, $(\alpha_8,\alpha_{12})$, $(\alpha_{10},\alpha_4)$, $(\alpha_{12},\alpha_2)$, $(\alpha_{12},\alpha_{8})$</td>
+</tr>
+</tbody>
+</table>
+:::
+
+:::
+
+
+---
+## Efek Nilai Sudut & Hubungan Trigonometri
+
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- ***Temuan Umum*** -->
+**Dampak Sudut Besar ($\pi/2$)**
 
-<!-- - $(\pi/12,\pi/12)$ paling stabil menghasilkan **tripartit (ABC)**
-- $\pi/2$ menyebabkan penurunan keterbelitan:
-  tripartit → bipartit → separabel
-- Keterbelitan dipengaruhi:
-  - besar sudut rotasi
-  - kombinasi parameter operator lokal -->
+- Hampir selalu menghasilkan keadaan **separabel penuh** (`A-B-C`).
 
+- Secara matematis, sudut $\pi/2$ memberikan nilai $\cos(\pi/2) = 0$.
 
-***Grup 1***
-
-- ABC hanya pada $(\pi/12,\pi/12)$
-<!-- - Selain itu separabel -->
-- Sangat sensitif terhadap sudut
-
-
-***Grup 2***
-
-- ABC pada $(\pi/12,\pi/12)$ dan $(\pi/2,\pi/12)$
-- Dipengaruhi parameter kedua
-
-
-***Grup 3***
-
-- Kebalikan Grup 2
-- ABC muncul saat parameter pertama = $\pi/12$
-- Efek urutan parameter jelas terlihat
-
-<!-- ***Catatan Teoretis***
-
-- Tidak ada hubungan langsung yang pasti dengan generator Gell-Mann
-- Karena operator merupakan kombinasi beberapa generator
-- Perlu analisis Lie algebra lebih dalam -->
-
+- Nilai nol ini **menghapus suku-suku qubit penting** dalam fungsi gelombang, sehingga merusak superposisi.
 :::
 
 ::: {.column width="50%"}
+**Dampak Sudut Kecil ($\pi/12$)**
 
-***Grup 4***
+- Jauh lebih berpotensi membentuk **keterbelitan** (sebagian maupun sejati).
 
-- Tripartit → bipartit → separabel
-- Degradasi bertahap
+- Nilai $\cos(\pi/12) \approx 0.96$ dan $\sin(\pi/12) \approx 0.25$ membuat kedua nilai trigonometri **sama-sama aktif**.
 
-
-***Grup 5***
-
-- Tidak pernah tripartit
-- Hanya bipartit atau separabel
-
-***Grup 6***
-
-- Selalu separabel
-- Tidak ada keterbelitan terbentuk
-
+- Koefisien suku tidak bernilai 0 atau 1, sehingga menjaga kondisi **superposisi kuantum** sebagai syarat perlu keterbelitan.
+:::
 :::
 
+## Analisis Grup 1 & Grup 2 (Struktur 4 Grup)
+
+::: {.columns}
+::: {.column width="50%"}
+**Grup 1 (Generator $\lambda_{10}$ / $\alpha_6$)**
+
+- Mampu menghasilkan keterbelitan sebagian hingga sejati (tripartit `ABC`).
+
+- *Sangat sensitif:* Keterbelitan hanya muncul pada sudut kecil ($\pi/12$ dan $\pi/12$). Kombinasi $\pi/2$ selalu berujung separabel.
+
+- *Catatan:* Pasangan $(\alpha_4, \alpha_6)$ kini melebur sempurna ke grup ini setelah urutan operator dibalik pada $U_{42}U_{24}$.
 :::
 
+::: {.column width="50%"}
+**Grup 2 (Interaksi $\lambda_2$ - $\lambda_5$)**
+
+- Menunjukkan pergeseran konsisten: **terbelit sebagian** (tahap 1) $\rightarrow$ **terbelit sejati** (tahap 2).
+
+- Muncul secara stabil setiap kali parameter yang terkait dengan generator $\lambda_5$ bernilai $\pi/12$, tanpa memedulikan nilai parameter $\lambda_2$.
+:::
 :::
 
+## Analisis Grup 3 & Grup 4
+
+::: {.columns}
+::: {.column width="50%"}
+**Grup 3 (Kebalikan Grup 2)**
+
+- Pola keterbelitan tripartit `ABC` muncul secara spesifik saat parameter pertama bernilai $\pi/12$.
+
+- Menunjukkan efek **urutan parameter** yang sangat jelas terlihat pada sistem kuantum.
 :::
+
+::: {.column width="50%"}
+**Grup 4 (Pasangan Sejenis)**
+
+- Berisi pasangan generator sejenis ($\lambda_2$-$\lambda_2$ dan $\lambda_5$-$\lambda_5$).
+
+- *Temuan Penting:* Setelah perbaikan perhitungan pada urutan $U_{42}U_{24}$, grup ini **selalu menghasilkan keadaan separabel penuh (`A-B-C`)** di kedua tahap pengujian.
+:::
+:::
+
+## Tingkat Invariansi Sudut ($U_{42}U_{24}$ vs $U_{24}U_{42}$)
+
+- Urutan $U_{42}U_{24}$ cenderung menghasilkan tingkat **invariansi sifat keterbelitan yang lebih tinggi/stabil** dibandingkan urutan $U_{24}U_{42}$.
+
+
+**Bukti Eksplisit pada Keadaan Variasi 7:**
+
+- **Pada Urutan $U_{24}U_{42}$ ($|\phi_1\rangle_7$):** *Sensitif terhadap perubahan.* Ketika sudut dibalik dari $(\pi/12 \text{ \& } \pi/2)$ menjadi $(\pi/2 \text{ \& } \pi/12)$, sifat sistem bergeser dari separabel penuh (`A-B-C`) menjadi terbelit sebagian (`A-BC`).
+
+- **Pada Urutan $U_{42}U_{24}$ ($|\phi_2\rangle_7$):** *Invarian.* Substitusi sudut maupun pembalikannya secara konsisten **bertahan pada keadaan separabel penuh (`A-B-C`)**.
+
+## Mekanisme Pembangkitan Subruang: Keadaan $|\psi_1\rangle_1$ ($U_{24}U_{42}$)
+
+- Transformasi uniter $U_{42} = U_4 \otimes I_2$ bertindak terlebih dahulu pada keadaan dasar $|000\rangle$.
+- Transformasi dimensi tinggi hanya membangkitkan subruang qubit $A$ dan $B$, sedangkan qubit $C$ dipertahankan oleh matriks identitas.
+
+$$\left|\psi_1 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \cos \alpha_{2} \cos \alpha_{4} |000\rangle - \sin \alpha_{2} \cos \alpha_{4} |010\rangle - \sin \alpha_{4} |100\rangle$$
+
+. . .
+
+Faktorisasi perkalian tensor membuktikan jenis keterbelitan **`C-AB`**:
+
+$$\left|\psi_1 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \left( \cos \alpha_{2} \cos \alpha_{4} |00\rangle - \sin \alpha_{2} \cos \alpha_{4} |01\rangle - \sin \alpha_{4} |10\rangle \right)_{AB} \otimes |0\rangle_C$$
+
+## Mekanisme Pembangkitan Subruang: Keadaan $|\psi_2\rangle_1$ ($U_{42}U_{24}$)
+
+- Operator uniter $U_{24} = I_2 \otimes U_4$ diterapkan terlebih dahulu pada keadaan dasar $|000\rangle$.
+- Memicu pembangkitan dimensi subruang qubit $B$ dan $C$, sementara qubit $A$ dipertahankan oleh matriks identitas.
+
+$$\left|\psi_2 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \cos \alpha_{2} \cos \alpha_{4} |000\rangle - \sin \alpha_{2} \cos \alpha_{4} |001\rangle - \sin \alpha_{4} |010\rangle$$
+
+. . .
+
+Faktorisasi perkalian tensor membuktikan subsistem $A$ terpisah dari subruang $BC$:
+
+$$\left|\psi_2 (\alpha_{2},\alpha_{4})\right\rangle_{1} = |0\rangle_A \otimes \left( \cos \alpha_{2} \cos \alpha_{4} |00\rangle - \sin \alpha_{2} \cos \alpha_{4} |01\rangle - \sin \alpha_{4} |10\rangle \right)_{BC}$$

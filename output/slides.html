@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Dosen Pembimbing Prof.&nbsp;Agus Purwanto, D.Sc.">
-  <meta name="dcterms.date" content="2026-07-13">
+  <meta name="dcterms.date" content="2026-07-20">
   <title>Konstruksi Keadaan 3-Qubit Menggunakan Transformasi Matriks SU(2) dan SU(4)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-5cdcbf794c54c95125dc25e3fbcb231c.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-38a5294990b34a78b912b4994cf3b4b2.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -147,7 +147,7 @@ Dosen Pembimbing<br>Prof.&nbsp;Agus Purwanto, D.Sc.
     </div>
 </div>
 
-  <p class="date">2026-07-13</p>
+  <p class="date">2026-07-20</p>
 </section>
 <section class="slide level2">
 
@@ -1034,7 +1034,7 @@ R_{34} &amp;= \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &am
 <section class="slide level2">
 
 <h3 id="hasil-dekomposisi-eksponensial-penuh-su4">Hasil Dekomposisi Eksponensial Penuh <span class="math inline">\(SU(4)\)</span></h3>
-<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2,\lambda_2, \lambda_3, \cdots, \lambda_{11}, \lambda_{14}\)</span>):</p>
+<p>Perkalian keenam blok penyisipan tersebut menghasilkan representasi jalinan parameter diagonal (<span class="math inline">\(\lambda_3, \lambda_8, \lambda_{15}\)</span>) dan rotasi (<span class="math inline">\(\lambda_2,\lambda_2, \lambda_3, \cdots, \lambda_{13}, \lambda_{14}\)</span>):</p>
 <div class="r-stack">
 <div class="fragment fade-out">
 <p><span class="math display">\[\boxed{
@@ -1087,18 +1087,47 @@ e^{i\lambda_{15}\alpha_{15}}\\
 <section id="tujuan-metodologi" class="slide level2">
 <h2>Tujuan Metodologi</h2>
 <ul>
-<li>Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit berbasis hierarki Grup Lie <span class="math inline">\(SU(2)\)</span>, <span class="math inline">\(SU(3)\)</span>, dan <span class="math inline">\(SU(4)\)</span> beserta aljabar generatornya.</li>
-<li>Menganalisis mekanisme pembentukan korelasi non-lokal atau keterbelitan yang dihasilkan oleh operator <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> melalui representasi ekponensial terhadap keadaan awal <span class="math inline">\(|000\rangle\)</span>.</li>
-<li>Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit, serta menghitung derajat keterbelitannya secara analitik menggunakan entropi von Neumann dari matriks densitas tereduksi.</li>
+<li>Memformulasikan representasi matematis dari keadaan kuantum dan transformasi evolusinya pada sistem tiga qubit berbasis hierarki Grup Lie <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> beserta aljabar generatornya.</li>
+<li>Menganalisis mekanisme pembentukan keterbelitan yang dihasilkan oleh operator <span class="math inline">\(SU(2)\)</span> dan <span class="math inline">\(SU(4)\)</span> melalui representasi ekponensial terhadap keadaan awal <span class="math inline">\(|000\rangle\)</span>.</li>
+<li>Mengklasifikasikan keadaan tiga qubit yang dihasilkan ke dalam kelas terpisah penuh, terpisah sebagian, dan terbelit tripartit menggunakan entropi von Neumann dari matriks densitas tereduksi.</li>
 </ul>
+</section>
+<section id="kontruksi-matriks-uniter-qubit" class="slide level2">
+<h2>Kontruksi Matriks Uniter Qubit</h2>
+<p><span class="math display">\[\boxed{|\psi'\rangle = M |000\rangle}\]</span></p>
+<p>dengan <span class="math inline">\(M\)</span> adalah matriks uniter yang dibangun oleh grup <span class="math inline">\(SU(N)\)</span></p>
+<div class="columns" style="display: flex; justify-content: space-between;">
+<div class="column fragment card info-box" style="text-align: left;">
+<div class="fragment strike">
+<p><span class="math display">\[ M=SU(8) \]</span></p>
+</div>
+<div class="fragment strike">
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p>Terlalu banyak parameter (63 Parameter)</p>
+</div>
+</div><div class="column fragment card success-box" style="text-align: left;">
+<div class="fragment strike">
+<p><span class="math display">\[ M=SU(2) \otimes SU(2) \otimes SU(2)\]</span></p>
+</div>
+<div class="fragment strike">
+<p><span class="math display">\[\Downarrow\]</span> Selalu menghasilkan keadaan yang terpisah</p>
+</div>
+</div><div class="column fragment card warning-box" style="text-align: left;">
+<div class="fragment">
+<p><span class="math display">\[ M=SU(4) \otimes SU(2)\]</span> atau <span class="math display">\[ M=SU(2) \otimes SU(4)\]</span></p>
+</div>
+<div class="fragment grow">
+<p><span class="math display">\[\Downarrow\]</span> dapat menghasilkan keadaan 3 qubit dengan semua jenis keterbelitannya</p>
+</div>
+</div></div>
+<!-- $$|\psi'\rangle = M |\psi\rangle \rightarrow \langle \psi'|\psi'\rangle = 1 $$ -->
 </section>
 <section id="kontruksi-parameterisasi-su4-dan-su2" class="slide level2">
 <h2>Kontruksi Parameterisasi SU(4) dan SU(2)</h2>
 <p><strong>Konstruksi SU(2)</strong></p>
 <p>Dari persamaan <span class="math display">\[\boxed{U_{SU(2)}(\theta, \phi, \lambda) = e^{i\lambda \sigma_z} e^{i\theta \sigma_y} e^{i\phi \sigma_z}}\]</span> dipilih parameter <span class="math inline">\(\theta=\phi=\lambda=0\)</span> sehingga <span class="math inline">\(U_{SU(2) }(0,0,0) = I\)</span></p>
 <p><strong>Konstruksi SU(4)</strong></p>
-<p>Dari persamaan <span class="math display">\[
-\boxed{\begin{align}
+<p>Dari persamaan <span class="math display">\[\boxed{\begin{align}
 U_{SU(4)} &amp;=
 e^{i\lambda_3\alpha_1}
 e^{i\lambda_2\alpha_2}
@@ -1116,8 +1145,7 @@ e^{i\lambda_2\alpha_{12}}\\
 e^{i\lambda_3\alpha_{13}}
 e^{i\lambda_8\alpha_{14}}
 e^{i\lambda_{15}\alpha_{15}}\\
-\end{align}}
-\]</span> dan parameter berupa <span class="math inline">\(\alpha_2,\alpha_4,\alpha_6,\alpha_8,\alpha_{10},\alpha_{12}\)</span> secara berpasangan dan dengan pasangan nilai yang dipilih <span class="math inline">\(\frac{\pi}{12},\frac{\pi}{2}\)</span>. Selanjutnya,Pengembangan matriks dari produk tensor untuk model</p>
+\end{align}}\]</span> dan parameter berupa <span class="math inline">\(\alpha_2,\alpha_4,\alpha_6,\alpha_8,\alpha_{10},\alpha_{12}\)</span> secara berpasangan dan dengan pasangan nilai yang dipilih <span class="math inline">\(\frac{\pi}{12},\frac{\pi}{2}\)</span>. Selanjutnya,Pengembangan matriks dari produk tensor untuk model</p>
 <p><span class="math display">\[U_{24} = I \otimes U_{SU(4)}(\alpha_i,\alpha_j)\]</span></p>
 <p>dan</p>
 <p><span class="math display">\[U_{42} = U_{SU(4)}(\alpha_i,\alpha_j) \otimes I \]</span></p>
@@ -1184,31 +1212,38 @@ U_{24}(\alpha_{2},\alpha_{4})
 <h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<h3 id="tahap-1">Tahap 1</h3>
-<p><span class="math display">\[\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
-\end{align*}\]</span></p>
+<h3 id="variasi-pertama">Variasi Pertama</h3>
+<p>Pada Variasi <span class="math inline">\((SU(2) \otimes SU(4))(SU(4) \otimes SU(2))=U_{24} U_{42}\)</span></p>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\psi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+\end{align*}}\]</span></p>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_1 (\alpha_i,\alpha_j)\right\rangle} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi (\alpha_i,\alpha_j)\right\rangle}\\
+&amp;=U_{24(x)}(\alpha_{i}, \alpha_{j}) U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
+\end{align*}}\]</span></p>
 </div><div class="column" style="width:60%;">
-<h3 id="tahap-2">Tahap 2</h3>
-<p><span class="math display">\[\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
-\end{align*}\]</span></p>
+<h3 id="variasi-kedua">Variasi Kedua</h3>
+<p>Pada Variasi <span class="math inline">\((SU(2) \otimes SU(4))(SU(4) \otimes SU(2))=U_{42} U_{24}\)</span></p>
+<p><span class="math display">\[ \boxed{{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}=U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}}\]</span></p>
+<p><span class="math display">\[\boxed{\begin{align*}
+{\left|\phi_2 (\alpha_i,\alpha_j)\right\rangle} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}\\
+&amp;=U_{42(x)}(\alpha_{i}, \alpha_{j}) U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\end{align*}}\]</span></p>
 </div></div>
 </section>
 <section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<h3 id="tahap-1-1">Tahap 1</h3>
+<h3 id="contoh-tahap-1-pada-variasi-pertama">Contoh Tahap 1 pada Variasi pertama</h3>
 <p><span class="math display">\[\begin{align*}
-{\left|\psi_{2,4}\right\rangle} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
+{\left|\psi (\alpha_2,\alpha_4)\right\rangle} &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,{\left|000\right\rangle}\\
 &amp;=  \begin{pmatrix}\cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)}\\ 0 \\- \sin{\left(\alpha_{4} \right)}\\ 0 \\ 0 \\ 0 \end{pmatrix}  \\
 % &amp;= \cos{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} {\left|010\right\rangle} - \sin{\left(\alpha_{4} \right)} {\left|100\right\rangle}
 \end{align*}\]</span></p>
 </div><div class="column" style="width:60%;">
-<h3 id="tahap-2-1">Tahap 2</h3>
+<h3 id="contoh-tahap-2-pada-variasi-pertama">Contoh Tahap 2 pada Variasi pertama</h3>
 <p><span class="math display">\[\begin{align*}
-{\left|\phi_{2,4}\right\rangle} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi_{2,4}\right\rangle}\\
+{\left|\phi (\alpha_2,\alpha_4)\right\rangle} &amp;= U_{24}(\alpha_{2}, \alpha_{4})\,{\left|\psi (\alpha_2,\alpha_4)\right\rangle}\\
 &amp;=  \begin{pmatrix}\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \left(\alpha_{2} + \alpha_{4}\right) \right)}}{4} + \frac{1}{4}\\- \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)}\\- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\\ 0 \\\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\frac{\cos{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\cos{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\\\sin^{2}{\left(\alpha_{4} \right)}\\ 0 \end{pmatrix}  \\
 % &amp;= \left(\frac{\cos{\left(2 \alpha_{2} \right)}}{4} + \frac{\cos{\left(2 \alpha_{4} \right)}}{4} + \frac{\cos{\left(2 \alpha_{2} + 2 \alpha_{4} \right)}}{4} + \frac{1}{4}\right) {\left|000\right\rangle} - \sin{\left(\alpha_{2} \right)} \cos{\left(\alpha_{4} \right)} \cos{\left(\alpha_{2} + \alpha_{4} \right)} {\left|001\right\rangle} \\
 % &amp;\quad + \left(- \frac{\sin{\left(\alpha_{2} \right)}}{2} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{2}\right) {\left|010\right\rangle} + \left(\frac{\sin{\left(\alpha_{2} - 2 \alpha_{4} \right)}}{4} - \frac{\sin{\left(\alpha_{2} + 2 \alpha_{4} \right)}}{4}\right) {\left|100\right\rangle} \\
@@ -1221,22 +1256,19 @@ U_{24}(\alpha_{2},\alpha_{4})
 <div class="columns">
 <div class="columns">
 <div class="column" style="width:40%;">
-<h3 id="tahap-1-2">Tahap 1</h3>
-<p><span class="math display">\[
-\begin{aligned}
-|\psi_{2,4}\rangle
+<h3 id="tahap-1">Tahap 1</h3>
+<p><span class="math display">\[\begin{aligned}
+|\psi (\alpha_2,\alpha_4)\rangle
 &amp;= U_{42}(\alpha_{2}, \alpha_{4})\,|000\rangle \\
 &amp;= \cos(\alpha_{2})\cos(\alpha_{4})\,|000\rangle \\
 &amp;\quad - \sin(\alpha_{2})\cos(\alpha_{4})\,|010\rangle \\
 &amp;\quad - \sin(\alpha_{4})\,|100\rangle
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </div><div class="column" style="width:60%;">
-<h3 id="tahap-2-2">Tahap 2</h3>
-<p><span class="math display">\[
-\begin{aligned}
-|\phi_{2,4}\rangle
-&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi_{2,4}\rangle \\[4pt]
+<h3 id="tahap-2">Tahap 2</h3>
+<p><span class="math display">\[\begin{aligned}
+|\phi (\alpha_2,\alpha_4)\rangle
+&amp;= U_{24}(\alpha_{2}, \alpha_{4})\,|\psi (\alpha_2,\alpha_4)\rangle \\[4pt]
 &amp;= \left(
 \frac{\cos(2\alpha_{2})}{4}
 + \frac{\cos(2\alpha_{4})}{4}
@@ -1248,90 +1280,38 @@ U_{24}(\alpha_{2},\alpha_{4})
 &amp;\quad + \frac{\sin(\alpha_{2}-2\alpha_{4}) - \sin(\alpha_{2}+2\alpha_{4})}{4}\,|100\rangle \\[4pt]
 &amp;\quad + \frac{\cos(\alpha_{2}-2\alpha_{4}) - \cos(\alpha_{2}+2\alpha_{4})}{4}\,|101\rangle \\[4pt]
 &amp;\quad + \sin^{2}(\alpha_{4})\,|110\rangle
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </div></div>
 </div>
 </section>
-<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1-3">Tahap 1</h3>
+<div class="column" style="width:50%;">
+<h3 id="variasi-pertama-u_24-u_42">Variasi Pertama (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+{\left|\psi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle} \\
+\\
+{\left|\phi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j}) U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
 \end{align*}}\]</span></p>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2-3">Tahap 2</h3>
+</div><div class="column" style="width:50%;">
+<h3 id="variasi-kedua-u_42-u_24">Variasi Kedua (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle} \\
+\\
+{\left|\phi_2 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j}) U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
 \end{align*}}\]</span></p>
 </div></div>
 </section>
-<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
+<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1-4">Tahap 1</h3>
+<div class="column" style="width:50%;">
+<h3 id="variasi-pertama-u_24-u_42-1">Variasi Pertama (<span class="math inline">\(U_{24} U_{42}\)</span>)</h3>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2-4">Tahap 2</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-</div></div>
-</section>
-<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1-5">Tahap 1</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2-5">Tahap 2</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-</div></div>
-</section>
-<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-6" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1-6">Tahap 1</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<div class="card success-box">
-<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
-</div>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2-6">Tahap 2</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
-\end{align*}}\]</span></p>
-<p><span class="math display">\[\Downarrow\]</span></p>
-<div class="card success-box">
-<p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
-</div>
-</div></div>
-</section>
-<section id="pembangkitan-keadaan-3-qubit-dari-keadaan-awal-000rangle-7" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Pembangkitan Keadaan 3-Qubit dari Keadaan Awal <span class="math inline">\(|000\rangle\)</span></h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="tahap-1-7">Tahap 1</h3>
-<p><span class="math display">\[\boxed{\begin{align*}
-{\left|\psi_{i,j}\right\rangle} &amp;= U_{42}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}\\
+{\left|\psi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle} \\
+\\
+{\left|\phi_1 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j}) U_{42(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
 \end{align*}}\]</span></p>
 <p><span class="math display">\[\Downarrow\]</span></p>
 <div class="card info-box">
@@ -1341,10 +1321,12 @@ U_{24}(\alpha_{2},\alpha_{4})
 <div class="card success-box">
 <p><span class="math display">\[\text{Jenis Keterbelitan}\]</span></p>
 </div>
-</div><div class="column" style="width:60%;">
-<h3 id="tahap-2-7">Tahap 2</h3>
+</div><div class="column" style="width:50%;">
+<h3 id="variasi-kedua-u_42-u_24-1">Variasi Kedua (<span class="math inline">\(U_{42} U_{24}\)</span>)</h3>
 <p><span class="math display">\[\boxed{\begin{align*}
-{\left|\phi_{i,j}\right\rangle} &amp;= U_{24}(\alpha_{i}, \alpha_{j})\,{\left|\psi_{i,j}\right\rangle}\\
+{\left|\psi_2 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle} \\
+\\
+{\left|\phi_2 (\alpha_i,\alpha_j)\right\rangle}_{x} &amp;= U_{42(x)}(\alpha_{i}, \alpha_{j}) U_{24(x)}(\alpha_{i}, \alpha_{j})\,{\left|000\right\rangle}
 \end{align*}}\]</span></p>
 <p><span class="math display">\[\Downarrow\]</span></p>
 <div class="card info-box">
@@ -1364,7 +1346,7 @@ U_{24}(\alpha_{2},\alpha_{4})
 SISTEM TOTAL
 </div>
 <div style="font-size: 24px; margin-top: 5px;">
-<span class="math display">\[\rho = |\psi \rangle \langle \psi |\]</span>
+<span class="math display">\[\rho = |\psi_{k}(\alpha_i,\alpha_j) \rangle_{x} \langle \psi_{k}(\alpha_i,\alpha_j) |_{x}\]</span>
 </div>
 </div>
 </div>
@@ -1544,20 +1526,2182 @@ Nilai Eigen <span class="math inline">\(\rho_3\)</span>
 <div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
 Entropi <span class="math inline">\(S_1\)</span>
 </div>
-<p><span class="math display">\[-\sum \lambda_i^{(1)} \ln \lambda_i^{(1)}\]</span></p>
+<div style="font-size: 18px; width: 100%; text-align: center;">
+<p><span class="math display">\[S_1 =-\sum \lambda_i^{(1)} \log_2 \lambda_i^{(1)}\]</span></p>
+</div>
 </div>
 <div data-id="entropy2" style="background: #3fb618; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
 Entropi <span class="math inline">\(S_2\)</span>
 </div>
-<p><span class="math display">\[-\sum \lambda_j^{(2)} \ln \lambda_j^{(2)}\]</span></p>
+<div style="font-size: 18px; width: 100%; text-align: center;">
+<p><span class="math display">\[S_2 = -\sum \lambda_j^{(2)} \log_2 \lambda_j^{(2)}\]</span></p>
+</div>
 </div>
 <div data-id="entropy3" style="background: #e83e8c; color: white; width: 260px; height: 140px; margin: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
 <div style="font-size: 14px; font-weight: bold; margin-bottom: 5px; opacity: 0.9;">
 Entropi <span class="math inline">\(S_3\)</span>
 </div>
-<p><span class="math display">\[-\sum \lambda_k^{(3)} \ln \lambda_k^{(3)}\]</span></p>
+<div style="font-size: 18px; width: 100%; text-align: center;">
+<p><span class="math display">\[S_3 = -\sum \lambda_k^{(3)} \log_2 \lambda_k^{(3)}\]</span></p>
 </div>
+</div>
+</div>
+</section>
+<section id="hasil-keadaan-psi_1alpha_ialpha_jrangle" class="slide level2">
+<h2>Hasil Keadaan <span class="math inline">\(|\psi_1(\alpha_i,\alpha_j)\rangle\)</span></h2>
+<div style="max-height: 500px; overflow-y: auto; border: 1px solid #ddd; font-family: sans-serif;">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.75em;">
+<thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+<tr style="border-bottom: 2px solid #555; background-color: #f7f7f7;">
+<th style="padding: 10px; font-weight: bold; text-align: left;">
+Variasi x
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/2
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 1
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 2
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 3
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 4
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 5
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 6
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 7
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 8
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 9
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 10
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 11
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 12
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 13
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 14
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 15
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 16
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 17
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 18
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 19
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 20
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 21
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 22
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 23
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 24
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 25
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 26
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 27
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 28
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 29
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #555;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 30
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hasil-keadaan-psi_2alpha_ialpha_jrangle" class="slide level2">
+<h2>Hasil Keadaan <span class="math inline">\(|\psi_2(\alpha_i,\alpha_j)\rangle\)</span></h2>
+<div style="max-height: 500px; overflow-y: auto; border: 1px solid #ddd; font-family: sans-serif;">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.75em;">
+<thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+<tr style="border-bottom: 2px solid #555; background-color: #f7f7f7;">
+<th style="padding: 10px; font-weight: bold; text-align: left;">
+Variasi x
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/2
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 1
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 2
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 3
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 4
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 5
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 6
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 7
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 8
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 9
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 10
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 11
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 12
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 13
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 14
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 15
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 16
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 17
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 18
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 19
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 20
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 21
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 22
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 23
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 24
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 25
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 26
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 27
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 28
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 29
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #555;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 30
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hasil-keadaan-phi_1alpha_ialpha_jrangle" class="slide level2">
+<h2>Hasil Keadaan <span class="math inline">\(|\phi_1(\alpha_i,\alpha_j)\rangle\)</span></h2>
+<div style="max-height: 500px; overflow-y: auto; border: 1px solid #ddd; font-family: sans-serif;">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.75em;">
+<thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+<!-- Baris Judul Kolom Utama -->
+<tr style="border-bottom: 2px solid #555; background-color: #f7f7f7;">
+<th style="padding: 10px; font-weight: bold; text-align: left;">
+Variasi x
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/2
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<!-- Baris data diulang berdasarkan pola warna -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 1
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 2
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 3
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 4
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 5
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 6
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 7
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 8
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 9
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 10
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 11
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 12
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 13
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 14
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 15
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 16
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 17
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 18
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 19
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 20
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 21
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 22
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 23
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 24
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 25
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 26
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 27
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 28
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 29
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #555;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 30
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hasil-keadaan-phi_2alpha_ialpha_jrangle" class="slide level2">
+<h2>Hasil Keadaan <span class="math inline">\(|\phi_2(\alpha_i,\alpha_j)\rangle\)</span></h2>
+<div style="max-height: 500px; overflow-y: auto; border: 1px solid #ddd; font-family: sans-serif;">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.75em;">
+<thead style="position: sticky; top: 0; background-color: white; z-index: 1;">
+<!-- Baris Judul Kolom Utama -->
+<tr style="border-bottom: 2px solid #555; background-color: #f7f7f7;">
+<th style="padding: 10px; font-weight: bold; text-align: left;">
+Variasi x
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/12 &amp; π/2
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/12
+</th>
+<th style="padding: 10px; font-weight: bold;">
+π/2 &amp; π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<!-- Baris data diulang berdasarkan pola warna -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 1
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 2
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 3
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 4
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 5
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 6
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 7
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 8
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 9
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 10
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 11
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 12
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 13
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 14
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 15
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 16
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 17
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 18
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 19
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 20
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 21
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 22
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #41b6c4; color: black;">
+C-AB
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 23
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 24
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 25
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 26
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 27
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 28
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 29
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #555;">
+<td style="padding: 6px; text-align: left; background-color: #fdfdfd;">
+Variasi 30
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 <section id="hasil-tabel-pengelompokkan-grup-berdasarkan-pola-keterbelitan" class="slide level2">
@@ -1572,10 +3716,10 @@ Entropi <span class="math inline">\(S_3\)</span>
 Grup
 </th>
 <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">
-Before
+Before (<span class="math inline">\(|\psi_1\rangle\)</span>)
 </th>
 <th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">
-After
+After (<span class="math inline">\(|\phi_1\rangle\)</span>)
 </th>
 </tr>
 <!-- Baris Pasangan Sudut Parameter -->
@@ -1862,57 +4006,314 @@ Grup 6
 </tbody>
 </table>
 </div>
-<div class="fragment">
+<div class="fragment fade-in-then-out">
+<table style="border-collapse: collapse; width: 100%; text-align: center; font-size: 0.65em; font-family: sans-serif;">
+<thead>
+<!-- Baris Kondisi Utama -->
+<tr style="border-bottom: 2px solid #555;">
+<th style="padding: 8px; font-weight: bold;">
+Grup
+</th>
+<th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f9f9f9; border-right: 2px solid #bbb;">
+Before (<span class="math inline">\(|\psi_2\rangle\)</span>)
+</th>
+<th colspan="4" style="padding: 8px; font-weight: bold; background-color: #f0f4f8;">
+After (<span class="math inline">\(|\phi_2\rangle\)</span>)
+</th>
+</tr>
+<!-- Baris Pasangan Sudut Parameter -->
+<tr style="border-bottom: 2px solid #333; font-size: 0.9em;">
+<th>
+</th>
+<th style="padding: 6px;">
+π/12, π/12
+</th>
+<th style="padding: 6px;">
+π/12, π/2
+</th>
+<th style="padding: 6px;">
+π/2, π/12
+</th>
+<th style="padding: 6px; border-right: 2px solid #bbb;">
+π/2, π/2
+</th>
+<th style="padding: 6px;">
+π/12, π/12
+</th>
+<th style="padding: 6px;">
+π/12, π/2
+</th>
+<th style="padding: 6px;">
+π/2, π/12
+</th>
+<th style="padding: 6px;">
+π/2, π/2
+</th>
+</tr>
+</thead>
+<tbody style="font-weight: bold;">
+<!-- Grup 1 (Gabungan Eks-Grup 1, 4, dan 5) -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 1
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 2 (Eks-Grup 2) -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 2
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 3 (Eks-Grup 3) -->
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 3
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #a1dab4; color: black;">
+A-BC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #225ea8; color: white;">
+ABC
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+<!-- Grup 4 (Eks-Grup 6) -->
+<tr style="bordetabelr-bottom: 2px solid #333;">
+<td style="padding: 8px; background-color: #fdfdfd; border-right: 1px solid #ddd;">
+Grup 4
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555; border-right: 2px solid #bbb;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+<td style="background-color: #e0e0e0; color: #555;">
+A-B-C
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment fade-in-then-out">
+<table style="border-collapse:collapse;width:100%;text-align:left;font-family:sans-serif;font-size:0.9em;">
+<thead>
+<tr style="border-bottom: 2px solid #333;">
+<th style="width:15%; padding: 8px 4px;">
+Grup
+</th>
+<th style="padding: 8px 4px;">
+Pasangan Parameter <span class="math inline">\((\alpha_i,\alpha_j)\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">
+Grup 1
+</td>
+<td style="padding: 8px 4px;">
+<span class="math inline">\((\alpha_2,\alpha_6)\)</span>, <span class="math inline">\((\alpha_4,\alpha_6)\)</span>, <span class="math inline">\((\alpha_6,\alpha_2)\)</span>, <span class="math inline">\((\alpha_6,\alpha_4)\)</span>, <span class="math inline">\((\alpha_6,\alpha_8)\)</span>, <span class="math inline">\((\alpha_6,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_6,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_8,\alpha_6)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_6)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_6)\)</span>
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">
+Grup 2
+</td>
+<td style="padding: 8px 4px;">
+<span class="math inline">\((\alpha_2,\alpha_4)\)</span>, <span class="math inline">\((\alpha_2,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_4,\alpha_8)\)</span>, <span class="math inline">\((\alpha_4,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_8,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_{10},\alpha_{12})\)</span>
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #ddd;">
+<td style="padding: 8px 4px; font-weight: bold;">
+Grup 3
+</td>
+<td style="padding: 8px 4px;">
+<span class="math inline">\((\alpha_4,\alpha_2)\)</span>, <span class="math inline">\((\alpha_8,\alpha_4)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_2)\)</span>, <span class="math inline">\((\alpha_{10},\alpha_{8})\)</span>, <span class="math inline">\((\alpha_{12},\alpha_4)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_{10})\)</span>
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #333;">
+<td style="padding: 8px 4px; font-weight: bold;">
+Grup 4
+</td>
+<td style="padding: 8px 4px;">
+<span class="math inline">\((\alpha_2,\alpha_8)\)</span>, <span class="math inline">\((\alpha_2,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_4,\alpha_{10})\)</span>, <span class="math inline">\((\alpha_8,\alpha_2)\)</span>, <span class="math inline">\((\alpha_8,\alpha_{12})\)</span>, <span class="math inline">\((\alpha_{10},\alpha_4)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_2)\)</span>, <span class="math inline">\((\alpha_{12},\alpha_{8})\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="efek-nilai-sudut-hubungan-trigonometri" class="slide level2">
+<h2>Efek Nilai Sudut &amp; Hubungan Trigonometri</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<!-- ***Temuan Umum*** -->
-<!-- - $(\pi/12,\pi/12)$ paling stabil menghasilkan **tripartit (ABC)**
-- $\pi/2$ menyebabkan penurunan keterbelitan:
-  tripartit → bipartit → separabel
-- Keterbelitan dipengaruhi:
-  - besar sudut rotasi
-  - kombinasi parameter operator lokal -->
-<p><strong><em>Grup 1</em></strong></p>
+<p><strong>Dampak Sudut Besar (<span class="math inline">\(\pi/2\)</span>)</strong></p>
 <ul>
-<li>ABC hanya pada <span class="math inline">\((\pi/12,\pi/12)\)</span> <!-- - Selain itu separabel --></li>
-<li>Sangat sensitif terhadap sudut</li>
+<li><p>Hampir selalu menghasilkan keadaan <strong>separabel penuh</strong> (<code>A-B-C</code>).</p></li>
+<li><p>Secara matematis, sudut <span class="math inline">\(\pi/2\)</span> memberikan nilai <span class="math inline">\(\cos(\pi/2) = 0\)</span>.</p></li>
+<li><p>Nilai nol ini <strong>menghapus suku-suku qubit penting</strong> dalam fungsi gelombang, sehingga merusak superposisi.</p></li>
 </ul>
-<p><strong><em>Grup 2</em></strong></p>
-<ul>
-<li>ABC pada <span class="math inline">\((\pi/12,\pi/12)\)</span> dan <span class="math inline">\((\pi/2,\pi/12)\)</span></li>
-<li>Dipengaruhi parameter kedua</li>
-</ul>
-<p><strong><em>Grup 3</em></strong></p>
-<ul>
-<li>Kebalikan Grup 2</li>
-<li>ABC muncul saat parameter pertama = <span class="math inline">\(\pi/12\)</span></li>
-<li>Efek urutan parameter jelas terlihat</li>
-</ul>
-<!-- ***Catatan Teoretis***
-
-- Tidak ada hubungan langsung yang pasti dengan generator Gell-Mann
-- Karena operator merupakan kombinasi beberapa generator
-- Perlu analisis Lie algebra lebih dalam -->
 </div><div class="column" style="width:50%;">
-<p><strong><em>Grup 4</em></strong></p>
+<p><strong>Dampak Sudut Kecil (<span class="math inline">\(\pi/12\)</span>)</strong></p>
 <ul>
-<li>Tripartit → bipartit → separabel</li>
-<li>Degradasi bertahap</li>
-</ul>
-<p><strong><em>Grup 5</em></strong></p>
-<ul>
-<li>Tidak pernah tripartit</li>
-<li>Hanya bipartit atau separabel</li>
-</ul>
-<p><strong><em>Grup 6</em></strong></p>
-<ul>
-<li>Selalu separabel</li>
-<li>Tidak ada keterbelitan terbentuk</li>
+<li><p>Jauh lebih berpotensi membentuk <strong>keterbelitan</strong> (sebagian maupun sejati).</p></li>
+<li><p>Nilai <span class="math inline">\(\cos(\pi/12) \approx 0.96\)</span> dan <span class="math inline">\(\sin(\pi/12) \approx 0.25\)</span> membuat kedua nilai trigonometri <strong>sama-sama aktif</strong>.</p></li>
+<li><p>Koefisien suku tidak bernilai 0 atau 1, sehingga menjaga kondisi <strong>superposisi kuantum</strong> sebagai syarat perlu keterbelitan.</p></li>
 </ul>
 </div></div>
+</section>
+<section id="analisis-grup-1-grup-2-struktur-4-grup" class="slide level2">
+<h2>Analisis Grup 1 &amp; Grup 2 (Struktur 4 Grup)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Grup 1 (Generator <span class="math inline">\(\lambda_{10}\)</span> / <span class="math inline">\(\alpha_6\)</span>)</strong></p>
+<ul>
+<li><p>Mampu menghasilkan keterbelitan sebagian hingga sejati (tripartit <code>ABC</code>).</p></li>
+<li><p><em>Sangat sensitif:</em> Keterbelitan hanya muncul pada sudut kecil (<span class="math inline">\(\pi/12\)</span> dan <span class="math inline">\(\pi/12\)</span>). Kombinasi <span class="math inline">\(\pi/2\)</span> selalu berujung separabel.</p></li>
+<li><p><em>Catatan:</em> Pasangan <span class="math inline">\((\alpha_4, \alpha_6)\)</span> kini melebur sempurna ke grup ini setelah urutan operator dibalik pada <span class="math inline">\(U_{42}U_{24}\)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Grup 2 (Interaksi <span class="math inline">\(\lambda_2\)</span> - <span class="math inline">\(\lambda_5\)</span>)</strong></p>
+<ul>
+<li><p>Menunjukkan pergeseran konsisten: <strong>terbelit sebagian</strong> (tahap 1) <span class="math inline">\(\rightarrow\)</span> <strong>terbelit sejati</strong> (tahap 2).</p></li>
+<li><p>Muncul secara stabil setiap kali parameter yang terkait dengan generator <span class="math inline">\(\lambda_5\)</span> bernilai <span class="math inline">\(\pi/12\)</span>, tanpa memedulikan nilai parameter <span class="math inline">\(\lambda_2\)</span>.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="analisis-grup-3-grup-4" class="slide level2">
+<h2>Analisis Grup 3 &amp; Grup 4</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Grup 3 (Kebalikan Grup 2)</strong></p>
+<ul>
+<li><p>Pola keterbelitan tripartit <code>ABC</code> muncul secara spesifik saat parameter pertama bernilai <span class="math inline">\(\pi/12\)</span>.</p></li>
+<li><p>Menunjukkan efek <strong>urutan parameter</strong> yang sangat jelas terlihat pada sistem kuantum.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Grup 4 (Pasangan Sejenis)</strong></p>
+<ul>
+<li><p>Berisi pasangan generator sejenis (<span class="math inline">\(\lambda_2\)</span>-<span class="math inline">\(\lambda_2\)</span> dan <span class="math inline">\(\lambda_5\)</span>-<span class="math inline">\(\lambda_5\)</span>).</p></li>
+<li><p><em>Temuan Penting:</em> Setelah perbaikan perhitungan pada urutan <span class="math inline">\(U_{42}U_{24}\)</span>, grup ini <strong>selalu menghasilkan keadaan separabel penuh (<code>A-B-C</code>)</strong> di kedua tahap pengujian.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="tingkat-invariansi-sudut-u_42u_24-vs-u_24u_42" class="slide level2">
+<h2>Tingkat Invariansi Sudut (<span class="math inline">\(U_{42}U_{24}\)</span> vs <span class="math inline">\(U_{24}U_{42}\)</span>)</h2>
+<ul>
+<li>Urutan <span class="math inline">\(U_{42}U_{24}\)</span> cenderung menghasilkan tingkat <strong>invariansi sifat keterbelitan yang lebih tinggi/stabil</strong> dibandingkan urutan <span class="math inline">\(U_{24}U_{42}\)</span>.</li>
+</ul>
+<p><strong>Bukti Eksplisit pada Keadaan Variasi 7:</strong></p>
+<ul>
+<li><p><strong>Pada Urutan <span class="math inline">\(U_{24}U_{42}\)</span> (<span class="math inline">\(|\phi_1\rangle_7\)</span>):</strong> <em>Sensitif terhadap perubahan.</em> Ketika sudut dibalik dari <span class="math inline">\((\pi/12 \text{ \&amp; } \pi/2)\)</span> menjadi <span class="math inline">\((\pi/2 \text{ \&amp; } \pi/12)\)</span>, sifat sistem bergeser dari separabel penuh (<code>A-B-C</code>) menjadi terbelit sebagian (<code>A-BC</code>).</p></li>
+<li><p><strong>Pada Urutan <span class="math inline">\(U_{42}U_{24}\)</span> (<span class="math inline">\(|\phi_2\rangle_7\)</span>):</strong> <em>Invarian.</em> Substitusi sudut maupun pembalikannya secara konsisten <strong>bertahan pada keadaan separabel penuh (<code>A-B-C</code>)</strong>.</p></li>
+</ul>
+</section>
+<section id="mekanisme-pembangkitan-subruang-keadaan-psi_1rangle_1-u_24u_42" class="slide level2">
+<h2>Mekanisme Pembangkitan Subruang: Keadaan <span class="math inline">\(|\psi_1\rangle_1\)</span> (<span class="math inline">\(U_{24}U_{42}\)</span>)</h2>
+<ul>
+<li>Transformasi uniter <span class="math inline">\(U_{42} = U_4 \otimes I_2\)</span> bertindak terlebih dahulu pada keadaan dasar <span class="math inline">\(|000\rangle\)</span>.</li>
+<li>Transformasi dimensi tinggi hanya membangkitkan subruang qubit <span class="math inline">\(A\)</span> dan <span class="math inline">\(B\)</span>, sedangkan qubit <span class="math inline">\(C\)</span> dipertahankan oleh matriks identitas.</li>
+</ul>
+<p><span class="math display">\[\left|\psi_1 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \cos \alpha_{2} \cos \alpha_{4} |000\rangle - \sin \alpha_{2} \cos \alpha_{4} |010\rangle - \sin \alpha_{4} |100\rangle\]</span></p>
+<div class="fragment">
+<p>Faktorisasi perkalian tensor membuktikan jenis keterbelitan <strong><code>C-AB</code></strong>:</p>
+<p><span class="math display">\[\left|\psi_1 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \left( \cos \alpha_{2} \cos \alpha_{4} |00\rangle - \sin \alpha_{2} \cos \alpha_{4} |01\rangle - \sin \alpha_{4} |10\rangle \right)_{AB} \otimes |0\rangle_C\]</span></p>
 </div>
-</div>
+</section>
+<section id="mekanisme-pembangkitan-subruang-keadaan-psi_2rangle_1-u_42u_24" class="slide level2">
+<h2>Mekanisme Pembangkitan Subruang: Keadaan <span class="math inline">\(|\psi_2\rangle_1\)</span> (<span class="math inline">\(U_{42}U_{24}\)</span>)</h2>
+<ul>
+<li>Operator uniter <span class="math inline">\(U_{24} = I_2 \otimes U_4\)</span> diterapkan terlebih dahulu pada keadaan dasar <span class="math inline">\(|000\rangle\)</span>.</li>
+<li>Memicu pembangkitan dimensi subruang qubit <span class="math inline">\(B\)</span> dan <span class="math inline">\(C\)</span>, sementara qubit <span class="math inline">\(A\)</span> dipertahankan oleh matriks identitas.</li>
+</ul>
+<p><span class="math display">\[\left|\psi_2 (\alpha_{2},\alpha_{4})\right\rangle_{1} = \cos \alpha_{2} \cos \alpha_{4} |000\rangle - \sin \alpha_{2} \cos \alpha_{4} |001\rangle - \sin \alpha_{4} |010\rangle\]</span></p>
+<div class="fragment">
+<p>Faktorisasi perkalian tensor membuktikan subsistem <span class="math inline">\(A\)</span> terpisah dari subruang <span class="math inline">\(BC\)</span>:</p>
+<p><span class="math display">\[\left|\psi_2 (\alpha_{2},\alpha_{4})\right\rangle_{1} = |0\rangle_A \otimes \left( \cos \alpha_{2} \cos \alpha_{4} |00\rangle - \sin \alpha_{2} \cos \alpha_{4} |01\rangle - \sin \alpha_{4} |10\rangle \right)_{BC}\]</span></p>
 <!-- {{< include sections/12-interpretasi-su4.qmd >}} -->
+</div>
 </section>
 <section id="kesimpulan" class="slide level2">
 <h2>Kesimpulan</h2>
@@ -2165,13 +4566,33 @@ Ada pertanyaan?
       <div class="motto-second">"The Art of Thinking"</div>
     </div>
 
-    <div class="footer-left">
+
+    <!-- <div class="footer-left">
       www.its.ac.id
     </div>
 
     <div class="footer-right">
       INSTITUT TEKNOLOGI SEPULUH NOPEMBER, Surabaya - Indonesia
+    </div> -->
+    <div class="footer-left"></div>
+
+    <div class="footer-right">
+      INSTITUT TEKNOLOGI SEPULUH NOPEMBER, Surabaya - Indonesia
     </div>
+
+    <script>
+    (function () {
+      const interval = setInterval(() => {
+        const slideNum = document.querySelector(".slide-number");
+        const footerLeft = document.querySelector(".footer-left");
+
+        if (slideNum && footerLeft) {
+          footerLeft.appendChild(slideNum);
+          clearInterval(interval);
+        }
+      }, 100);
+    })();
+    </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
